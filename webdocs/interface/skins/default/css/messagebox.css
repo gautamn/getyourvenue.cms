@@ -1,0 +1,179 @@
+/** popup css starts**/
+.popup{
+~padding-right:10px; 	_padding:0 10px;
+	top:15%;
+	left:249px;
+	z-index:1000000;
+}
+.popup .top span,
+.popup .bot span{
+	float:left; 
+	display:block; 
+	height:10px;
+	background:#999999;
+	display:block;
+	width:100%;
+	position:relative;
+}
+.popup .top span.lft{ 
+	background: url("../images/button-corners-sprite.gif") no-repeat scroll -1px -459px transparent;
+    width: 10px;
+	margin-left:-10px;
+	_margin-left:-5px;
+}
+	
+.popup .top span.rght {
+    background: url("../images/button-corners-sprite.gif") no-repeat scroll 100% -459px transparent;
+    width: 10px;
+	margin-right:-10px;
+	float:right;
+	_margin-left:-10px;
+}
+
+.popup .bot span{_margin-top:-5px;}
+
+.popup .bot span.lft{ 
+	background: url("../images/button-corners-sprite.gif") no-repeat scroll -1px -605px transparent;
+    width: 10px;
+	margin-left:-10px;
+	_margin:0 -10px -5px -5px;
+}
+	
+.popup .bot span.rght {
+    background: url("../images/button-corners-sprite.gif") no-repeat scroll 100% -605px transparent;
+    width: 10px;
+	margin-right:-10px;
+	float:right;
+	_margin:0 -10px -5px;
+}
+
+.popup .mid{
+	display:block;
+	background:#999999;
+	margin:10px -10px 0;
+	~margin:10px -10px 0 -10px;
+	padding:0 10px;
+	_margin-top:0px;
+}
+.popup .grayBg{
+	background:#eff1f5;
+	padding:10px;
+	display:block;
+	~position:relative;
+	_position:static;
+}
+.popup .pagehead {
+	background: url("../images/hr-sprite.gif") repeat-x scroll 0 -2332px transparent;
+	color: #333;
+	font: bold 28px/24px "Century Gothic",Helvetica,Arial,sans-serif;
+	height: 32px;
+	margin-bottom: 15px;
+	padding: 5px 0 15px 12px;
+	position: relative;
+}
+
+.popup  .login label {
+    
+    clear: both;
+    display: block;
+    float: none;
+    margin-top: 9px;
+    padding: 0 0 42px;
+    
+}
+
+.popup .notification{display:block ;}
+.popup .notification .msg.twoLine{float:left; font:bold 20px "Century Gothic", Helvetica, Arial, sans-serif; padding:15px 20px 0 0; }
+.popup .notification .msg div{display:block; font:16px "Century Gothic", Helvetica, Arial, sans-serif;}
+.popup .notification .msg span{ font-weight:normal;}
+
+.popup .notification .notifyImg{ width:80px; height:80px; vertical-align:middle; float:left;}
+.popup .notification .alreadyReg{ background:url("../images/sprite.gif") no-repeat scroll -82px -5864px;}
+
+.popup .notification .clipAdded{ background:url("../images/sprite.gif") no-repeat scroll -167px -6083px;}
+.popup .notification .rateClip{ background:url("../images/sprite.gif") no-repeat scroll -180px -5867px;}
+.popup .notification .rateEpisode{ background:url("../images/sprite.gif") no-repeat scroll 11px -5982px;}
+.popup .notification .rateMovie{ background:url("../images/sprite.gif") no-repeat scroll -279px -5870px;}
+.popup .notification .reviewValidate{ background:url("../images/sprite.gif") no-repeat scroll -81px -5979px;}
+.popup .notification .settingSaved{ background:url("../images/sprite.gif") no-repeat scroll -171px -5984px;}
+.popup .notification .thankYou{ background:url("../images/sprite.gif") no-repeat scroll -268px -6093px;}
+.popup .notification .clipRemove{ background:url("../images/sprite.gif") no-repeat scroll -75px -6083px;}
+.popup .notification .clipShare{ background:url("../images/sprite.gif") no-repeat scroll 11px -6083px;}
+.popup .notification .PasswordChanged{ background:url("../images/sprite.gif") no-repeat scroll -279px -5974px;}
+.popup .notification .postReview {background:url("../images/sprite.gif") no-repeat scroll 11px -5870px;}
+
+.popup .notification .msg{float:left; font:bold 20px "Century Gothic", Helvetica, Arial, sans-serif; line-height:75px; padding-right:20px;  }
+
+.pstatic{position:static !important;}
+
+.popup .login label strong {
+    width: 93px;
+	
+}
+
+.popup  .login label strong {
+    color: #000;
+    display: block;
+    float: left;
+    font:400 14px/28px Arial,Helvetica,sans-serif;
+    margin:0  11px 0 18px;
+    width: 93px;
+}
+
+.popup .login  label span{
+    background: url("../images/button-corners-sprite.gif") no-repeat scroll 0 -160px transparent;
+    float: left;
+    height: 32px;
+    width: 8px;
+}
+
+.popup .login label input {
+    width: 288px;
+}
+
+.popup .login  label input{
+    background: url("../images/hr-sprite.gif") repeat-x scroll 0 -1645px transparent;
+    border: 0 none;
+    float: left;
+    font: 12px/32px Arial,Helvetica,sans-serif;
+    height: 32px;
+    margin: 0 -1px;
+    padding: 0 10px 0 0;
+    width: 250px;
+}
+
+.popup .login  label span.rght{
+    background-position: right -160px;
+    clear: right;
+}
+.popup label span {
+    background: url("../images/button-corners-sprite.gif") no-repeat scroll 0 -160px transparent;
+    float: left;
+    height: 32px;
+    width: 8px;
+}
+
+.frgtPasswrd{ font:12px Arial, Helvetica, sans-serif; color:#008cfc;}
+.popup label.rememberPasswrd {
+    font:14px Arial, Helvetica, sans-serif;
+	color:#333;
+    clear: both;
+    display: block;
+    float: none;
+    margin-top: 9px;
+    }
+.popup label.rememberPasswrd span{ background:none; float:none;  line-height:28px; color:#333;}
+.popup label.rememberPasswrd input{ margin:0 0px 0 0px;}
+.popup  .savechanges{ margin:11px 0 0 0px;}
+
+.popup  .savechanges a.button, .button{ font-weight:normal;}
+.popup a.cancel {
+    color: #008DFC;
+    float: left;
+    font: 12px Arial,Helvetica,sans-serif;
+    margin-left: 20px;
+    padding-top: 8px;
+}
+
+div .errorPopup { color:red; font-size:11px; margin:-21px 0 0 6px; text-align:left;  position:absolute; }
+.padleft{padding-left:157px!important;}

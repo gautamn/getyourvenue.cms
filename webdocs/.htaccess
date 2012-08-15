@@ -1,0 +1,24 @@
+RewriteEngine  on
+RewriteBase    /gyvcmsdemo/webdocs/
+Options +FollowSymlinks
+
+RewriteCond %{REQUEST_URI} /search/
+RewriteCond %{REQUEST_URI} !php$
+RewriteRule ^(.*)$ index.php?q=search&searchvars=$0 [L]
+
+RewriteCond %{REQUEST_URI} /action/
+#RewriteCond %{REQUEST_URI} !php$
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^(.*)$ controllers/actions.php?qq=$0&%1 [L]
+
+RewriteCond %{REQUEST_URI} /modal/
+#RewriteCond %{REQUEST_URI} !php$
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^(.*)$ controllers/modals.php?q=$0&%1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f  
+RewriteCond %{REQUEST_URI} !/index.php 
+RewriteCond %{REQUEST_URI} !/interface
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^(.*)$ index.php?q=$1&%1 [L]

@@ -1,0 +1,3 @@
+contains all the images at the project level.
+
+Site Logo and/or other theme idependent images

@@ -1,0 +1,2 @@
+contatins all the skins for site.
+this host a folder for each skin prepared.

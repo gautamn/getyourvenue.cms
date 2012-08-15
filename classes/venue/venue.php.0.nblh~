@@ -1,0 +1,72 @@
+<?php
+
+class Venue {
+    public function get_venues_feed($arr = '') {
+        $whereArr = self::where_str($arr);
+        $where = ($whereArr) ? $whereArr['where'] : '';
+        $data = $whereArr['data'];
+        $query = "SELECT * FROM " . VENUES . $where . " order by venue_name";
+        $res = fDB::fetch_assoc_all($query, $data);
+        return $row = $res['result'];
+    }
+    public function where_str($arr) {
+          if (is_array($arr)) {
+                $data = array();
+                $and = '';
+                foreach ($arr as $k => $v) {
+                    $and = " `$k`=? AND";
+                    array_push($data, $v);
+                }
+                $where = (strlen($and)) ? " WHERE " . substr($and, 0, -4) : '';
+                return array("where" => $where, "data" => $data);
+          }
+          return false;
+    }
+
+    public function getVenueListing($arr = '', $limit=0) {
+        $limit = ($limit) ? $limit : TABLE_DATA_LIMIT;
+        $whereArr = self::where_str($arr);
+        $where = ($whereArr) ? $whereArr['where'] : '';
+        $data = $whereArr['data'];
+        $query = "SELECT * FROM " . VENUES . $where . " order by id DESC";
+        $res = fDB::fetch_assoc_all($query, $data);
+        return $row = $res['result'];
+    }
+
+    //function to save venue details
+    public function saveVenue($arr){
+      if(!is_array($arr))
+        return false;
+    }
+
+    //function to update venues
+    public function updateVenues($arr = '') {
+          return (($ins) ? fDB::inserted_id() : $id);
+    }
+
+    //function to change status
+    public function change_status($id) {
+        $query = "SELECT * FROM " . VENUES . " WHERE id='" . (int) $id . "'";
+        $row = fDB::fetch_assoc_first($query);
+        $status = ($row['status'] == 1) ? 0 : 1;
+        $query = "UPDATE  " . VENUES . " SET status='" . $status . "' WHERE id='" . (int) $id . "'";
+        fDB::query($query);
+    }
+
+    //function to get single venue details by id
+    public function getVenueDetailsByID($id) {
+        $query = "SELECT id, venue_name name FROM " . VENUES;
+        $row = fDB::fetch_assoc_all($query);
+        return $row['result'];
+    }
+    //
+    public function get_venues_searchResult($cond = '') {
+        $whr = 1;
+        if (count($cond) > 0) {
+          $whr = implode(" AND ", $cond);
+        }
+        $query = "SELECT * FROM " . VENUES . " WHERE " . $whr  . " order by id DESC";
+        return fDB::fetch_assoc_all($query, $data);
+    }
+}
+?>

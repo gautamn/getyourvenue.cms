@@ -1,0 +1,95 @@
+.fl{float:left;}
+.fr{float:right;}
+#Outerwrapper{background: #edf1f4 url(../images/homwall.jpg) no-repeat center top; width:100%; padding: 20px 0; }
+#whiteBGouter{background:url(../images/whiteBG.png) repeat-y center top;  }
+#BodyContainer{ background:url(../images/headerBG1.jpg) no-repeat top center;  _width:1000px; _margin:0 auto; }
+
+.left-col {width: 162px; margin: 0 20px 0 0; padding: 10px 10px 50px 20px; border-right: 1px solid #dddddd;}
+#wrapper{padding-top:20px;}
+
+.left-col ul {margin: 0 0 0 15px; padding: 0;}
+.left-col li {margin: 0; padding: 0 0 5px 0; list-style-type: square;}
+.left-col a {color: #000; text-decoration: none;}
+.left-col a:hover {color: #000; text-decoration: underline;}
+
+.rght-col {width: 680px; margin: 0; padding: 10px;}
+.banner-top {height: 42px; }
+.header-banner {background: url(../images/header1.gif) no-repeat top left; height: 135px; margin: 15px 0 0 0;}
+.footer-banner {background: url(../images/footer.jpg) no-repeat top left; height: 250px; margin: 15px 0 0 0;}
+
+.banner-size {padding: 15px 0 20px 24px; margin: 0;}
+.edit {margin: 10px 0; position: absolute; top: 0; left: 20px;}
+.samsung {width: 142px; height: 48px; position: relative;}
+.samsung .edit {margin: 10px 0; position: absolute; top: 0; left: 52px;}
+
+.fiat {width: 52px; height: 52px; position: relative; margin: 0 0 0 40px;}
+.fiat .edit {left: 5px;}
+
+.vox {width: 40px; height: 39px; position: relative; margin: 13px 0 0 84px;}
+.vox .edit {left: 0; top: -4px !important;}
+
+.vox2 {width: 40px; height: 39px; position: relative; margin: 13px 0 0 41px;}
+.vox2 .edit {left: 0px; top: -4px !important;}
+
+.hp {width: 51px; height: 32px; position: relative; margin: 13px 0 0 39px;}
+.hp .edit {left: 7px; top: -5px !important;}
+
+.pepsi {width: 53px; height: 45px; position: relative; margin: 13px 0 0 39px;}
+.pepsi .edit {left: 4px; top: 0px !important;}
+
+/**** Footer ****/
+.footer-top {height: 120px; margin: 0; padding: 0;}
+.footer-spon {width: 222px; height: 24px;}
+.footer-size { margin: 31px 0 0 72px;}
+.main-spon {margin: 14px 0 0 76px; position: relative;}
+.main-spon .edit {top: -10px; left: 80px;}
+.sponser1 {position: relative; width: 39px; height: 29px;}
+.sponser1 .edit {left: 0; top: 22px;}
+
+.sponser2 {position: relative; width: 39px; height: 29px; margin: 0 0 0 12px;}
+.sponser2 .edit {left: 0; top: 22px;}
+
+.sponser3 {position: relative; width: 39px; height: 29px; margin: 0 0 0 15px;}
+.sponser3 .edit {left: 0; top: 22px;}
+
+.sponser4 {position: relative; width: 24px; height: 29px; margin: 0 0 0 14px;}
+.sponser4 .edit {left: -9px; top: 22px;}
+
+.sponser5 {position: relative; width: 28px; height: 29px; margin: 0 0 0 16px;}
+.sponser5 .edit {left: 0; top: 22px;}
+
+/*** Right Banner ****/
+.right-banner {background: url(../images/rght-banner.jpg) no-repeat top left; width: 700px; height: 680px;}
+.right-banner .right-size {margin: 0 0 0 383px; padding: 122px 0 0 0;}
+.right-video {background: url(../images/video-right.jpg) no-repeat top left; width: 700px; height: 680px;}
+.right-video .right-size {margin: 0 0 0 383px; padding: 124px 0 0 0;}
+.right-video .right-size .banner2{ margin: 12px 0 0 0;}
+
+.right-live {background: url(../images/video-live.jpg) no-repeat top left; width: 700px; height: 680px;}
+.right-live .right-size {margin: 0 0 0 383px; padding: 125px 0 0 0;}
+
+.right-scorecard {background: url(../images/video-scorecard.jpg) no-repeat top left; width: 700px; height: 680px;}
+.right-scorecard .right-size {margin: 0 0 0 383px; padding: 124px 0 0 0;}
+.right-scorecard .right-size .banner2{ margin: 13px 0 0 0;}
+
+.right-team {background: url(../images/video-team.jpg) no-repeat top left; width: 700px; height: 680px;}
+.right-team .right-size {margin: 0 0 0 378px; padding: 125px 0 0 0;}
+.right-team .right-size .banner2{ margin: 13px 0 0 0;}
+
+.right-news {background: url(../images/video-news.jpg) no-repeat top left; width: 700px; height: 680px;}
+.right-news .right-size {margin: 0 0 0 383px; padding: 124px 0 0 0;}
+.right-news .right-size .banner2{ margin: 12px 0 0 0;}
+
+.right-standing {background: url(../images/video-standing.jpg) no-repeat top left; width: 700px; height: 680px;}
+.right-standing .right-size {margin: 0 0 0 382px; padding: 123px 0 0 0;}
+.right-standing .right-size .banner2{ margin: 13px 0 0 0;}
+
+
+.banner1 {width: 300px; height:125px; position: relative;}
+.banner2 {width: 300px; height:125px; position: relative; margin: 11px 0 0 0;}
+.banner3 {width: 300px; height:125px; position: relative; margin: 13px 0 0 0px;}
+.banner4 {width: 300px; height:125px; position: relative; margin: 13px 0 0 0;}
+.banner1 .edit, .banner2 .edit, .banner3 .edit, .banner4 .edit {top: 40px; left: 120px;}
+
+
+.right-banner .right-size .banner2{ margin: 13px 0 0 0;}

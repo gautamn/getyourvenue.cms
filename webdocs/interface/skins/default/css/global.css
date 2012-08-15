@@ -1,0 +1,1093 @@
+@charset "utf-8";
+
+/*
+CSS Document
+TITLE: Global styles for boxtv.com
+DATE: late 2011
+Copyright: Times Internet Limited
+*/
+
+
+*{ font-family:Arial, Helvetica, sans-serif; line-height:normal; }
+
+body{ font-size:12px;  margin:auto;}
+.homeBG { margin:auto; background:url(../images/pgbg.gif) repeat-x 0 30px;font-size:12px; margin-top:45px;}
+.homeBG .InnerContentWrapper{background:none;}
+* html .homeBG{margin-top:0px;}
+
+.homeBG.Movie{background:url(../images/pgbgmovie.gif) repeat-x 0 -13px;}
+h1 , h2 , h3 , h4 , h6 , h6{margin:0px; padding:0px;}
+
+/*.homeinner { margin-top:45px;}*/
+
+* html .homeinner  {margin-top:0px;}
+
+a{ text-decoration:none; outline:none;}
+a:hover{}
+
+input , select{outline:none;}
+
+ul, li{}
+html,  span, object, iframe,
+h1, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+	list-style:none;
+	display:inline;
+}
+
+.noPad{padding:0px!important;}
+.noMrg{margin:0px!important;}
+
+em {}
+.FloatLeft , .fl{ float:left!important;}
+.FloatRight , .fr{ float:right!important;}
+.clear , .cl{clear:both; font-size:1px; height:1px;}
+.lineBreak1p{clear:both;overflow:hidden;height:1px;width:100%;}
+.lineBreak2p{height:2px;overflow:hidden;clear:both;}
+.lineBreak5p{height:5px;overflow:hidden;clear:both;}
+.lineBreak10p{height:10px;overflow:hidden;clear:both;}
+.lineBreak20p{height:20px;overflow:hidden;clear:both;}
+.lineBreak15p{height:15px;overflow:hidden;clear:both;}
+.lineBreak25p{height:25px;overflow:hidden;clear:both;}
+.lineBreak30p{height:30px; background:none; clear:both;}
+.lineBreak49p{height:49px; background:none; clear:both;}
+
+
+.OuterMostWrapper{ margin:auto; width:1000px;}
+.InnerContentWrapper{width:980px; margin:auto; padding:0 10px 0px 10px; /*background:#FFF;*/}
+
+
+.BodyBannerLeft{background:#0261a3 url(../images/BodyBannerLeft.jpg) fixed no-repeat left 0;}
+.BodyBannerRight{background:url(../images/BodyBannerRight.jpg) fixed no-repeat right 0;}
+
+.AllLanguage{margin:0px 0 0 5px; padding:0px; position:relative; z-index:1000}
+.AllLanguage .Drop{margin:0px; padding:2px 8px; width:105px; background:#5f5f5f; font:normal 12px "Arial Black", Gadget, sans-serif!important; color:#fff; outline:none; cursor:pointer; float:left;}
+.AllLanguage .Drop span{float:left; width:92px; font:normal 12px "Arial Black", Gadget, sans-serif!Important; color:#fff;}
+.AllLanguage .Drop .Arrow{background:url(../images/sprite2.gif) no-repeat 0 -72px; width:11px; height:7px; margin:5px 0px 0 5px; float:right; position:absolute}
+.AllLanguage .DropDown{position:absolute; top:22px; left:0px;}
+.AllLanguage .DropDown ul{margin:0px; padding:0px; width:121px;  border-top:1px solid #969696; display:block}
+.AllLanguage .DropDown ul li{margin:0px; border:1px solid #969696; border-top:0px;   float:left;}
+.AllLanguage .DropDown ul li a{ font:normal 12px "Arial Black", Gadget, sans-serif!Important; color:#fff; background:#5f5f5f;  float:left; display:block; width:109px; padding:5px;}
+.AllLanguage .DropDown ul li a:hover{color:#fff!important; background:#1e1715; }
+.AllLanguage .DropDown ul li:hover{background:#1e1715; color:#fff}
+
+#BreadCrumb{margin:0px auto; padding:15px 0px;  width:1000px; /*background:#fff url(../images/verticale.gif) repeat-x 0 -14px!important;*/}
+#BreadCrumb ul{margin:0px; padding:0px;}
+#BreadCrumb ul li{margin:0px; padding:5px 20px 5px 15px; list-style:none; background:url(../images/sprite1.png) no-repeat right -420px; font:bold 11p Arial, Helvetica, sans-serif; color:#999999;}
+#BreadCrumb ul li.BGnone , .BGnone{background:none!important;}
+#BreadCrumb ul li a{font:bold 11p Arial, Helvetica, sans-serif; color:#999999;}
+
+
+
+
+#Banner { width:980px; margin:0px auto; padding:2px 10px 0 10px;height:305px;}
+
+#InnerBanner{ width:1000px; margin:0px auto; padding:0px 0px 0 0px; background:#171c2c;}
+.MovieBG{background:url(../images/FoxMovieBG.gif) no-repeat; height:71px; width:1000px;}
+.SocialIcons{font:bold 12px Arial, Helvetica, sans-serif; color:#fff; text-transform:uppercase; float:right; padding:12px 10px 0 0;}
+.SocialIcons span{float:left; padding:7px 10px 0 0}
+.SocialFB{background:url(../images/sprite1.png) no-repeat 0 -255px; width:30px; height:30px; margin-right:2px}
+.SocialTwit{background:url(../images/sprite1.png) no-repeat 0 -210px; width:30px; height:30px;}
+
+#InnerBanner .BannerContainer{padding:0px 20px 12px 20px; }
+#InnerBanner .Slider{margin:0px; padding:0px; float:left; width:640px; overflow:hidden; position:relative; height:300px;}
+#InnerBanner .Slider ul{width:640px; height:300px; float:left; }
+#InnerBanner .Slider ul li{width:640px; height:300px;  list-style:none;}
+.mrg10{margin:8px 10px;}
+.LRArrow{margin-top:75px; width:640px;}
+.LRArrow .Left , .LRArrow .Right{background:url(../images/sprite1.png) no-repeat left -304px; width:33px; height:66px;}
+.LRArrow .Right{background-position:right -304px;}
+
+#InnerBanner .Dots{ margin:0 0 0 280px; padding-top:10px;}
+#InnerBanner .Dots a img{background:url(../images/sprite1.png) no-repeat 0 -390px; width:15px; height:15px;}
+#InnerBanner .Dots a:hover img , #InnerBanner .Dots a.selected img{background:url(../images/sprite1.png) no-repeat -21px -390px; width:15px; height:15px;}
+
+.TLposition0{top:0px; left:0px;}
+.logo{position:absolute; margin:3px 0 0 0; z-index:1000; background:url(../images/boxtvlogo.png) no-repeat; width:115px; height:50px;}
+#Banner .Left img#img_banner{width:776px; height:310px; overflow:hidden;}
+#Banner .Left { width:764px; margin:0px; padding:0px; background:#000; float:left; position:relative; height:300px;}
+#Banner .Left .BannerInfo{position:absolute; top:0px; left:0px; background:url(../images/bannertrans.png) no-repeat left top; width:776px; height:310px; padding:5px 0px 0 0;}
+#Banner .Left .BannerInfo .Description{margin:0px; padding:50px 0 0 0; color:#818181; width:350px; min-height:180px; position:relative;}
+#Banner .Left .BannerInfo .Description h3{margin:0px 0 5px 0; padding:0px 0 12px 0; font:bold 33px "Arial Black", Gadget, sans-serif; color:#fff; background:url(../images/transB.png) left bottom repeat-x; float:left;line-height:30px;text-transform:lowercase; text-transform:uppercase;}
+#Banner .Left .BannerInfo .Description p{margin:0px; padding:0px; font:bold 11px/14px Arial, Helvetica, sans-serif; text-transform:capitalize; color:#fff; }
+.Description .Links , .Slider .Links{margin:0px; padding:10px 0; position:absolute; bottom:0px; left:0px;}
+.Description .Links a , .Slider .Links a{margin:0px 5px 0 0; padding:3px 4px; font:bold 9px  Arial, Helvetica, sans-serif; color:#fff; text-transform:uppercase; background:#d10606;}
+
+.Description .Links a.trailer ,.Description .Links a.full {margin:0px 5px 0 0; padding:5px; font:bold 10px  Arial, Helvetica, sans-serif; color:#fff; text-transform:uppercase;  float:left; height:17px;}
+
+.Description .Links a.trailer{background:url(../images/sprite1.png) no-repeat 0 -813px!important; width:87px;}
+.Description .Links a.full{background:url(../images/sprite1.png) no-repeat 0 -850px!important; width:103px; }
+
+
+
+.Slider .Description {margin:0px; padding:48px 0 0 18px;}
+.Slider .Description h3{margin:0px; padding:0px 5px; background:#000; color:#fff; font:normal 24px "Arial Black", Gadget, sans-serif; display:inline}
+.Slider .Description .Links{padding:0px;}
+
+
+.HDIcon.Large{background:url(../images/sprite1.png) no-repeat 0 -168px; width:40px; height:28px;}
+
+
+#Banner .Right { width:204px; margin:0px; padding:0px; background:#000; float:right;}
+
+#Banner .Right .Toparrow{height:15px; float:left;}
+#Banner .Right .Toparrow img{background:url(../images/sprite2.gif) no-repeat 0 0px; width:202px; height:15px;}
+
+#Banner .Right .btmarrow{height:15px; float:left;}
+#Banner .Right .btmarrow img{background:url(../images/sprite2.gif) no-repeat 0 -35px; width:202px; height:17px; }
+
+#Banner .Right .Height{height:277px; overflow:hidden; position:relative}
+#Banner .Right ul.ThumbList{margin:0px; padding:0px;height:274px;display:block; position:absolute;}
+#Banner .Right ul.ThumbList li{margin:1px 0 1px 0; padding:0px; background:#111 url(../images/thumbImg2.jpg) no-repeat; width:202px;float:left; position:relative; height:90px; cursor:pointer;}
+#Banner .Right ul.ThumbList li a{cursor:pointer;}
+#Banner .Right ul.ThumbList li span.trans{ background:url(../images/thumbtrans.png) no-repeat top right; border:1px solid #333; width:200px; height:90px;position:absolute; top:0px; right:0px;}
+#Banner .Right ul.ThumbList li table{margin:0px 0 0 100px; position:absolute; z-index:100; float:right}
+#Banner .Right ul.ThumbList li table td.txt{font:bold 15px Arial, Helvetica, sans-serif; color:#fff;  padding:2px 0px;width:90px;text-align:left; }
+
+#Banner .Right ul.ThumbList li table td.txt span{padding:3px 5px; display:block;}
+
+
+#Banner .Height .HoverEffect span.trans{border:4px solid #a00000; width:194px; height:83px; position:absolute; width:196px; height:86px; right:0px; top:92px; z-index:1;}
+#Banner .Selectedarrow{background:url(../images/arrowbullet.png) no-repeat 0px 0px; width:8px; height:18px; border:0; position:absolute; top:148px; right:212px; z-index:900; }
+
+.FixedPos {position:fixed;}
+
+
+#HeaderWrapper a, #HeaderWrapper div { font-family:Arial Black, Helvetica, sans-serif; line-height:10px; color:#FFF; font-size: 14px;}
+#HeaderWrapper a:hover{color:#333;}
+.borderSeprtr{background:url(../images/separator.gif) left center no-repeat; }
+
+
+/*---START----TOP MOST FIXED HEADER ITEMS----------*/
+#HeaderWrapper{
+	height:49px;
+	width:100%;
+	background: url(../images/headerbg.gif) repeat-x;
+	color:#FFF;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:1000;
+
+}
+
+
+
+#Header{width:980px; padding:0 10px 0 10px; margin:0 auto; height:48px; }
+
+	/*---START----------------MENU-----------------*/
+#TopMenuWrapper{ width:832px; float:right; margin-left:33px; }
+
+#TopMenuLinks {
+	margin:0;
+	padding: 0;
+	}
+
+ul.TopLink li.CurrentPG{  background: url(../images/hoverBG.gif) repeat;  position:relative; top:1px; }
+
+ul.TopLink li {
+	float:left;
+	background:url(../images/separator.gif) left center no-repeat;  position:relative; top:1px;}
+
+ul.TopLink li a {
+	float:left;
+	height:28px;
+	padding: 20px 14px 0 15px;
+	color: #fff;
+	text-transform:uppercase;
+}
+ul.TopLink li.plus a{color:#18a4f8!important}
+ul.TopLink li:hover.plus a{color:#18a4f8!important}
+ul.TopLink li:hover  {
+
+	color:#b6b6b6;
+  background: url(../images/hoverBG.gif) repeat;  position:relative; top:1px;
+
+
+}
+
+ul.TopLink li a:hover {
+
+	color:#b6b6b6!important;
+
+
+
+}
+
+
+ul.TopLink li .selected {
+	background:#f3f3f3;
+	color:#333333;
+}
+
+ul.TopLink li a img.home{width:20px; height:18px;  background: url(../images/sprite1.png) no-repeat 0 -764px;}
+
+/*-----START----------SUB MENU DROP DOWN-----------------------*/
+#OuterSubMenu{margin:0 auto; height:37px; /*margin-top:48px;*/ background: url(../images/submenuBG.gif) repeat-x 0 4px;}
+
+.submenuInner{position:fixed; width:1000px; z-index:100;}
+#SubMenuWrapper {
+	margin:0px auto;
+	padding: 0 0 0 110px;
+	width:575px;
+	float:left;
+		}
+
+.username{float:right; color:#cccccc; font:bold 14px Arial, Helvetica, sans-serif; padding:13px 61px 0 0;}
+.username img{border:1px solid #000; margin:-4px 0 0 5px}
+ul.SubMenu-Item, ul.SubMenu-Item li {
+	SubMenu-ddItem-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.SubMenu-Item {
+	position: relative;
+	z-index: 597;
+}
+ul.SubMenu-Item li:hover > ul {
+	visibility: visible;
+}
+ul.SubMenu-Item li.hover, ul.SubMenu-Item li:hover {
+	position: relative;
+	z-index: 599;
+	cursor: pointer;
+/*	background: url(../images/dropdown-bg-hover.gif) repeat-x left top;*/
+}
+ul.SubMenu-Item li {
+	float:left;
+	display:block;
+	color: #999;
+	font: 14px Arial, Helvetica, sans-serif;
+	border-right:1px solid #363636;
+	height:12px;
+	margin:12px 0 0px 0;
+	padding-bottom:8px;
+
+}
+ul.SubMenu-Item li a {
+	float:left;
+	padding: 2px 16px 10px 16px;
+
+	color: #cccccc;
+	font: 14px Arial, Helvetica, sans-serif;
+	text-decoration:none;
+}
+ul.SubMenu-Item li a:hover {
+	color:#dd3c13;
+}
+ul.SubMenu-Item *.SubMenu-ddItem {
+	padding-right:5px;
+background: url(../images/subnav-arrow.gif) no-repeat right -14px;
+}
+ul.nav-sub {
+	visibility: hidden;
+	position: absolute;
+	padding:0px;
+	top: 22px;
+	left: -1px;
+	~left: -15px;
+	z-index: 598;
+
+
+	border-top:0;
+}
+ul.nav-sub li {
+	SubMenu-ddItem-style:none;
+	display:block;
+	padding: 2px 5px;
+	height: 27px;
+	float: none;
+	width:145px;
+	border:0px;
+	background: none;
+	margin:0px;
+	background: url(../images/submenuBG.gif) repeat!important;
+}
+ul.nav-sub li a {
+	SubMenu-ddItem-style:none;
+	display:block;
+	padding: 6px 5px 6px 12px;
+	height: 15px;
+	float: none;
+	background: none;
+	font: 12px Arial, Helvetica, sans-serif;
+}
+
+
+/*-----END----------SUB MENU DROP DOWN-----------------------*/
+
+#ShowLanguage{width:194px; float:left;
+height:32px;
+padding: 16px 10px 0 14px;
+
+}
+
+#ShowLanguage div{ float:left; font-size:9px;}
+
+#TopSignInLink{  float:left; text-align:center;  background:url(../images/separator.gif) 0 0 no-repeat; position:relative   }
+#TopSignInLink a{ display:block;  padding:20px 20px 0 10px; height:28px; position:relative; top:1px;  }
+#TopSignInLink a:hover{  background: url(../images/hoverBG.gif) repeat;  position:relative; top:1px; 	color:#b6b6b6; }
+#TopSignInLink img.userpic{margin:-5px 5px 0 -2px;}
+#TopSignInLink img.arrow{position:absolute; top:2px; right:0px;}
+
+
+#TopSignInLink .settingdrop ul {
+	position: absolute;
+	padding:0px;
+	top: 48px;
+	left: 0px;
+	z-index: 598;
+	border:1px solid #3c3c3c;
+	display:none;
+}
+#TopSignInLink .settingdrop li {
+	SubMenu-ddItem-style:none;
+	display:block;
+	padding: 2px 5px;
+	height: 27px;
+	text-align:left;
+	width:109px;
+	margin:0px;
+	background: url(../images/submenuBG.gif) repeat!important;
+	float:left;
+}
+#TopSignInLink .settingdrop li a {
+	SubMenu-ddItem-style:none;
+	display:block;
+	padding: 6px 5px 6px 12px;
+	height: 15px;
+	float: none;
+	background: none;
+	font: 12px Arial, Helvetica, sans-serif;
+}
+#TopSignInLink .settingdrop li a:hover {
+	color:#dd3c13;
+}
+
+
+
+.search {height:38px; padding-top:12px; width:205px; background:url(../images/separator.gif) left center no-repeat; padding-left:10px; padding-right:10px; float:left;
+}
+#TopMenuWrapper .search .input1 { height:26px; background:url(../images/searchinptbg.png) repeat-x;  outline:none; padding-top:0px; WIDTH: 172px;   FLOAT: left;  border:none;}
+#TopMenuWrapper .search .input2 { float:left; }
+
+
+#TopMenuWrapper .search .corner {
+	WIDTH: 4px; BACKGROUND: url(../images/searchlftcrv.png) no-repeat left top; FLOAT: left; HEIGHT: 28px
+}
+
+	/*----END----------------MENU-----------------*/
+/*---END----TOP MOST FIXED HEADER ITEMS-----------*/
+
+/*---START----------WRRPAER ITEMS-----------------*/
+
+.Lft_3ColmnWrapper{ width:630px; float:left; min-height:200px; background:url(../images/threecolmnwrapperbg.gif) repeat-y;  }
+	.Container180{ width:178px; float:left; padding: 0 2px 0 2px;  margin:0 0 0 0;}
+	.Lft_3ColmnWrapper .mid{padding:0 42px; ~padding:0 39px;}
+
+.Box180wrapper{ width:180px; height:164px;  margin-bottom:35px;}
+
+
+.Container300rght{ width:300px; float:right; clear:right;}
+
+
+
+
+
+/*---START----------------FOOTER-----------------*/
+#Footer{ width:978px; height:20px; background:#000;  padding: 0 12px 0 12px; color:#FFF; padding-top:10px; font-size:10px; margin:0 auto;}
+#Footer a{color:#FFF;}
+#Footer a:hover{color:#F00;}
+#Footer ul li{ list-style:none; display:inline; margin: 0 10px 0 10px;}
+/*----END-----------------FOOTER-----------------*/
+
+
+
+
+/****************** Nitin Classes
+
+.abs{position:absolute;}
+.rel{position:relative;}
+.Box180wrapper{ width:180px; height:144px;  margin-bottom:35px; padding:15px 0 0 0;}
+.HDIcon{background:url(../images/sprite1.png) no-repeat 0 0; width:20px; height:14px;}
+.HDIcon.Imgover{top:3px; left:3px;}
+.Timer{background:#000; font:10px Arial, Helvetica, sans-serif; color:#fff; padding:1px 2px; bottom:3px; right:0px;}
+
+.Infotext{margin:10px 0 0 0; padding:0px 0 0 0;}
+.Infotext h3{margin:0px; padding:0px; font:bold 15px Arial, Helvetica, sans-serif; color:#333; 	-o-text-overflow: ellipsis;	text-overflow: ellipsis; white-space:nowrap;
+overflow:hidden; width:180px; }
+.Infotext h4{margin:0px; padding:0px; font:11px Arial, Helvetica, sans-serif; color:#666; -o-text-overflow: ellipsis;	text-overflow: ellipsis; white-space:nowrap; overflow:hidden; width:180px; float:left;}
+.Infotext h5{margin:0px; padding:0px;  float:left;}
+.Infotext h5 span{color:#4d4d4d!important; }
+
+
+/****************** Nitin Classes **********************/
+.rating{background:url(../images/sprite1.png) no-repeat 0 -51px; width:58px; height:12px; position:relative;}
+.rated{background:url(../images/sprite1.png) no-repeat 0 -71px; height:12px; position:absolute;}
+.rated.wid0{width:0px;}
+.rated.wid5{width:5px;}
+.rated.wid10{width:10px;}
+.rated.wid15{width:17px;}
+.rated.wid20{width:22px;}
+.rated.wid25{width:29px;}
+.rated.wid30{width:34px;}
+.rated.wid35{width:41px;}
+.rated.wid40{width:46px;}
+.rated.wid45{width:53px;}
+.rated.wid50{width:58px;}
+
+
+.rating.large .rateit-hover{background:url(../images/sprite1.png) no-repeat 1px -898px;}
+
+.rating.large{background-position:0 -450px; width:110px; height:22px;}
+.rating.large .rated{background-position:0 -475px;height:22px;}
+.rating.large .rated.wid0 , .rating.large .rateit-hover.wid0{width:0px;}
+.rating.large .rated.wid5 , .rating.large .rateit-hover.wid5{width:11px;}
+.rating.large .rated.wid10, .rating.large .rateit-hover.wid10{width:21px;}
+.rating.large .rated.wid15, .rating.large .rateit-hover.wid15{width:33px;}
+.rating.large .rated.wid20, .rating.large .rateit-hover.wid20{width:44px;}
+.rating.large .rated.wid25, .rating.large .rateit-hover.wid25{width:55px;}
+.rating.large .rated.wid30, .rating.large .rateit-hover.wid30{width:66px;}
+.rating.large .rated.wid35, .rating.large .rateit-hover.wid35{width:77px;}
+.rating.large .rated.wid40, .rating.large .rateit-hover.wid40{width:88px;}
+.rating.large .rated.wid45, .rating.large .rateit-hover.wid45{width:99px;}
+.rating.large .rated.wid50, .rating.large .rateit-hover.wid50{width:110px;}
+
+.rating.medium{background-position:0 -533px; width:82px; height:16px;}
+.rating.medium .rated{background-position:0 -554px;height:16px;}
+.rating.medium .rated.wid0{width:0px;}
+.rating.medium .rated.wid5{width:7px;}
+.rating.medium .rated.wid10{width:15px;}
+.rating.medium .rated.wid15{width:23px;}
+.rating.medium .rated.wid20{width:31px;}
+.rating.medium .rated.wid25{width:39px;}
+.rating.medium .rated.wid30{width:47px;}
+.rating.medium .rated.wid35{width:55px;}
+.rating.medium .rated.wid40{width:63px;}
+.rating.medium .rated.wid45{width:71px;}
+.rating.medium .rated.wid50{width:79px;}
+
+.rating.spacing{margin:2px 0 0 4px;}
+
+
+
+
+
+.Container180 h1, .Container300rght h1 , .Container300 h1 , .Container300rght h2 , .Container300 h2{font-family:Arial Black, Helvetica, sans-serif; font-size:25px;color:#333333; text-transform:lowercase; letter-spacing:-2px; background:#fff url(../images/verticale.gif)  repeat-x 0 46px; display:block; border:none; padding-bottom:20px;}
+
+.Container300rght h2 , .Container300 h2{font:normal 24px Arial Black, Helvetica, sans-serif; background-position: 0 40px; margin:0px; }
+
+
+.abs{position:absolute;}
+.rel{position:relative;}
+.Box180wrapper{ width:180px; height:144px;  margin-bottom:35px; padding:15px 0 0 0;}
+.HDIcon{background:url(../images/sprite1.png) no-repeat 0 0; width:20px; height:14px;}
+.HDIcon.Imgover{top:3px; left:3px;}
+.Timer{background:#000; font:10px Arial, Helvetica, sans-serif; color:#fff; padding:1px 2px; bottom:0px; right:0px;}
+
+.Cliptype{bottom:0px; left:3px;}
+.Cliptype img{background:url(../images/sprite1.png) no-repeat 0 1000px; height:14px;}
+.Cliptype img.fullmovie{width:36px;  background-position:0 -2116px;}
+.Cliptype img.clip{width:28px; background-position:0 -2148px;}
+
+
+.checkbox{top:0px; right:-160px; z-index:10; width:1px; height:1px; float:left; margin:0 0 0 -20px}
+
+
+.Infotext{margin:10px 0 0 0; padding:0px 0 0 0;}
+.Infotext h3 , .Infotext h4, .Infotext h5{	-o-text-overflow: ellipsis;	text-overflow: ellipsis; white-space:nowrap;
+overflow:hidden; width:180px;}
+.Infotext h3{margin:0px; padding:0px!important; font:bold 15px Arial, Helvetica, sans-serif!important; color:#333; }
+.Infotext h3 a{color:#333;}
+.Infotext h3 a:hover{color:#0066bc;}
+.Infotext h4{margin:0px; padding:0px; font:11px Arial, Helvetica, sans-serif; color:#666; }
+.Infotext h5{margin:0px; padding:0px; font:11px Arial, Helvetica, sans-serif; color:#666; float:left;}
+.Infotext h5 span{color:#4d4d4d!important}
+
+.rating{background:url(../images/sprite1.png) no-repeat 0 -51px; width:58px; height:12px; position:relative;}
+.rated{background:url(../images/sprite1.png) no-repeat 0 -71px; height:12px; position:absolute;}
+.rated.wid0{width:0px;}
+.rated.wid5{width:5px;}
+.rated.wid10{width:10px;}
+.rated.wid17{width:17px;}
+.rated.wid22{width:22px;}
+.rated.wid29{width:29px;}
+.rated.wid34{width:34px;}
+.rated.wid41{width:41px;}
+.rated.wid46{width:46px;}
+.rated.wid53{width:53px;}
+.rated.wid58{width:58px;}
+
+.rating.spacing{margin:2px 0 0 4px;}
+
+.Lft_3ColmnWrapper.Large{background-image:none; width:980px;}
+
+
+
+.Container300{ width:295px; float:left; padding: 0 2px 0px 2px;}
+.Box300wrapper{ width:300px;  padding:15px 0 0 0;}
+.Box300wrapper .Infotext{width:155px; margin:-3px 0 0 0px; padding:0px 0 0 10px;}
+
+.Lft_3ColmnWrapper.Col3 .Container300{ width:975px;}
+.Lft_3ColmnWrapper.Col3 .Container300 .Box300wrapper{float:left; margin-right:25px;}
+
+.Lft_3ColmnWrapper.Col3, .Lft_3ColmnWrapper.Col4, .Lft_3ColmnWrapper.Col5 , .Lft_3ColmnWrapper.bgnone{ background:none!important;}
+.Lft_3ColmnWrapper.Col3 .Container180{ width:650px;}
+.Lft_3ColmnWrapper.Col3 .Box180wrapper{float:left; margin-right:25px;}
+.Lft_3ColmnWrapper.Col3 .Box300wrapper{float:left; margin-right:5px;}
+
+
+.Lft_3ColmnWrapper.Col5{ width:970px;}
+.Lft_3ColmnWrapper.Col5 .Box180wrapper{float:left; margin-right:14px; margin-bottom:5px;}
+
+.Lft_3ColmnWrapper.Col4 .Container180{ width:820px;}
+.Lft_3ColmnWrapper.Col4 .Box180wrapper{float:left; margin-right:25px;}
+
+
+.Box300wrapper .Infotext h3{margin:0px; padding:0px; font:bold 12px Arial, Helvetica, sans-serif; color:#333; 	-o-text-overflow: ellipsis;	text-overflow: ellipsis; white-space:nowrap; overflow:hidden; border-bottom:0px;}
+.Box300wrapper .Infotext h3 , .Box300wrapper .Infotext h4 , .Box300wrapper .Infotext h5 {width:150px; line-height:17px;}
+
+.PlusIcon{background:url(../images/sprite1.png) no-repeat 0 -28px; width:8px; height:8px;display:none}
+.mrgR7{margin-right:7px!important;}
+.mrgR10{margin-right:10px!important;}
+.mrgLR10{margin-right:10px!important; margin-left:10px!important;}
+.mrgLR41{margin:0 41px;}
+*html .mrgLR41{margin:0 32px;}
+
+
+
+.MoreLink{margin:10px 0 0 0; padding:10px 0 0 0; border-top:1px solid #e9e9e9;}
+.MoreLink a{margin:0px; padding:0px; font:bold 11px Arial, Helvetica, sans-serif; color:#333; text-decoration:none;}
+.MoreLink a:hover{text-decoration:underline;}
+
+.mrgT20{margin-top:20px;}
+.mrgT40{margin-top:40px!important;}
+.mrgTB10{margin:10px 0!important;}
+.ActivityContainer{margin:0px; padding:0px;}
+.ActivityContainer .Row{margin:0px; padding:5px 0; border-bottom:1px solid #e9e9e9; font:12px Arial, Helvetica, sans-serif; color:#666;}
+.ActivityContainer .Row h4{font:bold 12px Arial, Helvetica, sans-serif; color:#333; margin:0px; padding:0px;}
+.ActivityContainer .Row span{font:10px Arial, Helvetica, sans-serif;}
+.ActivityContainer .Row a{font:bold 12px Arial, Helvetica, sans-serif; color:#333;}
+.ActivityContainer .Row a:hover{color:#0066bc;}
+
+.SocialBtn{padding:10px 0 0 0;}
+.FacebkBtn{background:url(../images/sprite1.png) no-repeat 0 -94px; width:67px; height:22px; margin-right:3px;}
+.TwitIcon{background:url(../images/sprite1.png) no-repeat 0 -132px; width:67px; height:22px;}
+
+.ViaF{background:url(../images/sprite1.png) no-repeat right -98px; width:5px; height:10px;}
+.ViaT{background:url(../images/sprite1.png) no-repeat right -138px; width:5px; height:10px;}
+
+.UserContent{width:250px;}
+
+/*----------------------------------------------*/
+
+img, div, table, tr, td, span , a { behavior: url(images/iepngfix.htc);}
+
+/********************** Video Page classes *********************/
+#VideoHead{margin:0px auto; padding:0px; background:#000; width:980px;}
+.Videotxt{margin:0px; padding:10px 10px 0 10px;}
+.Videotxt h3{margin:0px; padding:0px; float:left; font:normal 26px "Arial Black", Gadget, sans-serif; color:#fff;}
+
+.Videotxt .SocialIcons{font:bold 14px Arial, Helvetica, sans-serif; color:#fff; text-transform:none;  float:right; padding:0px 10px 0 0;}
+.Videotxt .SocialIcons span{float:left; padding:7px 10px 0 0}
+.Videotxt .SocialFB , .Videotxt .SocialTwit , .Videotxt .RssFeed{margin-right:10px;}
+.Videotxt .SocialFB{background:url(../images/sprite1.png) no-repeat 0 -255px;}
+.Videotxt .SocialTwit{background:url(../images/sprite1.png) no-repeat 0 -210px;}
+.Videotxt .RssFeed{background:url(../images/sprite1.png) no-repeat 0 -417px; width:30px; height:30px;}
+
+.rateSpacing{margin:0px 10px 0 10px;}
+.rateSpacing span{padding-right:5px!important;}
+
+.Postcmnt a{color:#fff;}
+
+.Video{margin:5px 0 0 0; padding:0px; border-top:1px solid #1a1a1a;}
+.Video .Left{float:left; margin:0px; padding:0px; height:299px;}
+.Video .Left img{float:left;}
+.Video .Right{float:left; text-align:left; padding:10px 10px 10px 20px;}
+
+.Imginfo{margin:0px; padding:0px; width:310px; position:relative; height:275px;}
+.Imginfo img.smallThumb{margin:0px; padding:0px; border:1px solid #333; float:left;}
+.Imginfo .text{float:left; margin:0 0 0px 15px;}
+.Imginfo .text h3{margin:0px; padding:0px; font:normal 20px Arial, Helvetica, sans-serif; color:#fff;}
+.Imginfo .text h5{margin:0px; padding:0px; font:10px Arial, Helvetica, sans-serif; color:#999;}
+.Imginfo p{margin:0px; padding:10px 0 0 0; font:13px/16px Arial, Helvetica, sans-serif; color:#999999; height:67px; overflow:hidden; float:left;}
+
+.mrgT20.abs{bottom:0px;}
+
+/* All Red Button classes */
+
+input.WatchBtn{background:url(../images/sprite1.png) no-repeat 0 -588px; margin:0px; padding:0px; width:149px; height:31px; border:0px; font:bold 16px Arial, Helvetica, sans-serif; color:#fff; text-align:center; cursor:pointer;}
+
+input.RedButton.submit{background:url(../images/sprite1.png) no-repeat 0 -635px; margin:0px; padding:0px; width:98px; height:31px; border:0px; font:bold 16px Arial, Helvetica, sans-serif; color:#fff; text-align:center; cursor:pointer;}
+
+input.RedButton.submit{background-position:0 -635px; width:84px;}
+input.WatchBtn.Reply{background-position:0 -682px; width:54px; height:22px; font:bold 11px Arial, Helvetica, sans-serif; margin-left:6px;}
+input.WatchBtn.PostReply{background-position:0 -727px; width:78px; height:22px; font:bold 11px Arial, Helvetica, sans-serif; height:19px;}
+
+.savebtn a , a.savebtn{background:url(../images/sprite1.png) no-repeat 0 -1725px; margin:20px 0; padding:0px; width:125px; height:36px; border:0px; font:bold 16px/36px Arial, Helvetica, sans-serif; color:#fff; text-align:center; cursor:pointer; float:right}
+
+.settingsavebtn.login a.savebtn{background-position: 0 -635px;width:85px;font:bold 14px/31px Arial, Helvetica, sans-serif; color:#fff;}
+
+.settingsavebtn a.savebtn{float:left; margin:-10px 10px 0 200px;}
+
+
+a.savebtnsmall{background:url(../images/sprite1.png) no-repeat 0 -850px!important; width:95px; padding:5px 10px; font:bold 12px  Arial, Helvetica, sans-serif; color:#fff;  float:left; height:13px;}
+a.savebtnsmall{background-position:0 -814px!important; text-align:center; width:97px; padding-left:0px; padding-right:0px;}
+
+
+/* End All Red Button classes */
+
+
+#fullPlayer{height:450px;}
+
+.Innerbody{margin:0px; padding:10px 0 0 15px;}
+ul.Tabs{margin:0px; padding:0px;  background:url(../images/verticale.gif) repeat-x 0 39px; width:100%; height:49px; float:left;}
+ul.Tabs li{margin:0px; padding:0px; float:left; list-style:none; background:#fff; }
+ul.Tabs li a{margin:0px; padding:5px 10px; float:left; font:normal 20px "Arial Black", Gadget, sans-serif; color:#de3d13; text-decoration:none;   width:120px; text-align:center}
+ul.Tabs li:hover a , ul.Tabs li.selected a{margin:0px; padding:5px 10px; float:left; background:#d5d5d5;  font:normal 20px "Arial Black", Gadget, sans-serif;  color:#666; text-decoration:none;}
+
+.TabingContent{margin:0px; padding:10px 0; font:12px Arial, Helvetica, sans-serif; color:#333; margin:0px; padding:0px;}
+.TabingContent h3{ font:16px "Arial Black", Gadget, sans-serif; color:#333; margin:0px; padding:10px 0; }
+.TabingContent p{ margin:0px; padding:0px;line-height:18px; display:block;}
+.TabingContent p a.readmore , .Moviedetails a{color:#0066cc; text-decoration:underline;}
+.TabingContent p a:hover.readmore , .Moviedetails a:hover{text-decoration:none;}
+
+.Moviedetails{margin:0px; padding:10px 0 0 0; line-height:25px;}
+.Moviedetails span{color:#999999}
+
+.Revietxt{margin:3px 5px 0 0; padding:5px; 	border:1px solid #c9c9c9;	-moz-border-radius: 3px;	border-radius:3px; outline:none; height:70px; font:12px Arial, Helvetica, sans-serif;}
+.Revietxt.wid450 , .txtbox.wid450{width:450px;}
+.instruction{font:10px Arial, Helvetica, sans-serif; color:#0066cc;}
+.instruction.wid140{width:140px;}
+.instruction.wid125{width:125px;}
+
+.Comments .Form{font:13px Arial, Helvetica, sans-serif; color:#666;}
+.Comments .Form .Blog{margin:0px; padding:10px 0 5px 0;}
+.txtbox{margin:3px 5px 0 0; padding:5px; 	border:1px solid #c9c9c9;	-moz-border-radius: 3px;	border-radius:3px; outline:none; font:12px Arial, Helvetica, sans-serif;}
+
+.TabingContent .Show1 #thumbVerticalBlock h1{font:bold 18px Arial, Helvetica, sans-serif; color:#666; margin:00px 0 0 0; padding:15px 0 5px 0; border-bottom:1px solid #dbdbdb; float:left; width:100%}
+.TabingContent .Show1 #thumbHBlock h1{font:bold 18px Arial, Helvetica, sans-serif; color:#666; margin:00px 0 0 0; padding:15px 0 5px 0; border-bottom:1px solid #dbdbdb; float:left; width:100%}
+
+
+.SearchFilter{margin:0px; padding:15px 10px 0 0; width:150px;}
+.SearchFilter .Containers{margin:0px 0 10px 0; padding:0px;}
+.SearchFilter .Containers h2{margin:0px; padding:4px; font:bold 12px Arial, Helvetica, sans-serif; color:#333; text-transform:uppercase; background:#d5d5d5;}
+.SearchFilter .Containers ul{margin:0px; padding:0px;}
+.SearchFilter .Containers li{margin:0px; padding:5px; list-style:none; font:12px Arial, Helvetica, sans-serif; color:#666; display:block;}
+.SearchFilter .Containers li.All{font:bold 12px Arial, Helvetica, sans-serif; color:#333}
+.SearchFilter .Containers li a{ margin:0 0 0 15px; color:#0066cc; padding:0px;}
+.SearchFilter .Containers li input{float:left; margin:0 5px 0px 0}
+
+.scrollContent{overflow:hidden;float:left;height:720px;width:136px;}
+.scrollbar{position:absolute;right:10px;width:7px;height:60px; background:#000;opacity:0.6;z-index:11}
+.scrollBody{overflow:auto;height:100%; width:160px;}
+.scrollContent .scrollbar{visibility:hidden}
+.scrollContent.show .scrollbar{visibility:visible}
+
+.error { color:red; font:normal 10px "Trebuchet MS", Arial, Helvetica, sans-serif; margin:0 0 0 0; padding-left: 7px }
+.abs.errormrg{margin:-4px 0 0 -6px;}
+
+ul#suggesstion{margin:-2px 0 0 2px; padding:0px; background:#fff; width:200px; float:left; z-index:1000;}
+ul#suggesstion li{margin:0px; padding:5px; list-style:none; font:12px Arial, Helvetica, sans-serif; color:#333; background:none!important; border-top:1px solid #e9e9e9;}
+ul#suggesstion li a{margin:0px; padding:0px;  font:12px Arial, Helvetica, sans-serif; color:#333; display:block;}
+ul#suggesstion li a:hover{font-weight:bold;}
+
+.ViewComment, #reviewListBlock{margin:0px; padding:0px 0;}
+.ViewComment h3, #reviewListBlock h3{margin:0px; padding:5px 0 8px 0; border-top:1px solid #ccc; font:bold 14px Arial, Helvetica, sans-serif; color:#333;}
+
+.ViewComment .Blog.BG, #reviewListBlock .Blog.BG{background:#f5f5f5; border:1px solid #ebe8e8;}
+.ViewComment .Blog, #reviewListBlock .Blog{margin:5px 0; padding:5px;}
+
+.ViewComment .Blog .userthumb img, #reviewListBlock .Blog .userthumb img{width:50px; height:50px; overflow:hidden; background:#fff; border:2px solid #ccc; padding:5px;}
+.ViewComment .Blog .cmntText, #reviewListBlock .Blog .cmntText{padding:0 0 0 10px; margin:0px; width:525px; font:12px Arial, Helvetica, sans-serif;}
+.ViewComment .Blog .cmntText a , #reviewListBlock .Blog .cmntText .right{color:#06C; text-decoration:none; }
+.ViewComment .Blog .cmntText a:hover , #reviewListBlock .Blog .cmntText a:hover {text-decoration:underline; }
+.ViewComment .Blog .cmntText .left, #reviewListBlock .Blog .cmntText .left{float:left;}
+.ViewComment .Blog .cmntText .right, #reviewListBlock .Blog .cmntText .right{float:right;}
+
+.ViewComment .Blog .cmntText p, #reviewListBlock .Blog .cmntText p{margin:0px; padding:5px 0; font-size:11px;}
+
+.Replycontainer{margin:0px; padding:5px; background:#fff; border:1px solid #ebe8e8;}
+.replybtn{position:absolute; left:6px; top:-21px; padding:2px 5px; text-align:center; width:42px; height:17px; background:#fff;  border:1px solid #ebe8e8; border-bottom:0px;}
+.lightsOffOverlay {height: 100%;left: 0;position: fixed !important;top: 0;width: 100%;z-index: 99998;}
+.lightoffrela{	position: relative;}
+.lightoffzindex{	z-index:99999;}
+
+
+
+.Geners{margin:0px; padding:0px 0 10px 0;}
+.Geners h3{margin:0px; padding:0px 0 5px 0; font:normal 20px "Arial Black", Gadget, sans-serif; color:#de3d13; border-bottom:1px solid #ccc;}
+.Geners ul{margin:5px 0; padding:0px;}
+.Geners li{margin:0px; padding:10px 0 0 20px; list-style:none; display:block; color:#666; font:bold 12px Arial, Helvetica, sans-serif; background:url(../images/sprite2.gif) no-repeat -290px -72px;}
+.Geners li a{color:#333}
+.Geners a.MoreLink{color:#0066bc; border:0px; margin:0px; padding:10px 7px 10px 20px; float:left;  float:right; font:bold 11px Arial, Helvetica, sans-serif;}
+
+.GenersCol3 .Container300 , .GenersCol3 .Box300wrapper{width:970px;}
+.GenersCol3 .Box300wrapper .Geners{width:290px; padding:0 16px 10px 16px; float:left;}
+
+.subcomment{margin:0px; padding:0px; border-bottom:1px solid #EBE8E8;}
+
+
+.SignupAdd{/*background:url(../images/addBG.gif) no-repeat 0px 0px;*/ background:#daf1f9; border:1px solid #60cce9;  -moz-border-radius: 3px;	border-radius:3px; width:978px; height:34px; font:bold 14px Arial, Helvetica, sans-serif; color:#333333; text-align:center; margin:15px 10px; padding:22px 0 0 0; cursor:pointer; display:block;}
+.SignupAdd a{font:bold 14px Arial, Helvetica, sans-serif; color:#333333; text-align:center;}
+.SignupAdd img{margin:-20px 0 0 5px;}
+.SignupAdd img.tryit{background:url(../images/sprite1.png) no-repeat 0px -2057px; width:95px; height:23px; font:bold 11px/18px Arial, Helvetica, sans-serif;  color:#fff; margin:-7px 0 0 10px; }
+
+.SignupAdd.small , .notallowed{background:#daf1f9; border:1px solid #60cce9; width:100%; height:34px; font-size:12px; -moz-border-radius: 3px;	border-radius:3px; margin:15px 0px;}
+.SignupAdd.small img.tryit{line-height:1px; position:static; margin:-5px 0px 0 10px}
+
+/*.subcomment .Blog.BG{background:#f5f5f5; border:1px solid #EBE8E8;}*/
+.subcomment .cmntText{width:472px!important;}
+.subcomment .arrow img{ background:url(../images/sprite2.gif) no-repeat 33px -100px; width:53px; height:30px;}
+
+#tooltip{position:absolute;display:block;z-index:1000;padding:0px;width:300px;}
+#contenttooltip{position:absolute;display:block;z-index:1000;background-color:#eee;padding:0px;width:300px;}
+
+
+
+.studioslogo{display:none; padding:0px 0px; position:absolute; width:1000px; background:#fff; top:26px; z-index:1; margin:-1px 0 0 -277px;  background:url(../images/sponserBG.gif) repeat-x; height:95px;}
+.studioslogo h3{margin:28px 0 0 32px; padding:0px; float:left; font:bold 18px Arial, Helvetica, sans-serif; color:#fff;}
+.studioslogo ul{margin:0px; padding:0px; float:right; width:850px; overflow:hidden; height:90px;}
+.studioslogo li{margin:4px 18px 0 0!important; padding:0px; list-style:none; float:left; border:0px!important; }
+.studioslogo li a{margin:0px 0px 0 0!important; padding:0px!important; height:auto!important; background:#fff; border:1px solid #595959;}
+
+
+.videoIcon1 a img.icon , .videoIcon1{height:67px; width:121px; text-align:center;}
+.videoIcon2 a img.icon , .videoIcon2 {height:90px; width:160px; text-align:center;}
+.videoIcon2 .image.border{border:2px solid #353535}
+.videoIcon1 a img.icon , .videoIcon2 a img.icon{position:absolute; left:0px; top:5px; height:80px;}
+.videoIcon1 a img.icon { height:58px;}
+
+.videoIcon1 a img.icon:hover, .videoIcon2 a img.icon:hover{margin:0px; padding:0px; background:url(../images/hover_playicon_round.png) no-repeat center;  z-index:1000; position:absolute;  display:block;}
+
+.playIcon{position:absolute; bottom:10px; left:10px;}
+
+
+/* Plus Pages Classes */
+.plusBG{background:url(../images/plusBG.gif) repeat-x 0 0px; height:478px;}
+
+
+.PlusContainer{margin:0px; padding:0px 10px;}
+.PlusContainer .Header{padding:0px 0 30px 0; ~padding:0px 0 15px 0;}
+.PlusContainer .Header .left{margin:0px; padding:0px; float:left; width:500px;}
+.PlusContainer .Header .left .Moreinfo {margin:12px 0; padding:0px 0; float:left;}
+.PlusContainer .Header .left .Moreinfo h3{margin:0px; padding:0px 0; font:normal 42px/45px "Arial Black", Gadget, sans-serif; color:#666666;}
+.PlusContainer .Header .left .Moreinfo p{margin:0px; padding:0px 0; font:12px Arial, Helvetica, sans-serif; color:#cccccc; height:46px; -o-text-overflow: ellipsis;	text-overflow: ellipsis;  overflow:hidden; width:420px; float:left;}
+.PlusContainer .Header .right{margin:0px; padding:0px 60px 0 0; float:right;}
+
+.PlusContainer .Header .right .AmountSub{margin:0px; padding:50px 0 0 0; font-family:"Arial Black", Gadget, sans-serif; color:#b3b3b3; font-weight:normal;}
+.PlusContainer .Header .right .AmountSub h3{margin:0px; padding:0px 0 0 15px; font-size:45px; color:#fff; clear:right;}
+.PlusContainer .Header .right .AmountSub h3 span{font-size:40px;}
+.PlusContainer .Header .right .AmountSub h4{margin:0px; padding:0px 0 0 15px; font-size:32px; position:relative;}
+.PlusContainer .Header .right .AmountSub h4 span{font-size:25px;}
+.PlusContainer .Header .right .AmountSub h4 img{background:url(../images/sprite1.png) no-repeat 0 -981px; width:98px; height:28px; position:absolute; left:60px; top:5px;~top:68px;}
+.PlusContainer .Header .right .AmountSub h5{margin:0px; padding:0px 0 0 15px; font-size:22px;}
+.PlusContainer .Header .right .AmountSub .btn a , .Trailbtn a{background:url(../images/Btnsprite.png) no-repeat 0 0px; font:bold 22px/47px Arial, Helvetica, sans-serif; color:#fff; width:375px; height:50px; border:0; cursor:pointer; margin:0px 0 0 0; float:left; text-align:center;}
+
+.PlusContainer .innercontainer{margin:0px; padding:10px 0;}
+
+.PlusContainer .innercontainer h2 , .paymentMode h2{margin:0px; padding:0px 0 5px 0; font:32px "Arial Black", Gadget, sans-serif; color:#a5a5a5; /*border-bottom:1px solid #e0e0e0;*/}
+.PlusContainer .innercontainer .TvContainer{margin:80px 0 0 0; padding:5px; background:#f0efef; border:1px solid #ececec;}
+
+.PlusContainer .innercontainer .TvContainer .left{margin:0px; padding:0px; float:left; font:bold 20px "Arial Black", Gadget, sans-serif; color:#b3b3b3; width:182px;}
+.PlusContainer .innercontainer .TvContainer .left .tvShow , .PlusContainer .innercontainer .TvContainer .left .movie , .PlusContainer .innercontainer .TvContainer .left .wayW , .PlusContainer .innercontainer .TvContainer .left .vidQ , .PlusContainer .innercontainer .TvContainer .left .price{border-bottom:1px solid #e2e1e1; padding:10px 0}
+.PlusContainer .innercontainer .TvContainer .left .tvShow {padding:63px 0;}
+.PlusContainer .innercontainer .TvContainer .left .movie{padding:38px 0;}
+.PlusContainer .innercontainer .TvContainer .left .wayW{padding:80px 0 211px 0;}
+.PlusContainer .innercontainer .TvContainer .left .vidQ{padding:26px 0 25px 0;}
+.PlusContainer .innercontainer .TvContainer .left .price{border-bottom:0px; padding:30px 0;}
+
+
+
+.PlusContainer .innercontainer .TvContainer .right{margin:-45px 0 0 0; ~margin:-37px 0 0 0; padding:0px; float:right;}
+.PlusContainer .innercontainer .TvContainer .right .Box{float:left; margin-right:7px}
+.PlusContainer .innercontainer .TvContainer .right .Box .Head{background:url(../images/Btnsprite.png) no-repeat 0 -89px; width:386px; height:60px; text-align:center;}
+.PlusContainer .innercontainer .TvContainer .right .upgardeInfo{border:1px solid #e3e2e2; background:#fff; border-top:0px; padding:5px; width:374px;}
+
+.right .upgardeInfo .tvShow , .right .upgardeInfo .movie, .right .upgardeInfo .wayW, .right .upgardeInfo .vidQ, .right .upgardeInfo .price{ border-bottom:1px solid #ebebeb; padding-bottom:5px;}
+.right .upgardeInfo .listing.tvShow ul.height{height:100px; overflow:hidden;}
+.right .upgardeInfo .listing.movie ul.height{height:70px; overflow:hidden;}
+.right .upgardeInfo .listing.wayW ul.height{height:300px; overflow:hidden;}
+.right .upgardeInfo .listing.vidQ ul.height{height:60px; overflow:hidden;}
+.right .upgardeInfo .listing.price ul.height{height:55px; overflow:hidden;}
+
+.right .upgardeInfo .price.listing.bnone , .bnone{ border-bottom:0px!important;}
+
+.right .upgardeInfo .listing ul , .right .upgardeInfo .listing.wayW ul{margin:0px; padding:10px 25px 0 25px; float:left;}
+.right .upgardeInfo .listing li{margin:0px; padding:0px 0 0 25px; list-style:none; display:block; background:url(../images/sprite1.png) no-repeat 0 -1587px; font:14px/23px Arial, Helvetica, sans-serif; color:#191717;}
+.right .upgardeInfo .listing .link a{ color:#227ad3; font:12px Arial, Helvetica, sans-serif; float:right;}
+
+
+
+.right .upgardeInfo .listing.wayW ul li{margin:0px; padding:0px 0 0 40px;  background:url(../images/sprite1.png) no-repeat 0 100000px; font:14px/40px Arial, Helvetica, sans-serif; color:#191717;}
+.right .upgardeInfo .listing.wayW ul li.computer{background-position:0 -1026px;}
+.right .upgardeInfo .listing.wayW ul li.smartphones{background-position:0 -1068px;}
+.right .upgardeInfo .listing.wayW ul li.tablets{background-position:0 -1112px;}
+.right .upgardeInfo .listing.wayW ul li.game{background-position:0 -1153px;}
+.right .upgardeInfo .listing.wayW ul li.blu-ray{background-position:0 -1194px;}
+.right .upgardeInfo .listing.wayW ul li.boxes{background-position:0 -1237px;}
+
+.right .upgardeInfo .listing.wayW ul li.computer.disable{background-position:0 -1306px; text-decoration:line-through}
+.right .upgardeInfo .listing.wayW ul li.smartphones.disable{background-position:0 -1347px; text-decoration:line-through}
+.right .upgardeInfo .listing.wayW ul li.tablets.disable{background-position:0 -1392px;  text-decoration:line-through}
+.right .upgardeInfo .listing.wayW ul li.game.disable{background-position:0 -1433px; text-decoration:line-through}
+.right .upgardeInfo .listing.wayW ul li.blu-ray.disable{background-position:0 -1474px; text-decoration:line-through}
+.right .upgardeInfo .listing.wayW ul li.boxes.disable{background-position:0 -1517px; text-decoration:line-through}
+
+.weektrail {margin:0px; padding:30px 0;}
+.weektrail h3{font-size:25px; float:left; color:#666666; font:21px "Arial Black", Gadget, sans-serif; position:relative;}
+.weektrail h3 span{font:22px "Arial Black", Gadget, sans-serif; color:#333}
+.weektrail h3 img{background:url(../images/sprite1.png) no-repeat 0 -981px; width:98px; height:28px; position:absolute; left:40px; top:5px;}
+
+/* End Plus Pages Classes */
+
+
+/* Payment mode classes */
+.paymentBG{background:url(../images/paymentBG.gif) repeat-x 0 49px; height:478px;}
+
+.paymentMode{margin:0px; padding:0px;}
+.paymentMode h3{margin:0px; padding:0px 0 10px 0; font:14px Arial, Helvetica, sans-serif; color:#333333;}
+.paymentMode .innercontainer{ background:#f0efef; border:1px solid #ececec; padding:0px 0 0 0; margin:0px 0 10px 0; border-bottom:0px;}
+.paymentMode .innercontainer.setting{padding:0px;}
+.paymentMode .innercontainer .form , .paymentMode .innercontainer .setting{background:#fff; padding:15px; padding-top:0px;}
+ .paymentMode .innercontainer .setting{padding-top:10px;}
+.paymentMode .innercontainer .form.profile{background:#efefef; padding:15px; padding-top:0px;}
+.paymentMode .innercontainer .form .ItemList { background:#f0efef; border:1px solid #ececec; padding:5px;}
+
+.paymentMode .innercontainer .form .ItemList ul{margin:0px; padding:0px;}
+.paymentMode .innercontainer .form .ItemList li{margin:0px; padding:5px 0; ~padding:0px 0; font:19px/10px Arial, Helvetica, sans-serif; color:#666666; width:950px;border-bottom:1px solid #c4c4c4; text-align:left; display:block;}
+.paymentMode .innercontainer .form .ItemList li.total{color:#000; border-bottom:0px;}
+.paymentMode .innercontainer .form .ItemList li span{text-align:right; float:right; line-height:10px;}
+
+.PaymentForm{margin:0px; padding:10px 0;}
+.PaymentForm .left{margin:0px; padding:0 10px 0 0; float:left; border-right:1px dotted #666666; width:400px; font:bold 12px Arial, Helvetica, sans-serif; color:#666666;}
+.PaymentForm .right{margin:0px; padding:0 0 0 10px; float:left;}
+.Formtxt .block label{ font:bold 12px Arial, Helvetica, sans-serif; color:#666666; float:left; padding:7px 0; width:95px}
+.Formtxt .block span.txt{ font:bold 12px Arial, Helvetica, sans-serif; color:#666666; float:left; padding:9px 9px 9px 25px;}
+.Formtxt .block span.txt.sep{font:bold 18px Arial, Helvetica, sans-serif; padding:11px}
+
+.vendor{margin:0px; padding:10px 0 20px 0;}
+.vendor a{float:left;}
+.vendor a img{background:url(../images/sprite2.gif) no-repeat 0px 10000px; width:40px; height:24px;}
+.vendor a img.visa{background-position:0 -145px;}
+.vendor a img.master{background-position:-43px -145px;}
+.vendor a img.discover{background-position:-84px -145px;}
+.vendor a img.uni{background-position:-124px -145px;}
+
+
+.confirmpayment a{background:url(../images/Btnsprite.png) no-repeat 0px -251px; width:142px; height:32px; text-align:center; font:bold 14px/33px Arial, Helvetica, sans-serif; color:#fff; display:block;  margin:50px 0 50px 340px;}
+
+.textboxes{margin:7px 0; padding:0px 0;}
+.textboxes img.leftimg{margin:0px; padding:0px; background:url(../images/Btnsprite.png) no-repeat left -196px; width:5px; height:34px; float:left;}
+.textboxes input.rightimg{margin:0px; padding:0; ~padding:8px 0 0 0; background:url(../images/Btnsprite.png) no-repeat right -196px; height:34px; ~height:26px; border:0px; outline:none; float:left; }
+.textboxes a.link{font:normal 12px Arial, Helvetica, sans-serif; color:#0099ff;}
+.textboxes input.txt{color:#999}
+.textboxes input.rightimg.wid450{width:430px; ~width:425px;}
+.textboxes input.rightimg.wid300{width:300px;}
+.textboxes input.rightimg.wid250{width:250px;}
+.textboxes input.rightimg.wid60{width:60px;}
+.textboxes input.rightimg.wid80{width:80px;}
+
+.textboxes div.rightimg{margin:0px; padding:7px 5px 0 0; background:url(../images/Btnsprite.png) no-repeat right -196px; height:28px; border:0px; outline:none; float:left;}
+.textboxes div.rightimg select{border:0px; padding-bottom:6px; outline:none; font:14px Arial, Helvetica, sans-serif;}
+.textboxes select.wid220{width:220px}
+.textboxes select.wid155{width:140px}
+.textboxes select.wid80{width:80px}
+.textboxes select.wid195{width:192px; ~width:185px}
+.autoselectwid{width:170px; font:12px Arial, Helvetica, sans-serif; color:#333333; padding:10px 0 0 0;}
+.autoselectwid input{margin:0 5px 0 0; float:left;}
+.subtitle{font:14px Arial, Helvetica, sans-serif;}
+.subtitle input{float:left; margin:2px 7px 0 0; ~margin-top:-2px}
+
+
+/* End payment classes */
+
+
+
+
+
+
+/* Profile Page */
+
+.ProfilePage{margin:0px; padding:10px 0 0 0;}
+.ProfilePage .left{margin:0px 35px 0 0; padding:0px; float:left; width:150px}
+.ProfilePage .left.userpic{width:128px; height:128px; border:5px solid #a5a5a5;}
+.ProfilePage .left.userpic img{margin-bottom:5px;}
+.ProfilePage .right{margin:0px; padding:10px; float:left;  background:#fff; border:1px solid #ececec; width:742px;}
+
+.ProfilePage .right.info h3{border-bottom:1px solid #c4c4c4; color:#dd3c13; padding:0px 5px 5px 5px; margin:0px; font:bold 24px Arial, Helvetica, sans-serif;}
+.ProfilePage .right.info h3 span{font:14px Arial, Helvetica, sans-serif; color:#000;}
+.ProfilePage .right.info h3 span a{font:12px Arial, Helvetica, sans-serif; color:#0099ff;}
+.ProfilePage .right.info h3 span.spacing{~margin:-30px 0 0 0;}
+
+.ProfilePage .right.info .block{margin:0px; padding:10px; border-bottom:1px solid #dcdcdc; font:14px Arial, Helvetica, sans-serif; color:#333333;}
+.ProfilePage .right.info .block .row{padding:5px 0;}
+.ProfilePage .right.info .block label{float:left; width:150px; margin:0 10px 0 0;  color:#999999;}
+
+.ProfilePage .ThumbsContainer{margin:0px; padding:0px;}
+.ProfilePage .ThumbsContainer .Box180wrapper{margin:0px!important; padding:0px!important}
+.ProfilePage .thumb{margin:0px 10px 0 0; padding:0px; width:132px; float:left;}
+.ProfilePage .thumb .left , .ProfilePage .Infotext h3{width:120px; overflow:hidden; font:bold 12px Arial, Helvetica, sans-serif!important; color:#343434; margin:0px; padding:0px; border-bottom:none!important}
+.ProfilePage .thumb .left span{ color:#9a9a9a;}
+
+.ProfilePage .thumb .smallplusicon{background:url(../images/sprite1.png) no-repeat 0 -28px; width:8px; height:12px;}
+.ProfilePage .link{margin:0px; padding:10px 0 0 0; float:right;}
+.ProfilePage .link a , .ProfilePage .left.userpic a{margin:0px; padding:0px; font:12px Arial, Helvetica, sans-serif; color:#008cfc;}
+
+/* End Profile page */
+
+/* Sharing page classes */
+.innercontainer .social{padding:20px 10px; margin:0px; border-bottom:1px solid #e0e0e0;}
+.innercontainer .social.fb{background:#f5f5f5; border:1px solid #f0f0f0; margin:10px 0 0 0}
+.innercontainer .social .left{float:left; width:180px; margin:0 10px 0 0; font:16px "Arial Black", Gadget, sans-serif; color:#707070;}
+.innercontainer .social .left .twiticon{background:url(../images/sprite1.png) no-repeat 0 -1633px; width:30px; height:22px; margin-right:10px}
+.innercontainer .social .left .fbicon{background:url(../images/sprite1.png) no-repeat 10px -1675px; width:30px; height:30px; margin-right:10px}
+
+.innercontainer .social .right{float:left;  margin:0; font:13px Arial, Helvetica, sans-serif; color:#333; width:720px;}
+.innercontainer .social .right .twitbtn{background:url(../images/sprite1.png) no-repeat 0 -1771px; width:146px; height:22px; margin-right:10px}
+.innercontainer .social .right .fbbtn{background:url(../images/sprite1.png) no-repeat 0 -1801px; width:146px; height:22px; margin-right:10px}
+
+.innercontainer .social .right .choosetxt div.login{margin:0px; font-size:11px;}
+.innercontainer .social .right .choosetxt div.login a{color:#4c90b4}
+
+.innercontainer .social .right ul{margin:0px; padding:0px 0;}
+.innercontainer .social .right li{margin:0px; padding:5px 0; float:left; list-style:none; width:200px; font:14px Arial, Helvetica, sans-serif; color:#999999;}
+
+
+
+/* End Sharing page classes */
+
+/* Fav page classes */
+.favAction{float:right; margin:-35px 0 0 0;}
+.favAction .btn{margin:0px; padding:0px; float:left;}
+.favAction .btn a{background:url(../images/verticale.gif) repeat-x 0 -78px; padding:3px 10px; border:1px solid #000; float:left; color:#fff; font:bold 12px Arial, Helvetica, sans-serif; margin:0 5px 0 0}
+.favAction .btn a img{background:url(../images/sprite1.png) repeat-x 4px -1913px; width:15px;}
+
+
+.favAction .paging{margin:0px; padding:0px; font:11px Arial, Helvetica, sans-serif; color:#030303; float:left;}
+.favAction .paging span{ color:#9f9f9f;}
+
+.favAction .paging .txt{line-height:21px; margin:0 5px; }
+.favAction .paging a.previous img , .favAction .paging a.next img , .favAction .paging img.previous.disable , .favAction .paging img.next.disable{background:url(../images/sprite1.png) no-repeat 0 -1841px; width:20px; height:20px; line-height:20px; }
+.favAction .paging a.previous img{background-position:0 -1875px;}
+.favAction .paging a.next img{background-position:-31px -1875px; margin:0px;}
+
+.favAction .paging img.previous.disable{background-position:0 -1841px!important;}
+.favAction .paging img.next.disable{background-position:-31px -1841px!important;}
+
+/*End Fav page classes */
+
+/* Account Setting page classes */
+.setting .txtboxrow{margin:0px 0 20px 0; padding:0px 10px; background:#eff1f5; 	-moz-border-radius: 3px;	border-radius:3px; width:600px;}
+.setting .txtboxrow label{float:left; font:14px Arial, Helvetica, sans-serif; color:#333; padding:15px 0 0 0; width:160px;}
+.setting .txtboxrow.select label{width:180px;}
+.setting .txtboxrow label span{font-size:12px; color:#666666; margin-top:10px; float:left;}
+.setting .emailtxt{font:12px Arial, Helvetica, sans-serif; color:#999; margin:-18px 0 20px 0}
+
+.setting .txtboxrow .Multiple{width:434px; padding:5px; font:12px Arial, Helvetica, sans-serif; color:#333333;}
+
+.setting .mandetory{font:12px Arial, Helvetica, sans-serif; color:#999999;}
+.setting .mandetory span{font-size:30px; color:#ccc; float:left; line-height:30px; margin-right:5px;}
+
+.contentPre , .tips , .deleteAcc{ padding:0px; background:#eff1f5; 	-moz-border-radius: 3px;border-radius:3px;}
+.contentPre.wid{ width:620px; margin:0px 0 20px 0;  font-size:14px;}
+.contentPre a, .settingsavebtn a.cancel{font:11px Arial, Helvetica, sans-serif; color:#008cfc; text-decoration:underline;}
+.contentPre a:hover, .settingsavebtn a.cancel:hover{text-decoration:none;}
+.contentPre .heading .fl{color:#999;}
+.contentPre .heading .fr{color:#333333; font-size:11px;}
+.contentPre .borderbot{border-bottom:1px dashed #ccc; padding:10px; ~padding:5px 10px;}
+.contentPre label{float:left; width:160px; font:16px Arial, Helvetica, sans-serif; color:#333;}
+.pad10{padding:10px!important;}
+
+.tips , .deleteAcc{padding:10px; width:250px; margin-bottom:15px}
+.tips h3, .deleteAcc h3{padding:0px 0 10px 0; margin:0px; font:14px Arial, Helvetica, sans-serif; color:#333333;}
+.tips p, .deleteAcc p{padding:0px; margin:0px; font:12px/12px Arial, Helvetica, sans-serif; color:#666666;}
+
+/* End Account Setting page classes */
+
+
+/* Not Allowed Pages classes */
+.menudisable{z-index:1000; width:1000px; position:fixed; height:50px; top:0px; 	background: url(../images/headerbg.gif) repeat-x; margin-left:155px}
+.notallowed{padding:40px 20px 60px 20px; height:auto; width:960px;}
+.notallowed .left{margin-right:40px; float:left;}
+.notallowed .right{margin:0px; float:left; width:550px}
+.notallowed .right h2{margin:0px; padding:0px; font:normal 30px/28px "Arial Black", Gadget, sans-serif; color:#30c2f3}
+.notallowed .right p{margin:0px; padding:10px 0; font:bold 14px/15px Arial, Helvetica, sans-serif; color:#333333; display:block;}
+
+.notallowed .textboxes{margin:7px 0; padding:0px 0px 0 0;}
+.notallowed .textboxes img.leftimg{background-position:left -403px; height:45px;}
+.notallowed .textboxes input.rightimg{background-position:right -403px; height:45px; padding-right:10px; width:365px; color:#666666; font:14px Arial, Helvetica, sans-serif;}
+
+.notallowed a img.saveup{background:url(../images/Btnsprite.png) no-repeat 0 -471px; width:141px; height:45px; margin:7px 0 0 10px}
+
+.bannerBGtrans{background:url(../images/bannertransBG.png) repeat; width:200px; padding:10px; font-family:Arial, Helvetica, sans-serif; color:#333;}
+.bannerBGtrans h3{font:normal 20px/20px "Arial Black", Gadget, sans-serif; text-align:left}
+.bannerBGtrans p{font-size:14px;}
+.bannerBGtrans p a{font-weight:bold; color:#0099ff;}
+
+.bannerBGtrans .banner{text-align:center; margin:10px 0;}
+.bannerBGtrans a.savebtn{font:bold 22px/35px Arial, Helvetica, sans-serif;}
+
+#pageloader{background:#ccc; opecity:0.5; border:1px solid #aaa; padding:4px 0px 4px 10px; text-align:center; margin:5px 0}
+
+
+.gamebanner{position:relative; z-index:99; margin-top:10px;}
+.gamebanner .txt{position:absolute; z-index:100; margin:0px 0 0 5px; color:#fff; top:160px; left:0px;}
+.gamebanner .txt h3{background:#000; font:bold 12px Arial, Helvetica, sans-serif; padding:5px;}
+.gamebanner .txt h4 a{background:#d10606; font:bold 11px Arial, Helvetica, sans-serif; padding: 2px 5px; color:#fff;}
+
+.poll{margin:0px; padding:0px}
+.poll h4{margin:0px; padding:5px 0; font:bold 12px Arial, Helvetica, sans-serif; color:#333; float:left; display:block;}
+.poll ul{margin:0px; padding:0px;}
+.poll li{margin:0px; padding:2px 0; list-style:none; font:11px Arial, Helvetica, sans-serif; color:#666666; display:block; float:left;}
+.poll li input{margin:0px 5px 0 0!important; line-height:20px; position:relative; top:2px;}
+
+.channelBlog .Container300{ width:100%!important;}
+.channelBlog .Container300 .blog{margin:20px 0; padding:0px;}
+.channelBlog .Container300 .blog .left{margin:0px 10px 0 0; padding:0px; float:left;}
+.channelBlog .Container300 .blog .right{margin:0px; padding:0px; float:right; width:370px;}
+.channelBlog .Container300 .blog .right h3{margin:0px; padding:0px; font:bold 12px Arial, Helvetica, sans-serif; color:#333;}
+.blog .right h3 img{background:url(../images/sprite1.png) no-repeat 0 -2007px; width:36px; height:36px; float:left; margin-right:10px}
+.channelBlog .Container300 .blog .right p{margin:0px; padding:0px; font:11px Arial, Helvetica, sans-serif; color:#666666;}
+
+.channelBlog .Container300 .blog .right .view{padding:10px 0; color:#666; font:11px Arial, Helvetica, sans-serif;}
+
+
+.favIcon{margin:-3px 0 0 0}
+/* End Not Allowed Pages classes */
+
+/* Modal classes */
+
+body.subscriptionUser #Banner .Right .Toparrow img{background:url(../images/modalsprite2.gif) no-repeat 0 0px;}
+
+body.subscriptionUser #Banner .Right .btmarrow img{background:url(../images/modalsprite2.gif) no-repeat 0 -35px;}
+
+body.subscriptionUser #Banner .Height .HoverEffect span.trans{border-color:#0078f0;}
+
+body.subscriptionUser #Banner .Selectedarrow{background:url(../images/modalarrowbullet.png) no-repeat 0px 0px; }
+
+body.subscriptionUser .logo{ background:url(../images/paidboxtvlogo.png) no-repeat; width:150px;}
+
+body.subscriptionUser #TopMenuWrapper{ width:810px;}
+
+body.subscriptionUser .Description .Links a.trailer{background:url(../images/modalsprite1.png) no-repeat 0 0px!important;}
+body.subscriptionUser .Description .Links a.full{background:url(../images/modalsprite1.png) no-repeat 0 -36px!important;  }
+
+/* End Modal classes */
+
+
+
+
