@@ -205,5 +205,4 @@ Class fDB
 		} 
 		return $string; 
 	}
-
 }
