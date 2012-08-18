@@ -30,18 +30,6 @@ $DSN[1]['r']['user'] = 'root';
 $DSN[1]['r']['password'] = '';
 $DSN[1]['r']['db'] = 'db418924494';
 
-/* DB1[Primary] - Master DB Connection */
-$DSN[2]['w']['host'] = 'localhost';
-$DSN[2]['w']['user'] = 'root';
-$DSN[2]['w']['password'] = '';
-$DSN[2]['w']['db'] = 'db418924494';
-/* DB1[Primary] - Slave DB Connection */
-$DSN[2]['r']['host'] = 'localhost';
-$DSN[2]['r']['user'] = 'root';
-$DSN[2]['r']['password'] = '';
-$DSN[2]['r']['db'] = 'db418924494';
-
-
 
 /* Web URL params */
 $web_url = 'http://localhost/gyvcmsdemo/webdocs/';

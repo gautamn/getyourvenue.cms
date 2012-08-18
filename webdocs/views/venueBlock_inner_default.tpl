@@ -57,8 +57,8 @@ if($totalRocords>0){
                         <td><?php echo $rows['address1'].' '.$rows['address2'];?></td>
                         <td><?php echo $rows['createdate'];?></td>
                         <td>
-                            <a title="Change Status" href="javascript:void(0);" onClick="javascript:changeStatus('<?php echo $rows["id"]?>');"><img src="<?php echo facile::$theme_url;?>images/<?php echo (($rows['is_active']=='Y')?'tick-':'minus-')?>circle.gif" width="16" height="16" alt="Change Status" /></a>
-                            <a title="Edit" href="<?php echo facile::$web_url;?>venue?view=edit&id=<?php echo $rows['id']?>"><img src="<?php echo facile::$theme_url;?>images/pencil.gif" width="16" height="16" alt="edit" /></a>
+                            <a title="Change Status" href="javascript:void(0);" onClick="javascript:changeStatus('<?php echo $rows["id"]?>');"><img src="<?php echo facile::$theme_url;?>images/<?php echo (($rows['is_active']==1)?'tick-':'minus-');?>circle.gif" width="16" height="16" alt="Change Status" /></a>
+                            <a title="Edit" href="<?php echo facile::$web_url;?>venue?view=edit&id=<?php echo $rows['id'];?>"><img src="<?php echo facile::$theme_url;?>images/pencil.gif" width="16" height="16" alt="edit" /></a>
                             <a title="View Details" href="javascript:void(0);" onClick="javascript:showVenueDetail('<?php echo $rows["id"]?>');"><img src="<?php echo facile::$theme_url;?>images/preview.png" width="16" height="16" alt="View Details" /></a>
                         </td>
                     </tr>

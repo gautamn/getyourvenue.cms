@@ -14,7 +14,7 @@ class Venue {
       $res = fDB::fetch_assoc_first($query);
       return $res;
     }
-    
+
     public function where_str($arr) {
         $data = array();
         if (is_array($arr)) {
@@ -79,7 +79,7 @@ class Venue {
         return;
       $res = array();
       if(isset($venue_id) && $venue_id>0){
-        $query = "SELECT vt.venuetype, vt.type FROM " . VENUE_TYPE_MAPPING." vm INNER JOIN ".VENUE_TYPE." vt ON (vm.venuetypeid=vt.venuetypeid) WHERE vm.venueid=$venue_id";
+        $query = "SELECT vt.venuetypeid, vt.venuetype, vt.type FROM " . VENUE_TYPE_MAPPING." vm INNER JOIN ".VENUE_TYPE." vt ON (vm.venuetypeid=vt.venuetypeid) WHERE vm.venueid=$venue_id";
         $res = fDB::fetch_assoc_all($query);
       }
       return !empty($res) ? $res['result'] : $res;
@@ -105,7 +105,7 @@ class Venue {
       $venueType = array();
       $venueCapcity = array();
 
-      $query = "SELECT v.*, vi.alttag FROM ". VENUES ." v LEFT JOIN ".VENUE_IMAGE_ALTTAG." vi ON (vi.venueid = v.id) WHERE v.id=$venue_id";
+      $query = "SELECT * FROM ". VENUES ." WHERE id=$venue_id";
       $row = fDB::fetch_assoc_first($query);
 
       //fetching venue type details

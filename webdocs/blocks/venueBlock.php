@@ -41,10 +41,13 @@ class venueBlock {
             $tplData['class'] = 'error';
           }
         }
-        $records = Venue::get_venues_feed($qarr);
-        if (count($records) == 0)
-          $records = Venue::get_venues($qarr);
-        $tplData['records'] = $records[0];
+        $tplData['regionList']  = Venue::getVenueRegionList();
+        $tplData['typeList']    = Venue::getVenueTypeList();
+        $tplData['capacityList']= Venue::getVenueCapacityList();
+        $tplData['popularChoiceList'] = Venue::getVenuePopularityList();
+        
+        $records = Venue::getVenueFullDetailsById($qarr['id']);
+        $tplData['records'] = $records;
         $tplData['tpl'] = 'venue_edit.tpl';
         break;
 
