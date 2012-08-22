@@ -1,7 +1,5 @@
  <div class="module">
     <h2><span>Edit Venue</span></h2>
-<?php //echo '<pre>';
-print_r($records); ?>
     <div class="module-body">
         <form action="" id="venueForm" enctype="multipart/form-data" method="post">
           <?php
@@ -10,22 +8,23 @@ print_r($records); ?>
               <span class="notification n-<?=$class?>"><?=$msg?></span>
             </div>
           <?php } ?>
-          <p>
-              <label>Region Name</label>
-              <select id="region" name="region">
+          <div class="widthper fl">
+            <div class="add-clip">
+                <label>Region Name <span class="star">*</span></label>
+                <p><select id="region" name="region">
                 <option value="">- Select Region -</option>
                 <?php
                 if(!empty($regionList)){
                   foreach($regionList as $region){?>
                     <option value="<?php echo $region['regionid'];?>"<?php echo ($records['regionid']==$region['regionid']) ? ' selected="selected"' :'';?>><?php echo $region['regionname'];?></option>
-                  <?php
-                  }
-                }?>
-              </select>
-          </p>
-          <p>
-              <label>Venue Type</label>
-              <select id="venueType" size="5" multiple="multiple">
+                  <?php }
+                  }?>
+                </select></p>
+                <div class="cl"></div>
+            </div>
+            <div class="add-clip">
+                <label>Venue Type <span class="star">*</span></label>
+                <p><select id="venueType" name="venueType" size="5" multiple="multiple">
                 <option>- Select Venue Type -</option>
                 <?php
                 $arrayTempVenue = array();
@@ -40,11 +39,12 @@ print_r($records); ?>
                     <?php
                   }
                 }?>
-              </select>
-          </p>
-          <p>
-              <label>Capacity</label>
-              <select id="venuecapacity" size="5" multiple="multiple" name="venuecapacity">
+                </select></p>
+                <div class="cl"></div>
+            </div>
+            <div class="add-clip">
+                <label>Capacity <span class="star">*</span></label>
+                <p><select id="venuecapacity" size="5" multiple="multiple" name="venuecapacity">
                 <option>- Select Venue Capacity -</option>
                 <?php
                 $arrayTempCapacity = array();
@@ -59,11 +59,12 @@ print_r($records); ?>
                     <?php
                   }
                 }?>
-              </select>
-          </p>
-          <p>
-              <label>Popularity</label>
-              <select id="popular" name="popular">
+                </select></p>
+                <div class="cl"></div>
+            </div>
+            <div class="add-clip">
+                <label>Popularity <span class="star">*</span></label>
+                <p><select id="popular" name="popular">
                 <option>- Select Popular Choice-</option>
                 <?php
                 if(!empty($popularChoiceList)){
@@ -72,51 +73,73 @@ print_r($records); ?>
                     <?php
                   }
                 }?>
-              </select>
-          </p>
-          <p>
-              <label>Venue Name</label>
-              <input name="venue_name" maxlength="256" type="text" class="input-short" id="venue_name" value="<?php echo $records['name'];?>" />
-          </p>
-          <p>
-              <label>SEO Id</label>
-              <input name="seo" maxlength="256" type="text" class="input-short" id="seo" value="<?php echo $records['venueid'];?>" />
-          </p>
-          <p>
-              <label>Rank</label>
-              <input name="venue_rank" maxlength="256" type="text" class="input-short" id="venue_rank" value="<?php echo $records['rank'];?>" />
-          </p>
-          <p>
-              <label>Venue Address 1 *</label>
-              <input name="address1" maxlength="256" type="text" class="input-short" id="address1" value="<?php echo $records['address1'];?>" />
-          </p>
-          <p>
-              <label>Venue Address 2</label>
-              <input name="address2" maxlength="256" type="text" class="input-short" id="address2" value="<?php echo $records['address2'];?>" />
-          </p>
-          <p>
-              <label>Description</label>
-              <textarea class="meta-des" id="description" rows="6" name="description"><?php echo $records['content'];?></textarea>
-          </p>
-          <p>
-              <label>Google Map iFrame Code</label>
-              <textarea class="meta-des" id="description" rows="6" name="description"><?php echo $records['iframe'];?></textarea>
-          </p>
-          <p>
-              <label>Meta Title</label>
-              <textarea class="meta-des" id="meta_title" rows="6" name="meta_title"><?php echo $records['title'];?></textarea>
-          </p>
-          <p>
-              <label>Meta Description</label>
-              <textarea class="meta-des" id="meta_description" rows="6" name="meta_description"><?php echo $records['meta_description'];?></textarea>
-          </p>
-          <p>
+                </select></p>
+                <div class="cl"></div>
+            </div>
+
+            <div class="add-clip">
+              <label>Meta Title <span class="star">*</span></label>
+              <p><textarea class="meta-desshort" id="meta_title" rows="4" name="meta_title"><?php echo $records['title'];?></textarea></p>
+              <div class="cl"></div>
+            </div>
+            <div class="add-clip">
+              <label>Meta Description <span class="star">*</span></label>
+              <p><textarea class="meta-desshort" id="meta_description" rows="4" name="meta_description"><?php echo $records['meta_description'];?></textarea></p>
+              <div class="cl"></div>
+            </div>
+            <div class="add-clip">
               <label>Meta Keywords</label>
-              <textarea class="meta-des" id="meta_keyword" rows="6" name="meta_keyword"><?php echo $records['meta_keyword'];?></textarea>
-          </p>
+              <p><textarea class="meta-desshort" id="meta_keyword" rows="4" name="meta_keyword"><?php echo $records['meta_keyword'];?></textarea></p>
+              <div class="cl"></div>
+            </div>
+          </div>
+          <div class="widthper fr">
+            <div class="add-clip">
+              <label>Venue Name <span class="star">*</span></label>
+              <p><input name="venue_name" maxlength="256" type="text" class="input-short" id="venue_name" value="<?php echo $records['name'];?>" /></p>
+              <div class="cl"></div>
+            </div>
+            <div class="add-clip">
+              <label>SEO Id <span class="star">*</span></label>
+              <p><input name="seo_title" maxlength="256" type="text" class="input-short" id="seo_title" value="<?php echo $records['venueid'];?>" /></p>
+              <div class="cl"></div>
+            </div>
+            <div class="add-clip">
+              <label>Rank <span class="star">*</span></label>
+              <p><input name="venue_rank" maxlength="256" type="text" class="input-short" id="venue_rank" value="<?php echo $records['rank'];?>" /></p>
+              <div class="cl"></div>
+            </div>
+            <div class="add-clip">
+              <label>Venue Address 1 <span class="star">*</span></label>
+              <p><input name="address1" maxlength="256" type="text" class="input-short" id="address1" value="<?php echo $records['address1'];?>" /></p>
+              <div class="cl"></div>
+            </div>
+            <div class="add-clip">
+              <label>Venue Address 2</label>
+              <p><input name="address2" maxlength="256" type="text" class="input-short" id="address2" value="<?php echo $records['address2'];?>" /></p>
+              <div class="cl"></div>
+            </div>
+            <div class="add-clip">
+              <label>Image Alt Tag <span class="star">*</span></label>
+              <p><input name="image_alt" maxlength="256" type="text" class="input-short" id="image_alt" value="<?php echo $records['image_alt_tag'];?>" /></p>
+              <div class="cl"></div>
+            </div>
+            <div class="add-clip">
+              <label>Description <span class="star">*</span></label>
+              <p><textarea class="meta-desshort" id="description" rows="6" style="height:300px !important;" name="description"><?php echo $records['content'];?></textarea></p>
+              <div class="cl"></div>
+            </div>
+            <div class="add-clip">
+              <label>Google Map Code</label>
+              <p><textarea class="meta-desshort" id="iframe_code" rows="6" name="iframe_code"><?php echo $records['iframe'];?></textarea></p>
+              <div class="cl"></div>
+            </div>
+          </div>
+          <div class="cl"></div>
+
           <?php if($records['image']!="") {?>
           <p>
-              <img src="<?=facile::$web_assets_url.'venues/images/'.$records['image']?>"  height="100" /> </p>
+              <img src="<?php echo facile::$web_assets_url.'venues/images/'.$records['image']?>" height="100" /> </p>
           <p>
           <?php } ?>
           <fieldset>

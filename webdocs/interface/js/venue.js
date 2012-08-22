@@ -1,24 +1,48 @@
-			// JavaScript Document
+// JavaScript Document
 	$().ready(function() {
+    $.validator.addMethod("checkMetaKeyword", function(value, element) {
+      var metaW =  $.trim(value);
+      metaW = metaW.split(" ");
+      return (metaW.length<3) ? false : true;
+    }, "");
 
 		// validate signin form on keyup and submit
-		$("#gutterForm").validate({
+		$("#venueForm").validate({
 			rules: {
-				title:"required",
-				impression_url: "required",
-				click_url: "required"
-
+				'region': {required: true},
+				'venueType': {required: true},
+				'venuecapacity': {required: true},
+				'popularity': {required: true},
+				'meta_title': {required: true, checkMetaKeyword:true},
+				'meta_description': {required: true, checkMetaKeyword:true},
+				'iframe_code': {required: true},
+        'venue_name': {required: true},
+        'seo_title': {required: true},
+        'venue_rank': {required: true},
+        'address1': {required: true},
+        //'address2': {required: true},
+        'image_alt': {required: true},
+        'description': {required: true},
+        'meta_keyword': {required: true, checkMetaKeyword:true}
 			},
 			messages: {
-				title:"required",
-				impression_url: "required",
-				click_url: "required"
-
+				'region': {required:"Please select Region Name."},
+        'venueType': {required:"Please select Venue Type."},
+        'venuecapacity': {required:"Please select venue capacity."},
+				'popularity': {required:"Please select popularity."},
+        'meta_title': {required:"Please enter Meta Keyword", checkMetaKeyword:"Please enter more than 2 Meta Title"},
+        'meta_description': {required:"Please enter Meta Keyword", checkMetaKeyword:"Please enter more than 2 Meta Keyword"},
+				'iframe_code': {required:"Please enter Google Map code."},
+				'venue_name': {required: "Please enter venue name."},
+        'seo_title': {required: "Please enter SEO Id."},
+        'venue_rank': {required: "Please enter venue rank."},
+        'address1': {required: "Please enter address."},
+        //'address2': {required: "Please enter address."},
+        'image_alt': {required: "Please enter image text for seo."},
+        'description': {required: "Please enter description"},
+        'meta_keyword': {required:"Please enter Meta Keyword", checkMetaKeyword:"Please enter more than 2 Meta Title"}
 			}
 		});
-
-
-
 	});
 
 function SaveForm(){

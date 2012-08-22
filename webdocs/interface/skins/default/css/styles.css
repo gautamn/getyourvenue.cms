@@ -1091,7 +1091,8 @@ table.eventTble legend {padding: 3px 5px 0 5px; font-weight: bold; ~width: 100px
 .wdth285{width: 285px !important;}
 .smal-txt {font-size:11px; width: 220px; display: block;}
 .mrgn-bot {margin-bottom: 10px !important;}
-.meta-des {width: 390px !important; height: 150px !important;}
+.meta-des {width: 390px !important; height: 100px !important; resize:none;}
+.meta-desshort {width:95%; height: 100px !important; resize:none;}
 .key-player {width: 310px !important; height: 100px !important;}
 .featurePad {padding: 5px 0;}
 .pop-grid td {vertical-align: top;}
