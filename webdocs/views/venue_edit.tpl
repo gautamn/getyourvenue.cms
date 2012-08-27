@@ -24,8 +24,8 @@
             </div>
             <div class="add-clip">
                 <label>Venue Type <span class="star">*</span></label>
-                <p><select id="venueType" name="venueType" size="5" multiple="multiple">
-                <option>- Select Venue Type -</option>
+                <p><select id="venueType" name="venueType[]" size="5" multiple="multiple">
+                <option value="">- Select Venue Type -</option>
                 <?php
                 $arrayTempVenue = array();
                 if(!empty($records['venueType'])){
@@ -44,8 +44,8 @@
             </div>
             <div class="add-clip">
                 <label>Capacity <span class="star">*</span></label>
-                <p><select id="venuecapacity" size="5" multiple="multiple" name="venuecapacity">
-                <option>- Select Venue Capacity -</option>
+                <p><select id="venuecapacity" size="5" multiple="multiple" name="venuecapacity[]">
+                <option value="">- Select Venue Capacity -</option>
                 <?php
                 $arrayTempCapacity = array();
                 if(!empty($records['venueCapcity'])){
@@ -65,7 +65,7 @@
             <div class="add-clip">
                 <label>Popularity <span class="star">*</span></label>
                 <p><select id="popular" name="popular">
-                <option>- Select Popular Choice-</option>
+                <option value="">- Select Popular Choice-</option>
                 <?php
                 if(!empty($popularChoiceList)){
                   foreach($popularChoiceList as $popular){?>
@@ -88,7 +88,7 @@
               <div class="cl"></div>
             </div>
             <div class="add-clip">
-              <label>Meta Keywords</label>
+              <label>Meta Keywords <span class="star">*</span></label>
               <p><textarea class="meta-desshort" id="meta_keyword" rows="4" name="meta_keyword"><?php echo $records['meta_keyword'];?></textarea></p>
               <div class="cl"></div>
             </div>
@@ -130,24 +130,23 @@
               <div class="cl"></div>
             </div>
             <div class="add-clip">
-              <label>Google Map Code</label>
+              <label>Google Map Code <span class="star">*</span></label>
               <p><textarea class="meta-desshort" id="iframe_code" rows="6" name="iframe_code"><?php echo $records['iframe'];?></textarea></p>
               <div class="cl"></div>
             </div>
           </div>
           <div class="cl"></div>
 
-          <?php if($records['image']!="") {?>
+          <?php if(isset($records['image']) && $records['image']!="") {?>
           <p>
               <img src="<?php echo facile::$web_assets_url.'venues/images/'.$records['image']?>" height="100" /> </p>
           <p>
           <?php } ?>
           <fieldset>
-            <input type="hidden" name="venue_id" value="<?php echo ($records['venue_id'])?$records['venue_id']:$records['id'];?>" />
             <input type="hidden" name="id"  value="<?php echo $records['id'];?>" />
-            <input type="hidden" name="action"  value="updateVenue" />
-            <input  class="submit-green" type="submit" value="Update" />
-            <input  id="btn_cancel" class="submit-gray" type="button" value="Cancel" />
+            <input type="hidden" name="action" value="updateVenue" />
+            <input class="submit-green" type="submit" value="Update" />
+            <input id="btn_cancel" class="submit-gray" type="button" value="Cancel" />
           </fieldset>
         </form>
      </div> <!-- End .module-body -->

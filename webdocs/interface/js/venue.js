@@ -12,7 +12,7 @@
 				'region': {required: true},
 				'venueType': {required: true},
 				'venuecapacity': {required: true},
-				'popularity': {required: true},
+				'popular': {required: true},
 				'meta_title': {required: true, checkMetaKeyword:true},
 				'meta_description': {required: true, checkMetaKeyword:true},
 				'iframe_code': {required: true},
@@ -29,7 +29,7 @@
 				'region': {required:"Please select Region Name."},
         'venueType': {required:"Please select Venue Type."},
         'venuecapacity': {required:"Please select venue capacity."},
-				'popularity': {required:"Please select popularity."},
+				'popular': {required:"Please select popularity."},
         'meta_title': {required:"Please enter Meta Keyword", checkMetaKeyword:"Please enter more than 2 Meta Title"},
         'meta_description': {required:"Please enter Meta Keyword", checkMetaKeyword:"Please enter more than 2 Meta Keyword"},
 				'iframe_code': {required:"Please enter Google Map code."},
@@ -44,11 +44,6 @@
 			}
 		});
 	});
-
-function SaveForm(){
-
-}
-
 
 function changeStatus(Id,type){
     var sh_keyword = $('#sh_keyword').val();
@@ -100,3 +95,17 @@ function showVenueDetail(Id){
     $('#Action').focus();
   });
 }
+
+$('#venue_name').live('blur',function(){
+  if($('#meta_title').val().length<1){
+    $('#meta_title').val(this.value);
+  }
+  if($('#image_alt').val().length<1){
+    $('#image_alt').val(this.value);
+  }
+  if($('#seo_title').val().length<1){
+    var seo = $.trim(this.value.toLowerCase());
+    seo = seo.replace(/\s/g, "-");
+    $('#seo_title').val(seo);
+  }
+});

@@ -1,7 +1,7 @@
-  <div class="module"> 
-    <h2><span>Admin Login</span></h2>  
+  <div class="module">
+    <h2><span>Admin Login</span></h2>
     <div class="module-body">
-       <?php $msgClass = ($msg)?'':'hideSection'; ?> 
+       <?php $msgClass = !empty($msg)?'':'hideSection'; ?>
        <span id="msg" class="notification n-error <?=$msgClass?>"><?=$msg?></span>
       <form enctype="text/plain" action="" id="signinform" method="post" name="signIn" autocomplete="off">
          <p>
@@ -10,7 +10,7 @@
          </p>
          <p>
           <label>Password:</label>
-          <input type="password" name="password" id="password" class="input-medium" value="<?php echo $upass;?>">
+          <input type="password" name="password" id="password" class="input-medium" value="">
          </p>
          <fieldset>
           <input class="submit-green" type="button" value="Login" id="signIn">

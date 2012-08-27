@@ -25,8 +25,8 @@
             </div>
             <div class="add-clip">
                 <label>Venue Type <span class="star">*</span></label>
-                <p><select id="venueType" name="venueType" size="5" multiple="multiple">
-                <option>- Select Venue Type -</option>
+                <p><select id="venueType" name="venueType[]" size="5" multiple="multiple">
+                <option value="">- Select Venue Type -</option>
                 <?php
                 if(!empty($typeList)){
                   foreach($typeList as $type){?>
@@ -39,8 +39,8 @@
             </div>
             <div class="add-clip">
                 <label>Capacity <span class="star">*</span></label>
-                <p><select id="venuecapacity" size="5" multiple="multiple" name="venuecapacity">
-                <option>- Select Venue Capacity -</option>
+                <p><select id="venuecapacity" size="5" multiple="multiple" name="venuecapacity[]">
+                <option value="">- Select Venue Capacity -</option>
                 <?php
                 if(!empty($capacityList)){
                   foreach($capacityList as $capacity){?>
@@ -54,7 +54,7 @@
             <div class="add-clip">
                 <label>Popularity <span class="star">*</span></label>
                 <p><select id="popular" name="popular">
-                <option>- Select Popular Choice-</option>
+                <option value="">- Select Popular Choice-</option>
                 <?php
                 if(!empty($popularChoiceList)){
                   foreach($popularChoiceList as $popular){?>
@@ -77,7 +77,7 @@
               <div class="cl"></div>
             </div>
             <div class="add-clip">
-              <label>Meta Keywords</label>
+              <label>Meta Keywords <span class="star">*</span></label>
               <p><textarea class="meta-desshort" id="meta_keyword" rows="4" name="meta_keyword"></textarea></p>
               <div class="cl"></div>
             </div>
@@ -119,7 +119,7 @@
               <div class="cl"></div>
             </div>
             <div class="add-clip">
-              <label>Google Map Code</label>
+              <label>Google Map Code <span class="star">*</span></label>
               <p><textarea class="meta-desshort" id="iframe_code" rows="6" name="iframe_code"></textarea></p>
               <div class="cl"></div>
             </div>
@@ -131,11 +131,10 @@
           <p>
           <?php } ?>
           <fieldset>
-              <input type="hidden" name="id" value="<?=$records['id']?>" />
-              <input type="hidden" name="action"  value="saveVenue" />
-              <input name="venue_image" type="hidden"  value="<?=$records['image']?>"/>
+              <input type="hidden" name="id" value="" />
+              <input type="hidden" name="action" value="saveVenue" />
               <input class="submit-green" type="submit" value="Save" />
-              <input id="btn_cancel"  class="submit-gray" type="button" value="Cancel" />
+              <input id="btn_cancel" class="submit-gray" type="button" value="Cancel" />
           </fieldset>
         </form>
     </div> <!-- End .module-body -->

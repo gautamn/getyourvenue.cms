@@ -20,7 +20,7 @@ class Venue {
         if (is_array($arr)) {
             $and = '';
             foreach ($arr as $k => $v) {
-                $and = " `$k`=? AND";
+                $and = " $k=? AND";
                 array_push($data, $v);
             }
             $where = (strlen($and)) ? " WHERE " . substr($and, 0, -4) : '';
@@ -41,9 +41,10 @@ class Venue {
         }
         $query = "SELECT * FROM " . VENUES . " WHERE ".$where;
 
-        if($getTotalRecords){
-          $res = fDB::fetch_assoc_all($query);
-          return $res['numRecords'];
+        if($getTotalRecords>0){
+          $sql_cnt = "SELECT count(*) as numRecords FROM ".VENUES." WHERE $where";
+          $res = fDB::fetch_assoc_first($sql_cnt);
+          return intval($res['numRecords']);
         }
         $orderBy = ($orderBy!="") ? " ORDER BY ". $orderBy : " ORDER BY id DESC";
         $query = $query.$orderBy.$limit;
@@ -52,14 +53,66 @@ class Venue {
     }
 
     //function to save venue details
-    public function saveVenue($arr){
-      if(!is_array($arr))
+    public function saveVenue($params){
+      if(!is_array($params))
         return false;
-    }
+      $params['seo_title'] = !empty($params['seo_title']) ? $params['seo_title'] : $params['venue_name'];
+      $params['seo_title'] = clean_special_character($params['seo_title']);
+      $date = date('Y-m-d H:i:s');
 
-    //function to update venues
-    public function updateVenues($arr = '') {
-        return (($ins) ? fDB::inserted_id() : $venue_id);
+      if(isset($params['id']) && $params['id']>0){
+        $sql = "UPDATE ".VENUES." SET venueid=?, name=?, rank=?, address1=?, address2=?, content=?, iframe=?, regionid=?, popular_choice=?, image_alt_tag=?, update_timestamp=?, meta_description=?, meta_keyword=?, title=? WHERE id=?";
+        $data = array($params['seo_title'], $params['venue_name'], $params['venue_rank'], $params['address1'], $params['address2'], $params['description'], $params['iframe_code'], $params['region'], $params['popular'], $params['image_alt'], $date, $params['meta_description'], $params['meta_keyword'], $params['meta_title'], $params['id']);
+      }else{
+        $sql = "INSERT INTO ".VENUES." SET venueid=?, name=?, rank=?, address1=?, address2=?, content=?, iframe=?, regionid=?, popular_choice=?, image_alt_tag=?, create_timestamp=?, update_timestamp=?, meta_description=?, meta_keyword=?, title=?";
+        $data = array($params['seo_title'], $params['venue_name'], $params['venue_rank'], $params['address1'], $params['address2'], $params['description'], $params['iframe_code'], $params['region'], $params['popular'], $params['image_alt'], $date, $date, $params['meta_description'], $params['meta_keyword'], $params['meta_title']);
+      }
+      $res = fDB::query($sql, $data);
+      if($res){
+        $id = (isset($params['id']) && $params['id']>0) ? intval($params['id']) : fDB::inserted_id();
+        //updating venue type mapping
+        if($id>0){
+          //venue
+          $venueT = is_array($params['venueType']) ? implode(',',$params['venueType']) : '';
+          $venueT = ($venueT!='') ? 'AND venuetypeid NOT IN('.$venueT.')' : '';
+          //delete venue_type
+          fDB::query("DELETE FROM ".VENUE_TYPE_MAPPING." WHERE venueid=$id $venueT");
+
+          //venue_type
+          if(!empty($params['venueType'])){
+            foreach($params['venueType'] as $vType){
+              //chking if not exits
+              $sql_ck = "SELECT count(*) as cnt FROM ".VENUE_TYPE_MAPPING." WHERE venueid=$id AND venuetypeid=$vType";
+              $res_type = fDB::fetch_assoc_first($sql_ck);
+              if(isset($res_type['cnt']) && $res_type['cnt']<1){
+                $sql_ins_type = "INSERT INTO ".VENUE_TYPE_MAPPING." (venueid, venuetypeid, create_timestamp, update_timestamp) VALUES(?,?,?,?)";
+                $data_type = array($id, $vType, $date, $date);
+                fDB::query($sql_ins_type, $data_type);
+              }
+            }//foreach
+          }//if
+          //insert & delete capcity mapping
+          $venueCap = !empty($params['venuecapacity']) ? implode(',',$params['venuecapacity']) : '';
+          $venueCap = ($venueCap!='') ? 'AND capacityid NOT IN('.$venueCap.')' : '';
+          //delete venue_type
+          fDB::query("DELETE FROM ".VENUE_CAPACITY_MAPPING." WHERE venueid=$id $venueCap");
+
+          //venue_type
+          if(!empty($params['venuecapacity'])){
+            foreach($params['venuecapacity'] as $vCap){
+              //chking if not exits
+              $sql_ck = "SELECT count(*) as cnt FROM ".VENUE_CAPACITY_MAPPING." WHERE venueid=$id AND capacityid=$vCap";
+              $res_cap = fDB::fetch_assoc_first($sql_ck);
+              if(isset($res_cap['cnt']) && $res_cap['cnt']<1){
+                $sql_ins_cap = "INSERT INTO ".VENUE_CAPACITY_MAPPING." (venueid, capacityid, create_timestamp, update_timestamp) VALUES(?,?,?,?)";
+                $data_cap = array($id, $vCap, $date, $date);
+                fDB::query($sql_ins_cap, $data_cap);
+              }
+            }//foreach
+          }//if
+        }//if id>0
+      }//if res
+      return $res;
     }
 
     //function to change status
@@ -68,7 +121,7 @@ class Venue {
          return;
        $query = "SELECT * FROM " . VENUES . " WHERE id='" . (int) $venue_id . "'";
        $row = fDB::fetch_assoc_first($query);
-       $status = ($row['is_active'] == 'Y') ? 'N' : 'Y';
+       $status = ($row['is_active'] == '1') ? '0' : '1';
        $query = "UPDATE " . VENUES . " SET is_active='" . $status . "' WHERE id='" . (int) $venue_id . "'";
        fDB::query($query);
     }

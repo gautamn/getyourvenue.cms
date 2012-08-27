@@ -3,28 +3,29 @@ include_once facile::$path_classes . "/users/users.php";
 include_once facile::$path_classes . "/adminrole/adminrole.php";
 include_once facile::$path_classes . "/image/image.php";
 class adminuserBlock{
-	
+
     function process(){
         is_loggedin();
-        // view Admin Users                           
-        if(isset($_REQUEST['view']))
-            $view = $_REQUEST['view'];
-        $vars = $_REQUEST['vars'][0];
+        // view Admin Users
+        $qarr = isset($_REQUEST) ? $_REQUEST : array();
+        $view = isset($_REQUEST['view']) ? $_REQUEST['view'] : '';
+
+        $vars = isset($_REQUEST['vars'][0]) ? $_REQUEST['vars'][0] : array();
         //echo '<pre>';print_r($vars);die;
-        if(trim($vars['action']) == 'checkUniqueAdminUsername' && $vars['ajax']){
+        if(isset($vars['action']) && trim($vars['action']) == 'checkUniqueAdminUsername' && $vars['ajax']){
           $ret = users::validate_admin_user($vars,$vars['id']);
           if($ret<0){
-            view::$jsInPage .= ' setUniqueUserName(0); '; 
+            view::$jsInPage .= ' setUniqueUserName(0); ';
           }else{
-            view::$jsInPage .= ' setUniqueUserName(1); '; 
+            view::$jsInPage .= ' setUniqueUserName(1); ';
           }
         }
-	elseif($view == 'edit' || $view == 'add') {
-            $qarr = array();
-			$qarr['id'] = $id = ($_POST['id'])?$_POST['id']:$_GET['id'];
-			
-			if((trim($qarr['id']) != '' && trim($_REQUEST['action']) == 'updatAdminUser') || trim($_REQUEST['action']) == 'saveAdminUser') {
-        
+        elseif($view == 'edit' || $view == 'add') {
+          $qarr = array();
+       $qarr['id'] = $id = isset($_REQUEST['id'])?$_REQUEST['id']:0;
+
+			if(isset($qarr['id']) && $qarr['id']>0 && isset($_REQUEST['action']) && ($_REQUEST['action'] == 'updatAdminUser' || $_REQUEST['action'] == 'saveAdminUser')) {
+
         // update AdminUser
         $tplData['msg'] = ($qarr['id']>0)?_DATA_UPDATE:_DATA_INSERT;
 				if($qarr['id'] = users::update_admin_user($qarr)){
@@ -48,8 +49,8 @@ class adminuserBlock{
 					$tplData['class'] = 'error';
 				}
 			}
-			
-      if($view == 'edit' || $qarr['id']>0)
+
+      if($view == 'edit' && (isset($qarr) && $qarr['id']>0))
       {
         $tplData['tpl'] = 'adminuser_edit.tpl';
         $records=users::get_admin_users($qarr);
@@ -63,11 +64,11 @@ class adminuserBlock{
       $tplData['arr_adminrole'] = AdminRole::get_id_name_pair();
 		}
 		else{
-      if($vars['id'] > 0 && trim($vars['action']) == 'changeStatusAdminUser') {
+      if(isset($vars['id']) && $vars['id'] > 0 && trim($vars['action']) == 'changeStatusAdminUser') {
 				users::change_status($vars['id']);
 			}
-      $tplData['sh_keyword'] = $vars['keyword'];
-			$records = users::get_admin_users(array('keyword'=>$vars['keyword'])); 
+      $tplData['sh_keyword'] = !empty($vars['keyword']) ? $vars['keyword'] : '';
+			$records = users::get_admin_users(array('keyword'=>$tplData['sh_keyword']));
 			$tplData['records'] = $records;
 		}
 		//echo '<pre>';print_r($records);

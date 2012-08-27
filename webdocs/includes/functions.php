@@ -328,7 +328,7 @@ function clean_special_character($text, $strtolower=1){
 	// replace all white space sections with a dash
 	$text = str_replace(' ', '-', $text);
 	// strip all non alphanum or -
-	$clean = ereg_replace("[^A-Za-z0-9-]", "", $text);
+	$clean = preg_replace("[^A-Za-z0-9-]", "", $text);
   $clean = str_replace(' ', '-', trim(str_replace('-', ' ', trim($clean))));
 	while(strpos($clean,"--")){
 		$clean=str_replace("--","-",$clean);

@@ -1,37 +1,37 @@
   <div class="module">
    <h2><span>Edit Admin User</span></h2>
-      
+
    <div class="module-body">
       <form action="" id="adminuserForm" enctype="multipart/form-data" method="post">
-         <?php 
+         <?php
          //extract($records);
-         if($msg){?>
+         if(isset($msg)){?>
           <div>
               <span class="notification n-<?=$class?>"><?=$msg?></span>
           </div>
-          <? } ?>   
+          <?php } ?>
           <div class="module-body-col1">
             <p>
                 <label>Name</label>
                 <input name="name" type="text" class="input-short" id="name" value="<?=$records['name']?>" />
             </p>
-            
+
             <p>
                 <label>Username</label>
                 <input name="username" type="text" class="input-short" id="username" value="<?=$records['username']?>" onBlur="javascript:check_if_username_unique(0)"/>
                 <input type="hidden" name="is_unique_username" id="is_unique_username" value="1" />
             </p>
-            
+
             <p>
                 <label>Password</label>
                 <input name="password" type="password" class="input-short" id="password" value="" />
             </p>
-            
+
             <p>
                 <label>Email</label>
                 <input name="email" type="text" class="input-short" id="email" value="<?=$records['email']?>" />
             </p>
-            
+
             <p>
                 <label>Role</label>
                 <?=get_dropdown ($arr_adminrole,'role_id',$records['role_id'],array("onChange"=>"showhideAdminUserInfo()"))?>
@@ -73,32 +73,32 @@
                 <label>Designation</label>
                 <input name="designation" type="text" class="input-medium" id="designation" value="<?=$records['designation']?>" />
             </p>
-      
+
             <p>
                 <label>Facebook URL</label>
                 <input name="fb_url" type="text" class="input-medium" id="fb_url" value="<?=$records['fb_url']?>" />
             </p>
-      
+
             <p>
                 <label>Twitter URL</label>
                 <input name="twitter_url" type="text" class="input-medium" id="twitter_url" value="<?=$records['twitter_url']?>" />
             </p>
-      
+
             <p>
                 <label>Google Plus URL</label>
                 <input name="google_plus_url" type="text" class="input-medium" id="google_plus_url" value="<?=$records['google_plus_url']?>" />
             </p>
-      
+
             <p>
                 <label>Office Phone</label>
                 <input name="office_phone" type="text" class="input-medium" id="office_phone" value="<?=$records['office_phone']?>" />
             </p>
-      
+
             <p>
                 <label>Home Phone</label>
                 <input name="home_phone" type="text" class="input-medium" id="home_phone" value="<?=$records['home_phone']?>" />
             </p>
-      
+
             <p>
                 <label>Mobile</label>
                 <input name="mobile" type="text" class="input-medium" id="mobile" value="<?=$records['mobile']?>" />
@@ -112,7 +112,7 @@
             <p>
             <fieldset>
                 <label>About</label>
-                <textarea name="about" id="about" rows="11" cols="42"><?php echo $records['about']?></textarea> 
+                <textarea name="about" id="about" rows="11" cols="42"><?php echo $records['about']?></textarea>
             </fieldset>
             </p>
             <p>
@@ -125,8 +125,8 @@
             <fieldset>
               <input type="hidden" name="action" id="adminuser_action" value="updatAdminUser" />
               <input type="hidden" name="id" id="id" value="<?php echo $records['id']; ?>" />
-              
-              <input class="submit-green" type="submit" value="Submit" /> 
+
+              <input class="submit-green" type="submit" value="Submit" />
               <input class="submit-gray" type="button" value="Cancel" onClick="javascript:window.location='<?php echo facile::$web_url;?>adminusers'"/>
             </fieldset>
           </div>

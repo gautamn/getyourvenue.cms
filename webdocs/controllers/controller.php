@@ -9,7 +9,7 @@ view::$jsFiles = Array(JSLIB_JQUERY, JSLIB_LOADER, JS_GLOBAL, JS_LOGIN, JS_MESSA
 view::$cssFiles = Array( CSS_LIGHTMODAL, CSS_MESSAGEBOX, CSS_GRID, CSS_IE, CSS_IE6, CSS_WYSIWYG, CSS_RESET, CSS_STYLES, CSS_TABLESORTER, CSS_THEMEBLUE, CSS_THICKBOX, CSS_STYLES1); // CSS_GLOBAL
 view::$bodyclass = 'homeinner';
 facile::$GLOBALS['cur_menu_tab'] = '';
-view::$submenu = $requestedPage.(($_REQUEST['view'])?'?view='.$_REQUEST['view']:'');
+view::$submenu = $requestedPage.(isset($_REQUEST['view']) ? '?view='.$_REQUEST['view']:'');
 //echo "<br>requestedPage: ".$_SESSION['requestedPage']." , ".$requestedPage;
 switch ($requestedPage) {
     case 'logout':
@@ -95,6 +95,14 @@ switch ($requestedPage) {
       //view::$callback = 'callbackhome';
       view::$jsFiles[] = JSLIB_AJAXLOADER;
       break;
+    case 'venuetype':
+      if (isset($_SESSION['admin_user_id']) && $_SESSION['admin_user_id'] > 0) {
+        view::$jsFiles[] = JS_VENUETYPE;
+        view::$blocks['middle'] = array('venueTypeBlock');
+      }else{
+        view::$jsInPage = ' document.location = JSWebURL;';
+      }
+      break;
     default:
       //view::$jsInPage = ' document.location = JSWebURL+"action/logout";';
       view::$bodyclass = 'homeinner';
@@ -113,7 +121,7 @@ if (isset($_POST['requesttype']) && $_POST['requesttype'] == 'lazyloading') {
 }
 
 if (isset($_POST['requesttype']) && $_POST['requesttype'] == 'ajaxloading') {
-    $_GET['page'] = $_POST['page'];
+    //$_GET['page'] = $_POST['page'];
     view::$renderMode = 'ajaxloading';
     $blocks = array($_POST['blocks']);
     $jsonresponse = view::renderBlockHtml($blocks);

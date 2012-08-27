@@ -17,12 +17,12 @@ class users{
 
   function setSession($params) {
     $_SESSION['admin_email'] = $params['email'];
-    $_SESSION['admin_user_name'] = $params['username'];     // $_SESSION['username'] = 
+    $_SESSION['admin_user_name'] = $params['username'];     // $_SESSION['username'] =
     $_SESSION['admin_name'] = $params['name'];
-    $_SESSION['admin_user_id'] = $params['id'];             // $_SESSION['user_id'] = 
+    $_SESSION['admin_user_id'] = $params['id'];             // $_SESSION['user_id'] =
     $_SESSION['admin_role_id'] = $params['role_id'];
-    $_SESSION['admin_user_status'] = $params['status'];     // $_SESSION['user_status'] = 
-    $_SESSION['admin_landing_url'] = trim($params['landing_url']);     // $_SESSION['user_status'] = 
+    $_SESSION['admin_user_status'] = $params['status'];     // $_SESSION['user_status'] =
+    $_SESSION['admin_landing_url'] = trim($params['landing_url']);     // $_SESSION['user_status'] =
     $_SESSION['admin_user_img'] = getArtworkURL('auser', getSEO($_SESSION['admin_user_id'],'admin_user').'_'.$_SESSION['admin_user_id'].'.jpg' ,'small');
     //self::updateLastLogin('sess_' . session_id(), $_SESSION['admin_user_id']);
   }
@@ -148,6 +148,7 @@ class users{
 		if(trim($id)!='')
 		{
       $user = self::adminUserDetails($id);
+      $cond = '';
       if($user['role_id']==1)
       {
         $join = "right";
@@ -158,21 +159,22 @@ class users{
         $cond = " AND user_id='".(int)$id."'";
       }
       $cond .= ($to_show == 1) ? " AND am.priority>=0 " : "";
-			$query="select * from admin_modules_users amu ".$join." join admin_modules am on am.id=amu.module_id where am.status=1 ".$cond." group by am.controller_file_name order by am.priority asc"; //echo $query;
+			$query="select * from admin_modules_users amu ".$join." join admin_modules am on am.id=amu.module_id where am.status=1 ".$cond." group by am.controller_file_name order by am.priority asc";
+      //echo $query;die;
 			$res = fDB::fetch_assoc_all($query);
-			$user_right=array();
-			$section_name=array();
+			$user_right = array();
+			$section_name= array();
       if(!empty($res['result']))
 			foreach($res['result'] as $row) {
-        $row['rights'] = ($user['role_id']==1) ? 1 : $row['rights'];
-        $right_module=trim($row['module']);
+        $row['rights']  = ($user['role_id']==1) ? 1 : $row['rights'];
+        $right_module   = trim($row['module']);
         $user_right[$right_module] = $row['rights'];
         if(!(in_array($row['section'],$section_name)))
         {
-          $section_name[]=$row['section'];
-          $group_section[$row['group']][]=$row['section'];
+          $section_name[] = $row['section'];
+          $group_section[$row['group']][] = $row['section'];
         }
-        $sec_name=strtolower(trim($row['section']));
+        $sec_name = strtolower(trim($row['section']));
         $cont_file_rel_url = $row['controller_file_name'];
         if(strpos($cont_file_rel_url,'?')!=false && (strpos($cont_file_rel_url,'~~~')!=false || strpos($cont_file_rel_url,'###')!=false))
         {
@@ -198,18 +200,18 @@ class users{
           }
           $cont_file_rel_url = $ary[0];
         }
-        $user_right[$sec_name][]=$row['title'].'^~~^'.$cont_file_rel_url.'^~~^'.$row['rights'];
-        $user_right[][]=$cont_file_rel_url;
-        $user_right['section']=$section_name;
-        $user_right['group']=$group_section;
+        $user_right[$sec_name][]= $row['title'].'^~~^'.$cont_file_rel_url.'^~~^'.$row['rights'];
+        $user_right[][]         = $cont_file_rel_url;
+        $user_right['section']  = $section_name;
+        $user_right['group']    = $group_section;
       }
-			//echo "<pre>".print_r($user_right,1)."</pre>"; die();
+			//echo "<pre>".print_r($user_right)."</pre>"; die();
 			return $user_right;
 		}
 	}
 
   function checkUrlAuthentication($user_id, $q1='', $params=array()){
-    unset($params[q]);
+    unset($params['q']);
     //echo "<br>".$q1."<br><pre>".print_r($params,1)."</pre><br>";
     $autenticationFreeURI = facile::$autenticationFreeURI; // array('forgotpassword','resetpassword','forgetpassword');
     $user = self::adminUserDetails($user_id);
@@ -268,7 +270,8 @@ class users{
     {
        $cond = " AND am.controller_file_name LIKE '".$fileNameV."?%'";
     }
-    $Query = "SELECT am.id, am.controller_file_name, amu.rights FROM admin_modules am JOIN admin_modules_users amu ON (amu.module_id=am.id) WHERE amu.user_id='".$user_id."' AND am.status = '1' ".$cond." ORDER BY amu.rights, am.priority ";    //echo $Query;
+    $Query = "SELECT am.id, am.controller_file_name, amu.rights FROM admin_modules am JOIN admin_modules_users amu ON (amu.module_id=am.id) WHERE amu.user_id='".$user_id."' AND am.status = '1' ".$cond." ORDER BY amu.rights, am.priority ";
+    ////echo $Query;
     $res = fDB::fetch_assoc_all($Query);
 		if($exactMatch)
     {
@@ -377,7 +380,7 @@ class users{
 		$res = fDB::fetch_assoc_all($query);
 		return $res['result'];
   }
-  
+
   public function where_str($arr) {
     if (is_array($arr)) {
       $data = array();
@@ -386,8 +389,8 @@ class users{
         if($k=='field_prefix'){continue;}
         if($k=='keyword'){
           if(trim($v)){
-            $v = str_replace(" ",'|',trim($v)); 
-            $and .= " ".$arr['field_prefix']."`name` REGEXP ? AND"; 
+            $v = str_replace(" ",'|',trim($v));
+            $and .= " ".$arr['field_prefix']."`name` REGEXP ? AND";
             array_push($data, trim($v));
           }
         }else{
@@ -401,12 +404,13 @@ class users{
     return false;
   }
 
-  function get_admin_users($arr = '', $orderBy = '', $joinArr = array(), $mapping_cols_ary = array()) { 
+  function get_admin_users($arr = '', $orderBy = '', $joinArr = array(), $mapping_cols_ary = array()) {
     $arr['field_prefix'] = 'au.';
     $whereArr = self::where_str($arr);
     $where = $whereArr['where'];
     $data = $whereArr['data'];
-    if($joinArr){
+    $col = $join = $cond = '';
+    if(!empty($joinArr)){
       $join = $joinArr['join'];
       $cond = $joinArr['cond'];
       $col = $joinArr['col'];
@@ -417,13 +421,13 @@ class users{
       }
     }
     $orderBy = (trim($orderBy)) ? ' ORDER BY '.$arr['field_prefix'].trim($orderBy) : ' ORDER BY au.id DESC';
-    $query = "SELECT au.*, ar.role as role_name, aui.`designation`, aui.`fb_url`, aui.`twitter_url`, aui.`google_plus_url`, aui.`office_phone`, aui.`home_phone`, aui.`mobile`, aui.`alternate_mobile`, aui.`about`, aui.`seo_key` ".$col . 
-            " FROM " . ADMINUSER . " au " . 
-            " LEFT JOIN " . ADMINROLE . " ar ON (ar.id = au.role_id) " . 
-            " LEFT JOIN " . ADMINUSERINFO . " aui ON (aui.admin_user_id = au.id) " . 
-              $join . " " . 
-              $where . " " . $cond . 
-            " GROUP BY au.id ". 
+    $query = "SELECT au.*, ar.role as role_name, aui.`designation`, aui.`fb_url`, aui.`twitter_url`, aui.`google_plus_url`, aui.`office_phone`, aui.`home_phone`, aui.`mobile`, aui.`alternate_mobile`, aui.`about`, aui.`seo_key` ".$col .
+            " FROM " . ADMINUSER . " au " .
+            " LEFT JOIN " . ADMINROLE . " ar ON (ar.id = au.role_id) " .
+            " LEFT JOIN " . ADMINUSERINFO . " aui ON (aui.admin_user_id = au.id) " .
+              $join . " " .
+              $where . " " . $cond .
+            " GROUP BY au.id ".
               $orderBy; //echo $query."<pre>".print_r($data,1)."</pre>";
     $res = fDB::fetch_assoc_all($query, $data);
     return $row = $res['result'];
@@ -487,7 +491,7 @@ class users{
                   $dataImg = array($img,$ret);
                   fDB::query($queryImg, $dataImg);
                 }
-                
+
                 if($ret > 0 && $_POST['role_id']==2){
 
                   $_POST['admin_user_id'] = $ret ;
@@ -500,7 +504,7 @@ class users{
             }
         }
     }
-    
+
     public function update_admin_user_info($arr = '') {
         global $ADMINUSERINFOCOL;
         if (isset($_POST)) {
@@ -534,12 +538,12 @@ class users{
             }
         }
     }
-    
+
     public function update_admin_modules_users($arr = '') {
-      $query = 'DELETE FROM '.ADMINMODULESUSERS.' WHERE user_id=?';  
+      $query = 'DELETE FROM '.ADMINMODULESUSERS.' WHERE user_id=?';
       $data = array($arr['user_id']);
       fDB::query($query, $data);
-      
+
       if($arr['role_id']){
         $rows = self::getUserDefaultModules($arr['role_id']);
         foreach($rows as $row){
@@ -560,7 +564,7 @@ class users{
     }
 
     public function check_admin_user_info($arr = '') {
-        
+
         $whereArr = self::where_str($arr);
         $where = $whereArr['where'];
         $data = $whereArr['data'];
@@ -604,12 +608,12 @@ class users{
           if($_SESSION['admin_role_id'] == 2)
               $cond .= " AND id in (".$_SESSION['admin_user_id'].") ";
         }
-        
+
         $query = "SELECT id, name FROM " . ADMINUSER . " WHERE 1=1 and status=1 ".$cond." ORDER BY `name`" ;
         $row = fDB::fetch_assoc_all($query);
         return $row['result'];
     }
-    
-    
+
+
 }
 ?>

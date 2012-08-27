@@ -52,6 +52,7 @@ define("JSLIB_FORM", "lib/jquery.form");
 define("JS_READERS_CORNER", "readers_corner");
 define("JS_ALLIED_SERVICES", "allied_services");
 define("JS_LEADS","leads");
+define("JS_VENUETYPE", "venuetype");
 
 define('JS_SEPRATOR','###');
 

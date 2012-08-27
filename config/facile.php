@@ -67,7 +67,7 @@ facile::$web_gutterskin_path = $path . 'webdocs/assets/gutterskin/';
 
 facile::$web_url = $web_url;
 facile::$web_url_ui = $web_url_ui;
-facile::$geo_api = $geo_api;
+
 facile::$theme_url = $web_static_url."interface/skins/default/";
 facile::$jsbaseurl = $web_static_url."interface/js/";
 facile::$autenticationFreeURI = array('forgotpassword','resetpassword','forgetpassword');
@@ -94,7 +94,7 @@ facile::$akamai_sourcefile_url = facile::$akamai_url.'tangerine/vodupload/';
 /**
  * @desc set the session management
  */
-if($FACILE['sessionmode'] == 'memcache'){
+if(isset($FACILE['sessionmode']) && $FACILE['sessionmode'] == 'memcache'){
   include facile::$path_core . 'fSession.php';
   $sessionObj = new fSession($FACILE['sessioncache']);
 }
@@ -143,7 +143,7 @@ class facile{
 	public static $path_blocks;
 	public static $path_actions;
 	public static $web_url;
-	public static $geo_api;
+
 	public static $web_static_url;
 	public static $web_assets_url;
 

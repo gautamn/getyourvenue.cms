@@ -2,12 +2,8 @@
     <div>
         <span class="notification n-<?php echo $class;?>"><?php echo $msg;?></span>
     </div>
-<?php }
-if($totalRocords>0){
-    //view::$jsInPage .= " tablesort();";
-}
-?>
-<h1 id="pgHeading">Venue</h1>
+<?php }?>
+<h1 id="pgHeading">Venue Type</h1>
 <div class="homeButton"><a href="index.php">Home</a></div>
 
 <div class="module">
@@ -51,7 +47,7 @@ if($totalRocords>0){
               <?php
               foreach($records as $key => $rows) {
               ?>
-                <tr>
+                <tr class="<?php echo ($key%2==0)? 'even' : 'odd';?>">
                     <td class="align-center"><?php echo ($key+RECORDS_PER_PAGE*($currPage-1)+1);?></td>
                     <td><a href="javascript:void(0);" onClick="javascript:showVenueDetail('<?php echo $rows["id"];?>');" title="<?php echo $rows['name'];?>"><?php echo $rows['name'];?></a></td>
                     <td><?php echo $rows['address1'].' '.$rows['address2'];?></td>

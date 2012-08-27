@@ -184,12 +184,12 @@ function removeCropPictures($imagename, $blockName)
 
 function getPaginationHtml(&$param, $totalRecords, $onClick='', $currPage=1, $rowsPerPage=RECORDS_PER_PAGE, $pagesPerPage=5)
     {
-      $totRows = (int)$totRows;
       $currPage = ($currPage>0)?(int)$currPage:1;
       $rowsPerPage = (int)$rowsPerPage;
       $totalPages = ceil($totalRecords/$rowsPerPage);
 
       $onClick = isset($onClick) ? $onClick : 'void(0);';
+      $pgHtml = '';
 
       $pgHtml .= '<input type="hidden" id="currPage" name="currPage" value="'.$currPage.'" />';
       $pgHtml .= '<div class="totalrds">Total Records: <b>'.$totalRecords.'</b></div>';
