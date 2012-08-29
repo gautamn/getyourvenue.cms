@@ -17,19 +17,19 @@ if(!empty($msg)){ ?>
 <div class="module">
   <h2><span> Search</span></h2>
   <div class="module-table-body">
-    <form action="" method="post" id="searchVenue" name="searchVenue">
+    <form action="javascript:;" method="post" id="searchAlliedServices" name="searchAlliedServices">
       <table border="0" class="NoBorder">
         <tr>
           <td class="wid35prcnt">
-              <span class="FieldBox">Keyword : <input type="text" class="input-medium" name="sh_keyword" id="sh_keyword" value="<?php echo $sh_keyword?>"></span>
-              <span class="FieldBox">Status :
+              <span class="FieldBox">Keyword: <input type="text" class="input-medium" name="sh_keyword" id="sh_keyword" value="<?php echo $sh_keyword?>"></span>
+              <span class="FieldBox">Status:
                 <select id="sh_status" name="sh_status">
                   <option value="" <?php echo (($sh_status=='') ?'selected':''); ?>>All</option>
-                  <option value="N" <?php echo (($sh_status=='N') ? 'selected':'');?>>Unpublished</option>
-                  <option value="Y" <?php echo (($sh_status=='Y') ? 'selected':'');?>>Published</option>
+                  <option value="0" <?php echo (($sh_status=='0') ? 'selected':'');?>>Unpublished</option>
+                  <option value="1" <?php echo (($sh_status=='1') ? 'selected':'');?>>Published</option>
                 </select>
                 </span>
-              <span class="FieldBox"><input class="submit-green" id="btn_search" onclick="javascript:searchVenues();" type="button" value="Search" /></span>
+              <span class="FieldBox"><input class="submit-green" id="btn_search" onclick="javascript:searchAllied();" type="button" value="Search" /></span>
             </td>
         </tr>
       </table>
@@ -46,10 +46,10 @@ if(!empty($msg)){ ?>
                 <thead>
                     <tr>
                         <th style="width:5%">#</th>
-                        <th style="width:25%">Venue Name</th>
-                        <th style="width:45%">Place</th>
+                        <th style="width:25%">Service Name</th>
+                        <th style="width:45%">Title</th>
                         <th style="width:15%">Created On</th>
-                        <th style="width:10%"></th>
+                        <th style="width:10%">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,13 +58,13 @@ if(!empty($msg)){ ?>
                 ?>
                     <tr>
                         <td class="align-center"><?php echo ($key+RECORDS_PER_PAGE*($currPage-1)+1);?></td>
-                        <td><a href="javascript:void(0);" onClick="javascript:showVenueDetail('<?php echo $rows["id"];?>');" title="<?php echo $rows['name'];?>"><?php echo $rows['name'];?></a></td>
-                        <td><?php echo $rows['address1'].' '.$rows['address2'];?></td>
-                        <td><?php echo $rows['createdate'];?></td>
+                        <td><a href="javascript:void(0);" onClick="javascript:showAlliedServiceDetail('<?php echo $rows["SEO_ID"];?>');" title="<?php echo $rows['HEADING'];?>"><?php echo $rows['HEADING'];?></a></td>
+                        <td><?php echo $rows['TITLE'];?></td>
+                        <td><?php echo $rows['CREATE_TIMESTAMP'];?></td>
                         <td>
-                            <a title="Change Status" href="javascript:void(0);" onClick="javascript:changeStatus('<?php echo $rows["id"]?>');"><img src="<?php echo facile::$theme_url;?>images/<?php echo (($rows['is_active']=='Y')?'tick-':'minus-')?>circle.gif" width="16" height="16" alt="Change Status" /></a>
-                            <a title="Edit" href="<?php echo facile::$web_url;?>venue?view=edit&id=<?php echo $rows['id']?>"><img src="<?php echo facile::$theme_url;?>images/pencil.gif" width="16" height="16" alt="edit" /></a>
-                            <a title="View Details" href="javascript:void(0);" onClick="javascript:showVenueDetail('<?php echo $rows["id"]?>');"><img src="<?php echo facile::$theme_url;?>images/preview.png" width="16" height="16" alt="View Details" /></a>
+                            <a title="Change Status" href="javascript:void(0);" onClick="javascript:changeStatus('<?php echo $rows["SEO_ID"]?>');"><img src="<?php echo facile::$theme_url;?>images/<?php echo (($rows['IS_ACTIVE']==1)?'tick-':'minus-');?>circle.gif" width="16" height="16" alt="Change Status" /></a>
+                            <a title="Edit" href="<?php echo facile::$web_url;?>alliedservices?view=edit&id=<?php echo $rows['SEO_ID']?>"><img src="<?php echo facile::$theme_url;?>images/pencil.gif" width="16" height="16" alt="edit" /></a>
+                            <a title="View Details" href="javascript:void(0);" onClick="javascript:showAlliedServiceDetail('<?php echo $rows["SEO_ID"]?>');"><img src="<?php echo facile::$theme_url;?>images/preview.png" width="16" height="16" alt="View Details" /></a>
                         </td>
                     </tr>
                 <?php } ?>

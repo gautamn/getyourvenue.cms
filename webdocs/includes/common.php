@@ -7,7 +7,7 @@ include_once facile::$path_includes . 'functions.php';
 include_once facile::$path_includes . 'uiFunctions.php';
 include_once facile::$path_classes . 'users/users.php';
 if($_SESSION['requestedPage'] != 'home'){
-  if(users::checkUrlAuthentication($_SESSION['admin_user_id'], $_SESSION['requestedPage'], $_GET)==false){
+  if(isset($_SESSION['admin_user_id']) && users::checkUrlAuthentication($_SESSION['admin_user_id'], $_SESSION['requestedPage'], $_GET)==false){
     $_SESSION['requestedPage'] = $requestedPage = 'home';
   }
 }

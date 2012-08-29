@@ -3,7 +3,7 @@
         <span class="notification n-<?php echo $class;?>"><?php echo $msg;?></span>
     </div>
 <?php }?>
-<h1 id="pgHeading">Venue Type</h1>
+<h1 id="pgHeading">Venue</h1>
 <div class="homeButton"><a href="index.php">Home</a></div>
 
 <div class="module">

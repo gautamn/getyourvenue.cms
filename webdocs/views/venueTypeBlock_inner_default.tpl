@@ -3,14 +3,14 @@
         <span class="notification n-<?php echo $class;?>"><?php echo $msg;?></span>
     </div>
 <?php }?>
-<h1 id="pgHeading">Venue</h1>
+<h1 id="pgHeading">Venue Type</h1>
 <div class="homeButton"><a href="index.php">Home</a></div>
 
 <div class="module">
 <h2><span> Search</span></h2>
 <div class="module-table-body">
   <form action="" method="post" id="searchVenue" name="searchVenue">
-    <table border=0  class="NoBorder">
+    <table border="0" class="NoBorder">
       <tr>
         <td class="wid35prcnt">
             <span class="FieldBox">Keyword : <input type="text" class="input-medium" name="sh_keyword" id="sh_keyword" value="<?php echo $sh_keyword?>"></span>

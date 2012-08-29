@@ -1,5 +1,4 @@
 <?php
-
 include_once facile::$path_classes . "/venue/venue.php";
 //include_once facile::$path_classes . "/image/image.php";
 

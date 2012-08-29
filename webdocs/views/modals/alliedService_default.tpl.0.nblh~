@@ -5,8 +5,8 @@ $arrInfo = array("1"=>"Active","0"=>"In-active");
   <div style="float:left;width:100%;">
     <table cellspacing="10">
       <tr>
-         <td width="25%" align="right"> <b>Venue Name:</b> </td>
-         <td width="75%" align="left" style="padding:5px;"> <?php echo $records['name'];?> [<b>Rank: <?php echo $records['rank'];?></b>]</td>
+         <td width="25%" align="right"> <b>Allied Service:</b> </td>
+         <td width="75%" align="left" style="padding:5px;"> <?php echo $records['HEADING'];?></td>
        </tr>
        <?php if($records['address1']!="") { ?>
        <tr>

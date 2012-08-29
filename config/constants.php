@@ -86,6 +86,8 @@ define('VENUE_TYPE_MAPPING', 'venue_type_mapping');
 define('VENUE_REGION', 'region');
 define('VENUE_POPULAR_CHOICE', 'popular_choice');
 define('BOOK_NOW', 'book_now');
+//alied services
+define('ALLIED_SERVICES', 'allied_services');
 
 define('ROLES','roles');
 define('SEO','seo');

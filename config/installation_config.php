@@ -70,5 +70,5 @@ $web_url_ui = 'http://localhost/gyvcmsdemo/webdocs/';
 
 
 
-ini_set('display_errors','on');
+ini_set('display_errors','On');
 error_reporting(E_ALL);

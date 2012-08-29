@@ -7,7 +7,7 @@
     }, "");
 
 		// validate signin form on keyup and submit
-		$("#venueForm").validate({
+		$("#alliedServiceForm").validate({
 			rules: {
 				'region': {required: true},
 				'venueType': {required: true},

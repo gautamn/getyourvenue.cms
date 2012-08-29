@@ -94,7 +94,8 @@ Class fDB
     }
 		$sql = self::prepare_query($sql, $args);
     //echo "<br>SQL: ".$sql; if(strtolower(substr(trim($sql),0,6))=='insert' || strtolower(substr(trim($sql),0,6))=='update'){ /*die();*/ }
-		$query = mysql_query($sql, fDB::$_link[$dsn_key][$query_type]); //echo "<br>".$sql;
+		$query = mysql_query($sql, fDB::$_link[$dsn_key][$query_type]);
+    //echo "<br>".$sql;
 		if (!$query) {
 			die(mysql_error() . "<br/>Query:: $sql");
 			//Logger::log(" Throwing exception DB_QUERY_FAILED | Message: ".mysql_error()." | Query: ".$sql);
