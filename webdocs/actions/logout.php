@@ -3,7 +3,7 @@
 include_once facile::$path_classes . "users/users.php";
 session_start();
 users::unsetSession();
-$url = $_COOKIE['initlogouturl'];
+//$url = isset()$_COOKIE['initlogouturl'];
 if(empty($url)){
   $url = facile::$web_url;
 }

@@ -1,4 +1,4 @@
-	$(function()
+/*	$(function()
   {
     $('#about').wysiwyg(
     {
@@ -25,7 +25,7 @@
       decreaseFontSize : { visible : false }
     }
     } );
-  });
+  });*/
 
   $().ready(function() {
 

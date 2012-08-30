@@ -37,7 +37,7 @@ class alliedServicesBlock{
         $id     = isset($vars['id']) ? trim($vars['id']) : '';
         $action = isset($vars['action']) ? $vars['action'] : '';
         $sh_keyword = isset($vars['sh_keyword']) ? trim($vars['sh_keyword']) : '';
-        $sh_status = isset($vars['sh_status']) ? trim($vars['sh_status']) : '';
+        $sh_status = isset($vars['sh_status']) ? $vars['sh_status'] : '';
 
         if (!empty($id) && $action == 'changeStatus') {//change status
             Allied_Services::change_status($id);
@@ -56,8 +56,8 @@ class alliedServicesBlock{
             if(count($arrKeyword)>0)
               $qarr[] = " (".implode(" OR ",$arrKeyword ).") ";
         }
-        if($sh_status!=""){
-          $qarr[] = " IS_ACTIVE='".$sh_status."'";
+        if(isset($sh_status) && $sh_status!=''){
+          $qarr[] = " IS_ACTIVE=".$sh_status." ";
         }
         $tplData['sh_keyword'] = $sh_keyword;
         $tplData['sh_status'] = $sh_status;

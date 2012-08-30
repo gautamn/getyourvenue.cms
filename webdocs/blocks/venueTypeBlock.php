@@ -3,15 +3,14 @@
  * @auther: Manish Sahu
  * @created On:
  */
-
 include_once facile::$path_classes . "/venue/venue_type.php";
-//include_once facile::$path_classes . "/image/image.php";
 
 class venueTypeBlock {
 
   function process() {
     is_loggedin();
     $view = isset($_REQUEST['view']) ? $_REQUEST['view'] : '';
+    view::$mainmenu = 'venue';
 
     switch ($view) {
 

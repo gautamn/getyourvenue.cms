@@ -10,7 +10,7 @@ class Allied_Services {
      */
     public function getVenueListing($cond, $getTotalRecords=0, $limit = '', $orderBy = '') {
         $data = array();
-        $where = '1';
+        $where = '1 ';
 
         if (count($cond) > 0) {
             $where = implode(" AND ", $cond);
@@ -51,7 +51,7 @@ class Allied_Services {
     public function change_status($aid) {
        if(empty($aid))
          return;
-       $query = "SELECT * FROM " . ALLIED_SERVICES . " WHERE SEO_ID='" . $aid . "'";
+       $query = "SELECT IS_ACTIVE FROM " . ALLIED_SERVICES . " WHERE SEO_ID='" . $aid . "'";
        $row = fDB::fetch_assoc_first($query);
        $status = ($row['IS_ACTIVE'] == 1) ? 0 : 1;
        $query = "UPDATE " . ALLIED_SERVICES . " SET IS_ACTIVE=" . $status . " WHERE SEO_ID='" . $aid . "'";

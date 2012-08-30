@@ -223,7 +223,7 @@ span#admin a {
 		#height: 48px;
 		width:auto; clear:both;
 		border-top:1px solid #909fd1;
-		width:%;
+		width:100%;
 		margin:auto;
 	}
 
@@ -234,19 +234,19 @@ span#admin a {
 float:left; margin-top:40px;margin-bottom:0px;  margin-left:10px;
 }
 
-.iplMainNav{
+.gyvMainNav{
 float:left;  clear:left; margin-top:14px;
 color:#FF0000; margin-left:12px; width:835px;
 }
 
-.iplMainNav li a{
+.gyvMainNav li a{
 color:#767575 !important; font:bold 11px Arial, Helvetica, sans-serif; padding:0 5px;
 text-transform:uppercase;
 }
 
 
 
-.iplMainNav li a:hover , .iplMainNav li#current a{
+.gyvMainNav li a:hover , .gyvMainNav li#current a{
  /*background:url(../images/navro.png) no-repeat;*/
  color:#000!important;
  border-bottom:2px solid #273d88;
@@ -260,7 +260,7 @@ li a.noHover:hover{border-bottom:none; padding-bottom:8px!important;}
 
 
 
-.iplMainNav li#current a{ background:#0c1c51; color:#FFFFFF !important;}
+.gyvMainNav li#current a{ background:#0c1c51; color:#FFFFFF !important;}
 
 
 #subnav ul {

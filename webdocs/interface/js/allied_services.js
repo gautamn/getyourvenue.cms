@@ -34,8 +34,8 @@
 	});
 
 function changeStatus(Id){
-    var sh_keyword = $('#sh_keyword').val();
-    var sh_status = $('#sh_status').val();
+    var sh_keyword = $.trim($('#sh_keyword').val());
+    var sh_status = $.trim($('#sh_status').val());
     ajaxloader.load('alliedServicesBlock',[{"sh_keyword":sh_keyword,"sh_status":sh_status,action:"changeStatus",id:Id}],true);
 }
 
@@ -56,7 +56,7 @@ $('#btn_cancel').click(function(){
 
 $('#btn_search').click(function(){
   if(IsValidSubmit()){
-    $('#searchAlliedServices').submit();
+   // $('#searchAlliedServices').submit();
   }
 });
 

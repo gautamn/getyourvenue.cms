@@ -7,7 +7,7 @@ include_once facile::$path_classes . "/adminrole/adminrole.php";
 class users{
 
   function processLogin($params) {
-    $Query = "select * from " . ADMINUSER . " WHERE username = ? AND password = ? AND status = 1";
+    $Query = "select * from " . ADMINUSER . " where username = ? AND password = ? AND status = 1";
     $data = array($params['username'],md5($params['password']));
     $res = fDB::fetch_assoc_all($Query, $data);
     $row = current(end($res));
@@ -147,8 +147,8 @@ class users{
 	{
 		if(trim($id)!='')
 		{
-      $user = self::adminUserDetails($id);
       $cond = '';
+      $user = self::adminUserDetails($id);
       if($user['role_id']==1)
       {
         $join = "right";
@@ -159,22 +159,21 @@ class users{
         $cond = " AND user_id='".(int)$id."'";
       }
       $cond .= ($to_show == 1) ? " AND am.priority>=0 " : "";
-			$query="select * from admin_modules_users amu ".$join." join admin_modules am on am.id=amu.module_id where am.status=1 ".$cond." group by am.controller_file_name order by am.priority asc";
-      //echo $query;die;
+			$query="select * from admin_modules_users amu ".$join." join admin_modules am on am.id=amu.module_id where am.status=1 ".$cond." group by am.controller_file_name order by am.priority asc"; //echo $query;
 			$res = fDB::fetch_assoc_all($query);
-			$user_right = array();
-			$section_name= array();
+			$user_right=array();
+			$section_name=array();
       if(!empty($res['result']))
 			foreach($res['result'] as $row) {
-        $row['rights']  = ($user['role_id']==1) ? 1 : $row['rights'];
-        $right_module   = trim($row['module']);
+        $row['rights'] = ($user['role_id']==1) ? 1 : $row['rights'];
+        $right_module=trim($row['module']);
         $user_right[$right_module] = $row['rights'];
         if(!(in_array($row['section'],$section_name)))
         {
-          $section_name[] = $row['section'];
-          $group_section[$row['group']][] = $row['section'];
+          $section_name[]=$row['section'];
+          $group_section[$row['group']][]=$row['section'];
         }
-        $sec_name = strtolower(trim($row['section']));
+        $sec_name=strtolower(trim($row['section']));
         $cont_file_rel_url = $row['controller_file_name'];
         if(strpos($cont_file_rel_url,'?')!=false && (strpos($cont_file_rel_url,'~~~')!=false || strpos($cont_file_rel_url,'###')!=false))
         {
@@ -200,12 +199,12 @@ class users{
           }
           $cont_file_rel_url = $ary[0];
         }
-        $user_right[$sec_name][]= $row['title'].'^~~^'.$cont_file_rel_url.'^~~^'.$row['rights'];
-        $user_right[][]         = $cont_file_rel_url;
-        $user_right['section']  = $section_name;
-        $user_right['group']    = $group_section;
+        $user_right[$sec_name][]=$row['title'].'^~~^'.$cont_file_rel_url.'^~~^'.$row['rights'];
+        $user_right[][]=$cont_file_rel_url;
+        $user_right['section']=$section_name;
+        $user_right['group']=$group_section;
       }
-			//echo "<pre>".print_r($user_right)."</pre>"; die();
+			//echo "<pre>".print_r($user_right,1)."</pre>"; die();
 			return $user_right;
 		}
 	}
@@ -270,8 +269,7 @@ class users{
     {
        $cond = " AND am.controller_file_name LIKE '".$fileNameV."?%'";
     }
-    $Query = "SELECT am.id, am.controller_file_name, amu.rights FROM admin_modules am JOIN admin_modules_users amu ON (amu.module_id=am.id) WHERE amu.user_id='".$user_id."' AND am.status = '1' ".$cond." ORDER BY amu.rights, am.priority ";
-    ////echo $Query;
+    $Query = "SELECT am.id, am.controller_file_name, amu.rights FROM admin_modules am JOIN admin_modules_users amu ON (amu.module_id=am.id) WHERE amu.user_id='".$user_id."' AND am.status = '1' ".$cond." ORDER BY amu.rights, am.priority ";    //echo $Query;
     $res = fDB::fetch_assoc_all($Query);
 		if($exactMatch)
     {
@@ -409,8 +407,8 @@ class users{
     $whereArr = self::where_str($arr);
     $where = $whereArr['where'];
     $data = $whereArr['data'];
-    $col = $join = $cond = '';
-    if(!empty($joinArr)){
+    $cond = '';
+    if($joinArr){
       $join = $joinArr['join'];
       $cond = $joinArr['cond'];
       $col = $joinArr['col'];

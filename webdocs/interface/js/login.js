@@ -60,12 +60,6 @@ $(document).ready(function (){
 });
 
 $('#logout').live('click',function(){
-    var ref = document.location.hash.substr(1);
-    var refLocation = window.location.href;
-    if($.trim(ref)){
-      var refLocation = refLocation.substr(0, window.location.href.indexOf('#'));
-    }
-    createCookie('initlogouturl',refLocation,1);
     window.location.href = JSWebURL+'action/logout';
   });
 
@@ -287,7 +281,7 @@ function changePasswordValidate(){
   $('.error').each(function (){
     $(this).remove();
   });
-  
+
   if(clientValidation){
     sendChangePasswordRequest();
   }
@@ -336,7 +330,7 @@ changeHtml = function (params){
     $('#fname').html(parms.username);
     fillDetails(parms['username']);
     var lu = '';
-    
+
     if(parms['landing_url']){
       lu = parms['landing_url'];
     }

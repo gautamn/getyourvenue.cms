@@ -1,3 +1,10 @@
+<?php
+
+/* @desc: php file
+ * @auther: Manish Sahu
+ * @created On:
+ */
+?>
 <!-- Initiate tablesorter script -->
 <!-- Example table -->
                 <div class="module">
@@ -5,7 +12,7 @@
                   <h2><span> Search</span></h2>
                   <div class="module-table-body">
                     <form action="" method="post" id="frmsearchadminusers" name="frmsearchadminusers" novalidate="novalidate">
-                      <table border="0">
+                      <table class="NoBorder" border="0">
                         <tbody><tr>
                           <td width="30%">
                             Keyword : <input type="text" name="sh_keyword" id="sh_keyword" value="<?php echo $sh_keyword?>">
@@ -24,9 +31,8 @@
 
                 <div class="module">
                 	<h2><span>Admin Users</span></h2>
-                  <?php if(!empty($records)){?>
                     <div class="module-table-body">
-                    	<form action="">
+                      <?php if(!empty($records)){?>
                         <table id="myTable" class="tablesorter">
                         	<thead>
                                 <tr>
@@ -39,23 +45,24 @@
                             </thead>
                             <tbody>
                             <?php
-                            foreach($records as $i=> $row) {
+                              foreach($records as $i=> $row) {
                             ?>
-                                <tr>
+                                <tr class="<?php echo ($i%2==0)? 'even' : 'odd';?>">
                                     <td class="align-center"><?php echo ($i+1);?></td>
                                     <td><a href="<?php echo facile::$web_url;?>adminusers?view=edit&id=<?php echo $row['id']?>" title="<?php echo $row['name']?>"><?=chop_string($row['name'],50)?></a></td>
                                     <td><?=chop_string($row['email'],50)?></td>
                                     <td><?=chop_string($row['role_name'])?></td>
                                     <td>
-                                    	  <a href="javascript:void(0);" onClick="javascript:changeStatusAdminUser('<?php echo $row['id']?>','<?php echo $row['status']?>')"><img src="<?php echo facile::$theme_url;?>images/<?php echo (($row['status']==1)?'minus-':'tick-')?>circle.gif" width="16" height="16" alt="published" /></a>
+                                    	  <a href="javascript:void(0);" onClick="javascript:changeStatusAdminUser('<?php echo $row['id']?>','<?php echo $row['status']?>')"><img src="<?php echo facile::$theme_url;?>images/<?php echo (($row['status']==1)?'tick-':'minus-')?>circle.gif" width="16" height="16" alt="published" /></a>
                                         <a href="<?php echo facile::$web_url;?>adminusers?view=edit&id=<?php echo $row['id'];?>"><img src="<?php echo facile::$theme_url;?>images/pencil.gif" width="16" height="16" alt="edit" /></a>
                                     </td>
                                 </tr>
-                             <?php } ?>
+                             <?php }?>
                             </tbody>
                         </table>
-                      </form>
                     <div style="clear: both"></div>
+                    <?php }else{
+                              echo "<div>No Record found.</div>";
+                            }?>
                  </div> <!-- End .module-table-body -->
-                 <?php }?>
             </div> <!-- End .module -->

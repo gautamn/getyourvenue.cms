@@ -24,7 +24,7 @@ if(!empty($msg)){ ?>
               <span class="FieldBox">Keyword: <input type="text" class="input-medium" name="sh_keyword" id="sh_keyword" value="<?php echo $sh_keyword?>"></span>
               <span class="FieldBox">Status:
                 <select id="sh_status" name="sh_status">
-                  <option value="" <?php echo (($sh_status=='') ?'selected':''); ?>>All</option>
+                  <option value="" <?php echo (($sh_status=='') ? 'selected':'');?>>All</option>
                   <option value="0" <?php echo (($sh_status=='0') ? 'selected':'');?>>Unpublished</option>
                   <option value="1" <?php echo (($sh_status=='1') ? 'selected':'');?>>Published</option>
                 </select>
@@ -56,7 +56,7 @@ if(!empty($msg)){ ?>
                 <?php
                 foreach($records as $key => $rows) {
                 ?>
-                    <tr>
+                    <tr class="<?php echo ($key%2==0)? 'even' : 'odd';?>">
                         <td class="align-center"><?php echo ($key+RECORDS_PER_PAGE*($currPage-1)+1);?></td>
                         <td><a href="javascript:void(0);" onClick="javascript:showAlliedServiceDetail('<?php echo $rows["SEO_ID"];?>');" title="<?php echo $rows['HEADING'];?>"><?php echo $rows['HEADING'];?></a></td>
                         <td><?php echo $rows['TITLE'];?></td>
