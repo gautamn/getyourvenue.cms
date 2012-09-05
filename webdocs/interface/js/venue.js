@@ -7,18 +7,18 @@
     }, "");
 
 		// validate signin form on keyup and submit
-		$("#alliedServiceForm").validate({
+		$("#venueForm").validate({
 			rules: {
 				'region': {required: true},
 				'venueType': {required: true},
 				'venuecapacity': {required: true},
 				'popular': {required: true},
-				'meta_title': {required: true, checkMetaKeyword:true},
-				'meta_description': {required: true, checkMetaKeyword:true},
-				'iframe_code': {required: true},
+				//'meta_title': {required: true, checkMetaKeyword:true},
+				//'meta_description': {required: true, checkMetaKeyword:true},
+				'iframe_code': {required: true, url:true},
         'venue_name': {required: true},
         'seo_title': {required: true},
-        'venue_rank': {required: true},
+        'venue_rank': {required: true, digits:true},
         'address1': {required: true},
         //'address2': {required: true},
         'image_alt': {required: true},
@@ -30,17 +30,17 @@
         'venueType': {required:"Please select Venue Type."},
         'venuecapacity': {required:"Please select venue capacity."},
 				'popular': {required:"Please select popularity."},
-        'meta_title': {required:"Please enter Meta Keyword", checkMetaKeyword:"Please enter more than 2 Meta Title"},
-        'meta_description': {required:"Please enter Meta Keyword", checkMetaKeyword:"Please enter more than 2 Meta Keyword"},
-				'iframe_code': {required:"Please enter Google Map code."},
+        //'meta_title': {required:"Please enter Meta Keyword.", checkMetaKeyword:"Please enter more than 2 Meta Title."},
+        //'meta_description': {required:"Please enter Meta Keyword.", checkMetaKeyword:"Please enter more than 2 Meta Keyword."},
+				'iframe_code': {required:"Please enter Google Map code.", url:"Please enter valid google map url."},
 				'venue_name': {required: "Please enter venue name."},
         'seo_title': {required: "Please enter SEO Id."},
         'venue_rank': {required: "Please enter venue rank."},
         'address1': {required: "Please enter address."},
         //'address2': {required: "Please enter address."},
         'image_alt': {required: "Please enter image text for seo."},
-        'description': {required: "Please enter description"},
-        'meta_keyword': {required:"Please enter Meta Keyword", checkMetaKeyword:"Please enter more than 2 Meta Title"}
+        'description': {required: "Please enter description."},
+        'meta_keyword': {required:"Please enter Meta Keyword.", checkMetaKeyword:"Please enter more than 2 Meta Title."}
 			}
 		});
 	});
@@ -91,9 +91,11 @@ function IsValidSubmit(){
 }
 
 function showVenueDetail(Id){
-  lightModal.load(JSWebURL+'modal/venue-detail?Id='+Id,false,true,380,500,'Venue Detail',function (){
-    $('#Action').focus();
-  });
+  lightModal.load(JSWebURL+'modal/venue-detail?Id='+Id,false,true,450,500,'Venue Detail');
+}
+
+function showVenueImages(Id){
+  lightModal.load(JSWebURL+'modal/venue-images?Id='+Id,false,true,500,600,'Venue Images');
 }
 
 $('#venue_name').live('blur',function(){

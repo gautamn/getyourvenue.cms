@@ -38,9 +38,9 @@
                   <tr>
                       <th style="width:5%">#</th>
                       <th style="width:25%">Venue Name</th>
-                      <th style="width:45%">Place</th>
+                      <th style="width:43%">Place</th>
                       <th style="width:17%">Created On</th>
-                      <th style="width:8%">Action</th>
+                      <th style="width:10%">Action</th>
                   </tr>
               </thead>
               <tbody>
@@ -55,7 +55,8 @@
                     <td>
                         <a title="Change Status" href="javascript:void(0);" onClick="javascript:changeStatus('<?php echo $rows["id"]?>');"><img src="<?php echo facile::$theme_url;?>images/<?php echo (($rows['is_active']==1)?'tick-':'minus-');?>circle.gif" width="16" height="16" alt="Change Status" /></a>
                         <a title="Edit" href="<?php echo facile::$web_url;?>venue?view=edit&id=<?php echo $rows['id'];?>"><img src="<?php echo facile::$theme_url;?>images/pencil.gif" width="16" height="16" alt="edit" /></a>
-                        <a title="View Details" href="javascript:void(0);" onClick="javascript:showVenueDetail('<?php echo $rows["id"]?>');"><img src="<?php echo facile::$theme_url;?>images/preview.png" width="16" height="16" alt="View Details" /></a>
+                        <a title="Gallery Images" href="javascript:void(0);" onClick="javascript:showVenueImages('<?php echo $rows["id"]?>');"><img src="<?php echo facile::$theme_url;?>images/picture.png" width="16" height="16" alt="Gallery Images" /></a>
+                        <a title="Preview" target="_blank" href="<?php echo facile::$web_url_ui.'venue/'.$rows["venueid"];?>"><img src="<?php echo facile::$theme_url;?>images/preview.png" alt="Preview" /></a>
                     </td>
                 </tr>
               <?php } ?>

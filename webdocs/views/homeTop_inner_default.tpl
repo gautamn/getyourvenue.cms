@@ -8,23 +8,23 @@ if ($_SESSION['admin_role_id'] == 1){
       <span>Venue List</span>
     </a>
 
-    <a href="readerscorner" class="dashboard-module">
+    <!--<a href="readerscorner" class="dashboard-module">
       <img src="<?php echo facile::$theme_url;?>images/gift.png" tppabs="<?php echo facile::$theme_url;?>images/gift.png" width="64" height="64" alt="edit" />
       <span>Readers Corner</span>
-    </a>
+    </a>-->
 
     <a href="alliedservices" class="dashboard-module">
       <img src="<?php echo facile::$theme_url;?>images/Crystal_Clear_editorial.png" tppabs="<?php echo facile::$theme_url;?>images/Crystal_Clear_editorial.png" width="64" height="64" alt="edit" />
       <span>Allied Services</span>
     </a>
-
+    <?php if($_SESSION[_ROLE_ID]!=5){?>
     <a href="leads" class="dashboard-module">
       <img src="<?php echo facile::$theme_url;?>images/Crystal_Clear_blog.png" tppabs="<?php echo facile::$theme_url;?>images/Crystal_Clear_blog.png" width="64" height="64" alt="edit" />
       <span>Daily Leads</span>
-    </a>
+    </a><?php }?>
 
     <div style="clear: both"></div>
-</div> 
+</div>
 <?php
 }else{
 ?>

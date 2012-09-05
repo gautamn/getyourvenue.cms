@@ -10,24 +10,24 @@
 		$("#alliedServiceForm").validate({
 			rules: {
 				'service_name': {required: true},
-				'meta_title': {required: true, checkMetaKeyword:true},
-				'meta_description': {required: true, checkMetaKeyword:true},
+				//'meta_title': {required: true, checkMetaKeyword:true},
+				//'meta_description': {required: true, checkMetaKeyword:true},
 				'seo_title': {required: true},
-        'banner_path': {required: true},
-				'jcarousel_path': {required: true},
+        //'banner_path': {required: true},
+				//'jcarousel_path': {required: true},
         //'themes_path': {required: true},
-				'meta_keyword': {required: true, checkMetaKeyword:true},
+				//'meta_keyword': {required: true, checkMetaKeyword:true},
         'description': {required: true}
 			},
 			messages: {
 				'service_name': {required:"Please select Allied Serivce Name."},
-        'meta_title': {required:"Please enter Meta Title.", checkMetaKeyword:"Please enter more than 2 Meta Title"},
-        'meta_description': {required:"Please enter Meta Description.", checkMetaKeyword:"Please enter more than 2 Meta Description"},
+        //'meta_title': {required:"Please enter Meta Title.", checkMetaKeyword:"Please enter more than 2 Meta Title"},
+        //'meta_description': {required:"Please enter Meta Description.", checkMetaKeyword:"Please enter more than 2 Meta Description"},
         'seo_title': {required:"Please enter SEO Id."},
-        'banner_path': {required:"Please enter banner path."},
-				'jcarousel_path': {required:"Please enter jcarousel path."},
+        //'banner_path': {required:"Please enter banner path."},
+				//'jcarousel_path': {required:"Please enter jcarousel path."},
         //'themes_path': {required: "Please enter themes path."},
-        'meta_keyword': {required:"Please enter Meta Keywords.", checkMetaKeyword:"Please enter more than 2 Meta Keyword"},
+        //'meta_keyword': {required:"Please enter Meta Keywords.", checkMetaKeyword:"Please enter more than 2 Meta Keyword"},
         'description': {required: "Please enter description."}
 			}
 		});

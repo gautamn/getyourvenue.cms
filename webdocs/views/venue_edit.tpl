@@ -76,19 +76,18 @@
                 </select></p>
                 <div class="cl"></div>
             </div>
-
             <div class="add-clip">
-              <label>Meta Title <span class="star">*</span></label>
+              <label>Meta Title </label>
               <p><textarea class="meta-desshort" id="meta_title" rows="4" name="meta_title"><?php echo $records['title'];?></textarea></p>
               <div class="cl"></div>
             </div>
             <div class="add-clip">
-              <label>Meta Description <span class="star">*</span></label>
+              <label>Meta Description </label>
               <p><textarea class="meta-desshort" id="meta_description" rows="4" name="meta_description"><?php echo $records['meta_description'];?></textarea></p>
               <div class="cl"></div>
             </div>
             <div class="add-clip">
-              <label>Meta Keywords <span class="star">*</span></label>
+              <label>Meta Keywords </label>
               <p><textarea class="meta-desshort" id="meta_keyword" rows="4" name="meta_keyword"><?php echo $records['meta_keyword'];?></textarea></p>
               <div class="cl"></div>
             </div>
@@ -96,12 +95,12 @@
           <div class="widthper fr">
             <div class="add-clip">
               <label>Venue Name <span class="star">*</span></label>
-              <p><input name="venue_name" maxlength="256" type="text" class="input-short" id="venue_name" value="<?php echo $records['name'];?>" /></p>
+              <p><input name="venue_name" maxlength="256" type="text" class="input-short" id="venue_name" value="<?php echo htmlentities($records['name']);?>" /></p>
               <div class="cl"></div>
             </div>
             <div class="add-clip">
               <label>SEO Id <span class="star">*</span></label>
-              <p><input name="seo_title" maxlength="256" type="text" class="input-short" id="seo_title" value="<?php echo $records['venueid'];?>" /></p>
+              <p><input name="seo_title" maxlength="256" type="text" readonly="" class="input-short" id="seo_title" value="<?php echo $records['venueid'];?>" /></p>
               <div class="cl"></div>
             </div>
             <div class="add-clip">
@@ -130,7 +129,7 @@
               <div class="cl"></div>
             </div>
             <div class="add-clip">
-              <label>Google Map Code <span class="star">*</span></label>
+              <label>Google Map Code <img src="<?php echo facile::$theme_url.'images/notification-information.gif'?>" title="google map URL" /> <span class="star">*</span></label>
               <p><textarea class="meta-desshort" id="iframe_code" rows="6" name="iframe_code"><?php echo $records['iframe'];?></textarea></p>
               <div class="cl"></div>
             </div>

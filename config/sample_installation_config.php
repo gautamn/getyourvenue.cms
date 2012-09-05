@@ -9,78 +9,25 @@ ini_set('display_errors',0);
 */
 
 /* DB1[Primary] - Master DB Connection */
-$DSN[0]['w']['host'] = 'localhost';
-$DSN[0]['w']['user'] = 'root';
-$DSN[0]['w']['password'] = '';
-$DSN[0]['w']['db'] = 'db418924494';
+$DSN[0]['w']['host'] = 'db428851191.db.1and1.com';
+$DSN[0]['w']['user'] = 'dbo428851191';
+$DSN[0]['w']['password'] = 'password';
+$DSN[0]['w']['db'] = 'db428851191';
 /* DB1[Primary] - Slave DB Connection */
-$DSN[0]['r']['host'] = 'localhost';
-$DSN[0]['r']['user'] = 'root';
-$DSN[0]['r']['password'] = '';
-$DSN[0]['r']['db'] = 'db418924494';
-
-/* DB2[Primary] - Master DB Connection */
-$DSN[1]['w']['host'] = 'localhost';
-$DSN[1]['w']['user'] = 'root';
-$DSN[1]['w']['password'] = '';
-$DSN[1]['w']['db'] = 'db418924494';
-/* DB1[Primary] - Slave DB Connection */
-$DSN[1]['r']['host'] = 'localhost';
-$DSN[1]['r']['user'] = 'root';
-$DSN[1]['r']['password'] = '';
-$DSN[1]['r']['db'] = 'db418924494';
-
-/* DB1[Primary] - Master DB Connection */
-$DSN[2]['w']['host'] = 'localhost';
-$DSN[2]['w']['user'] = 'root';
-$DSN[2]['w']['password'] = '';
-$DSN[2]['w']['db'] = 'db418924494';
-/* DB1[Primary] - Slave DB Connection */
-$DSN[2]['r']['host'] = 'localhost';
-$DSN[2]['r']['user'] = 'root';
-$DSN[2]['r']['password'] = '';
-$DSN[2]['r']['db'] = 'db418924494';
-
-
+$DSN[0]['r']['host'] = 'db428851191.db.1and1.com';
+$DSN[0]['r']['user'] = 'dbo428851191';
+$DSN[0]['r']['password'] = 'password';
+$DSN[0]['r']['db'] = 'db428851191';
 
 /* Web URL params */
-$web_url = 'http://localhost/gyvcmsdemo/webdocs/';
-$web_static_url = 'http://localhost/gyvcmsdemo/webdocs/';
-
+$web_url = 'http://cms.getyourvenue.com/webdocs/';
+$web_static_url = 'http://cms.getyourvenue.com/';
+$web_url_ui = 'http://getyourvenue.com/';
 
 /**
 * filesystem path for templates and frames
 */
 $path = dirname(__file__) . '/../';
 
-
-
-
-/**
-* memcache server details
-*/
-
-
-
-/**
-* Solr server Details contains the installation details for all solr instances to be used for search, autocomplete and spellsuggest
-*/
-
-/* Solr details for autocomplete */
-$FACILE['solr'][0]['master'] = 'localhost';
-$FACILE['solr'][0]['slave'] = 'localhost';
-/* Solr details for spellsuggest */
-$FACILE['solr'][0]['master'] = 'localhost';
-$FACILE['solr'][0]['slave'] = 'localhost';
-/* Solr details for search */
-$FACILE['solr'][1]['master'] = 'localhost';
-$FACILE['solr'][1]['slave'] = 'localhost';
-
-$FACILE['solr'][0]['master'] = 'iplclips/dev_';
-
-$web_url_ui = 'http://localhost/gyvcmsdemo/webdocs/';
-
-
-
-//ini_set('display_errors','on');
-//error_reporting(E_ALL^E_NOTICE);
+ini_set('display_errors','On');
+error_reporting(E_ALL);

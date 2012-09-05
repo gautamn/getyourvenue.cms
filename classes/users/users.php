@@ -38,9 +38,20 @@ class users{
     $Query = "update users set last_login=now(),user_session=? where id=?";
     $data = array($session, $user_id);
     */
-    $Query = "update " . ADMINUSER . " set last_login=now() where id=?";
+    self::createUserLoginHistory($user_id);
+    $Query = "UPDATE " . ADMINUSER . " set last_login=now() where id=?";
     $data = array($user_id);
     fDB::query($Query, $data);
+  }
+
+  function createUserLoginHistory($user_id=0){
+    if($user_id<1)
+      return;
+    $ip = getIP();
+    $date = date('Y-m-d H:i:s');
+    $sql = "INSERT INTO log_cms_login_histroy (user_id, ip_address, logged_on) VALUES(?,?,NOW())";
+    $data = array($user_id, $ip);
+    fDB::query($sql, $data);
   }
 
   function unsetSession() {
@@ -407,8 +418,8 @@ class users{
     $whereArr = self::where_str($arr);
     $where = $whereArr['where'];
     $data = $whereArr['data'];
-    $cond = '';
-    if($joinArr){
+    $cond = $col = $join = '';
+    if(!empty($joinArr)){
       $join = $joinArr['join'];
       $cond = $joinArr['cond'];
       $col = $joinArr['col'];

@@ -17,14 +17,12 @@ switch ($requestedPage) {
         break;
     case 'forgotpassword':
         view::$bodyclass = 'homeinner';
-        //view::$blocks['middle'] = 'forgotpasswordBlock';
         view::$frames['middle'] = 'frame_three_cols.tpl';
         view::$blocks['middle'] = array('col2' => array('forgotpasswordBlock'));
         break;
     case 'resetpassword':
         if (!empty($_GET['token'])) {
             view::$bodyclass = 'homeinner';
-            //view::$blocks['middle'] = 'resetpasswordBlock';
             view::$frames['middle'] = 'frame_three_cols.tpl';
             view::$blocks['middle'] = array('col2' => array('resetpasswordBlock'));
         } else {
@@ -34,7 +32,6 @@ switch ($requestedPage) {
     case 'changepassword':
         if (!empty($_SESSION['admin_user_id'])) {
             view::$bodyclass = 'homeinner';
-            //view::$blocks['middle'] = array('changepasswordBlock');
             view::$frames['middle'] = 'frame_three_cols.tpl';
             view::$blocks['middle'] = array('col2' => array('changepasswordBlock'));
             //view::$callback = 'callbacksearch';
@@ -76,6 +73,14 @@ switch ($requestedPage) {
       break;
     case 'leads':
       if (isset($_SESSION['admin_user_id']) && $_SESSION['admin_user_id'] > 0) {
+        //datepicker CSS files
+        view::$cssFiles[] = CSS_DATEPICKER_JQ_UI_CUSTOM;
+        view::$cssFiles[] = CSS_DATEPICKER_CONFIG;
+        //datepicker JS Files
+        view::$jsFiles[] = JSDATEPICKER_JQ_UI_CORE;
+        view::$jsFiles[] = JSDATEPICKER_JQ_UI_WIDGET;
+        view::$jsFiles[] = JSDATEPICKER_JQ_UI_DATEPICKER;
+
         view::$jsFiles[]    = JS_LEADS;
         view::$blocks['middle'] = array('leadsBlock');
       }else{
@@ -83,16 +88,13 @@ switch ($requestedPage) {
       }
       break;
     case 'home':
-      //view::$jsInPage = ' document.location = JSWebURL+"action/logout";';
       view::$bodyclass = 'homeinner';
       if (isset($_SESSION['admin_user_id']) && $_SESSION['admin_user_id'] > 0) {
           view::$blocks['middle'] = array('homeTop');
       }else {
-          //view::$blocks['middle'] = array('loginBlock') ;
           view::$frames['middle'] = 'frame_three_cols.tpl';
           view::$blocks['middle'] = array('col2' => array('loginBlock'));
       }
-      //view::$callback = 'callbackhome';
       view::$jsFiles[] = JSLIB_AJAXLOADER;
       break;
     case 'venuetype':
@@ -104,7 +106,6 @@ switch ($requestedPage) {
       }
       break;
     default:
-      //view::$jsInPage = ' document.location = JSWebURL+"action/logout";';
       view::$bodyclass = 'homeinner';
       view::$blocks['middle'] = array('error404Block');
       break;
@@ -130,5 +131,6 @@ if (isset($_POST['requesttype']) && $_POST['requesttype'] == 'ajaxloading') {
     $jsonresponse = null;
     die();
 }
+//echo 'block:'.view::$blocks['middle'][0].' q:'.$_REQUEST['q'];
 include facile::$path_controllers . 'seo.php';
 echo view::render();

@@ -41,7 +41,7 @@
                 <label>Landing URL</label>
                 <input name="landing_url" type="text" class="input-short" id="landing_url" value="" />
             </p>
-            <fieldset class="field_set">
+            <fieldset class="field_set" style="display:none;">
               <legend>Profile Picture</legend>
               <p>
                 <input type="hidden" name="tempurl" id="tempurl" value="<?php echo facile::$web_tempfile_url;?>" />

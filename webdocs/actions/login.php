@@ -10,11 +10,11 @@ if(!empty($rest)){
     users::updateLastLogin($rest['id']);
 		//HTML changes
     $userobj = changeHtml();
-    echo $jsString="changeHtml('$userobj');";
+    echo $jsString=" changeHtml('$userobj');";
 }
 else
 {
-	echo $jsString = "ShowMessage(37,'error','','Y')";
+	echo $jsString = " ShowMessage(37,'error','','Y');";
 }
 
 function changeHtml(){

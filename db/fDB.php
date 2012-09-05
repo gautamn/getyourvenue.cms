@@ -23,9 +23,9 @@ Class fDB
 		if(!isset(fDB::$_link[$dsn_key][$query_type])){
 			$dsninfo = $DSN[$dsn_key][$query_type];
 			$_link[$dsn_key][$query_type] = mysql_connect($dsninfo['host'], $dsninfo['user'], $dsninfo['password']) or
-			Logger::log(" Throwing exception DB_CONNECTION_FAILED | Message: Couldn't connect to Server");
+			die(" Throwing exception DB_CONNECTION_FAILED | Message: Couldn't connect to Server");
 			if(!mysql_select_db($dsninfo['db'], $_link[$dsn_key][$query_type])) {
-				Logger::log(" Throwing exception DB_SELECTION_FAILED | Message: Couldn't connect to Database");
+				die(" Throwing exception DB_SELECTION_FAILED | Message: Couldn't connect to Database");
 			}
 			fDB::$_link[$dsn_key][$query_type] = $_link[$dsn_key][$query_type];
 		}
@@ -33,7 +33,7 @@ Class fDB
 
 	private static function close($dsn_key, $query_type) {
 		if(!mysql_close(fDB::$_link[$dsn_key][$query_type])){
-			Logger::log(" Throwing exception DB_CLOSE_FAILED | Message: Connection close failed");
+			die(" Throwing exception DB_CLOSE_FAILED | Message: Connection close failed");
 		}
 	}
 
@@ -93,7 +93,11 @@ Class fDB
       $args[$k] = fDB::escapeData($v);
     }
 		$sql = self::prepare_query($sql, $args);
+    $sql_type = strtolower(substr(trim($sql),0,6));
     //echo "<br>SQL: ".$sql; if(strtolower(substr(trim($sql),0,6))=='insert' || strtolower(substr(trim($sql),0,6))=='update'){ die(); }
+    if($sql_type !="" && $sql_type!='select'){
+      cms_activity_log($sql_type, $sql);
+    }
 		$query = mysql_query($sql, fDB::$_link[$dsn_key][$query_type]);
     //echo "<br>".$sql;
 		if (!$query) {

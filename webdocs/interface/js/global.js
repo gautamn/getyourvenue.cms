@@ -3,15 +3,15 @@ var dynaTabs = {
 	activateTabs:function(c,tab,tabcontent){
 	$('.'+tab).each(function(i){
 		try{
-		var obj = $(this).children('a');		
+		var obj = $(this).children('a');
 		obj.addClass('bg');
 		obj.click(function(e){
 			e.preventDefault();
 			dynaTabs.loadTabContent(this,tab,tabcontent);
 		});
-		if(typeof c != 'undefined' && c == i) dynaTabs.loadTabContent(obj[0],tab,tabcontent) 
-		}catch(e){ 
-		
+		if(typeof c != 'undefined' && c == i) dynaTabs.loadTabContent(obj[0],tab,tabcontent)
+		}catch(e){
+
 		}
 	});
 	$('#activateTabs').remove();
@@ -148,9 +148,10 @@ var resezHandler = function(){
   try{
     var wh = $(window).height();
     var dh = parseFloat(document.documentElement.scrollHeight);
-    if(wh > dh){
+    //console.log('wh:'+wh+'dh'+dh);
+    if(wh > dh && typeof dh!=undefined){
       var oh = $('#HeaderWrapper').height() + $('#OuterSubMenu').height() + $('#FooterBG').height();
-      $('.OuterMostWrapper').height(wh-oh);
+      //$('.OuterMostWrapper').height(wh-oh);
     }
   }catch(e){
 
@@ -207,31 +208,6 @@ $('.SubMenu-ddItem,.SubMenu-channel').hover(
         target.hide();
     }
 );
-$('#myPage').hover(
-    function () {
-		hidePopup();
-        var ctarget = $(this).children('div.settingdrop');
-		var target = $(ctarget).children('ul');
-        target.slideDown(400);
-    },
-    function () {
-		 var ctarget = $(this).children('div.settingdrop');
-        var target = $(ctarget).children('ul')
-        target.hide();
-    }
-);
-$('.SubMenu-studio').hover(
-    function () {
-		hidePopup();
-        var target = $(this).children('div');
-        target.fadeIn('slow');
-    },
-    function () {
-        var target = $(this).children('div')
-        target.fadeOut('slow');
-    }
-);
-
 var hidePopup = function(e){
 	if($(".DropDown").css('display') == 'block'){
 		$(".DropDown").slideUp(100)
@@ -276,13 +252,6 @@ function eraseCookie(name){
 		errorLog(e.message,'eraseCookie');
 	}
 }
-
-$('Div.DropDown >ul.languagelist >li >a').click(function(e){
-  //createCookie("langid",this.rel);
-  //createCookie("language",$(this).html());
-	window.location.reload();
-});
-
 
 function sethourCookie(name,value,hour){
 		if(hour){
@@ -670,7 +639,7 @@ akamai.isFileUploaded = function(txtFieldId,idHtmlStatusContainer,btnId){
 
   evtId = $('#event_id').val();
   file = $('#'+txtFieldId).val();
-  
+
   ajaxloader.loadURL(JSWebURL+'action/akamai', [{'act':'isSourceFileUploaded','file':file,'evtId':evtId,'idHtmlStatusContainer':idHtmlStatusContainer,'txtFieldId':txtFieldId,'btnId':btnId}]);
 }
 
@@ -678,11 +647,11 @@ akamai.showStatusCallback = function(ret,msg,txtFieldId,idHtmlStatusContainer,bt
   var cls = '';
   $('#'+btnId).attr("disabled", false);
 
-  if(ret == '0'){  
+  if(ret == '0'){
     $('#'+txtFieldId).addClass('error');
     //$('#'+idHtmlStatusContainer).addClass('error');
     cls = 'error';
     msg = '<span for="'+txtFieldId+'" generated="true" class="'+cls+'">'+msg+'</span>';
   }
-  $('#'+idHtmlStatusContainer).html(msg);    
+  $('#'+idHtmlStatusContainer).html(msg);
 }

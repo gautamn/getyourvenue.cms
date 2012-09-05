@@ -8,6 +8,9 @@
     case 'modal/venue-detail':
       $callAction = 'venuedetail';
       break;
+    case 'modal/venue-images':
+      $callAction = 'venueimages';
+      break;
     case 'modal/allied-service-detail':
       $callAction = 'alliedservicedetail';
       break;

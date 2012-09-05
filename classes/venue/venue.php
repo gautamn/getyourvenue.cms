@@ -9,7 +9,7 @@ class Venue {
         return;
       $where = '';
       $res = array();
-      $where = ($venue_id) ? "WHERE id=$venue_id" : '';
+      $where = ($venue_id) ? " WHERE id=$venue_id" : '';
       $query = "SELECT * FROM " . VENUES . $where . " order by id desc";
       $res = fDB::fetch_assoc_first($query);
       return $res;
@@ -56,16 +56,17 @@ class Venue {
     public function saveVenue($params){
       if(!is_array($params))
         return false;
-      $params['seo_title'] = !empty($params['seo_title']) ? $params['seo_title'] : $params['venue_name'];
-      $params['seo_title'] = clean_special_character($params['seo_title']);
       $date = date('Y-m-d H:i:s');
 
       if(isset($params['id']) && $params['id']>0){
-        $sql = "UPDATE ".VENUES." SET venueid=?, name=?, rank=?, address1=?, address2=?, content=?, iframe=?, regionid=?, popular_choice=?, image_alt_tag=?, update_timestamp=?, meta_description=?, meta_keyword=?, title=? WHERE id=?";
-        $data = array($params['seo_title'], $params['venue_name'], $params['venue_rank'], $params['address1'], $params['address2'], $params['description'], $params['iframe_code'], $params['region'], $params['popular'], $params['image_alt'], $date, $params['meta_description'], $params['meta_keyword'], $params['meta_title'], $params['id']);
+        $sql = "UPDATE ".VENUES." SET name=?, rank=?, address1=?, address2=?, content=?, iframe=?, regionid=?, popular_choice=?, image_alt_tag=?, update_timestamp=?, meta_description=?, meta_keyword=?, title=? WHERE id=?";
+        $data = array($params['venue_name'], (int)$params['venue_rank'], $params['address1'], $params['address2'], $params['description'], $params['iframe_code'], $params['region'], $params['popular'], $params['image_alt'], $date, $params['meta_description'], $params['meta_keyword'], $params['meta_title'], $params['id']);
       }else{
+        $params['seo_title'] = !empty($params['seo_title']) ? $params['seo_title'] : $params['venue_name'];
+        $params['seo_title'] = clean_special_character($params['seo_title']);
+
         $sql = "INSERT INTO ".VENUES." SET venueid=?, name=?, rank=?, address1=?, address2=?, content=?, iframe=?, regionid=?, popular_choice=?, image_alt_tag=?, create_timestamp=?, update_timestamp=?, meta_description=?, meta_keyword=?, title=?";
-        $data = array($params['seo_title'], $params['venue_name'], $params['venue_rank'], $params['address1'], $params['address2'], $params['description'], $params['iframe_code'], $params['region'], $params['popular'], $params['image_alt'], $date, $date, $params['meta_description'], $params['meta_keyword'], $params['meta_title']);
+        $data = array($params['seo_title'], $params['venue_name'], (int)$params['venue_rank'], $params['address1'], $params['address2'], $params['description'], $params['iframe_code'], $params['region'], $params['popular'], $params['image_alt'], $date, $date, $params['meta_description'], $params['meta_keyword'], $params['meta_title']);
       }
       $res = fDB::query($sql, $data);
       if($res){

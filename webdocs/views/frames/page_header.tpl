@@ -18,11 +18,12 @@ function togelmenu(did){
 	<div>
 
          <?php
+         $cms_module_selected = '';
          if(isset($_SESSION[_ADMIN_ID])) { ?>
             <div class="">
               <span><a href="javascript:void(0);" id="logout">Logout</a></span>
-              <span id="admin" <?php if($_SESSION['admin_user_img']){?> style="background:none"<?php } ?> > Welcome : <a href="home">Admin</a>
-                <?php if($_SESSION['admin_user_img']){?> <img src="<?php echo $_SESSION['admin_user_img']; ?>" width="16px"><?php } ?>
+              <span id="admin" <?php if($_SESSION['admin_user_img']){?> style="background:none"<?php } ?>> Welcome : <a href="home">Admin</a>
+                <?php if($_SESSION['admin_user_img']){?> <img src="<?php echo $_SESSION['admin_user_img'];?>" width="16px"><?php } ?>
               </span>
 
             </div>
@@ -81,7 +82,7 @@ if(facile::$Dynamaic_navigation['group']['USER']){
 <li <?=(($_SESSION['requestedPage']=='home' || !isset($_SESSION[_ADMIN_ID]))?'id="current"':'')?>><a href="<?=facile::$web_url?>">Home</a></li>
                         <?php
                         }
-                        if(facile::$Dynamaic_navigation['group']['CMS']){
+                        if(isset(facile::$Dynamaic_navigation['group']['CMS'])){
                           foreach(facile::$Dynamaic_navigation['group']['CMS'] as $cms_module1){
                             $cms_module = strtolower($cms_module1);
                             $controler = facile::$Dynamaic_navigation[$cms_module][0];
@@ -101,7 +102,7 @@ if(facile::$Dynamaic_navigation['group']['USER']){
 <!---SUBNAVIGATION--->
 <?php
 $cms_module_selected = (view::$mainmenu)? strtolower(view::$mainmenu) : $cms_module_selected;
-if(facile::$Dynamaic_navigation[$cms_module_selected]){
+if($cms_module_selected!="" && facile::$Dynamaic_navigation[$cms_module_selected]){
 ?>
 <div id="subnav">
         <div class="">

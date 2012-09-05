@@ -13,6 +13,6 @@ if($_SESSION['requestedPage'] != 'home'){
 }
 if(isset($_SESSION['admin_user_id']))
 facile::$Dynamaic_navigation = users::rightUserDetails($_SESSION['admin_user_id'], 1);
-//echo $_SESSION['requestedPage']."<pre>".print_r(facile::$Dynamaic_navigation,1)."</pre>";
+//echo '-'.$_SESSION['requestedPage'].'-';//."<pre>".print_r(facile::$Dynamaic_navigation,1)."</pre>";
 include facile::$path_controllers . 'callback.php';
 include facile::$path_controllers . 'controller.php';

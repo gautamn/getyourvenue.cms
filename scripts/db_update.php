@@ -34,6 +34,23 @@ $update_history['create_admin_forgot_password_11111111'] = "CREATE TABLE IF NOT 
   `enter_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `status` tinyint(1) DEFAULT '1'
 ) ENGINE=MyISAM;";
+$update_history['add_new_log_cms_activity_05092012'] = "CREATE TABLE IF NOT EXISTS `log_cms_activity` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) NOT NULL,
+  `page_url` text NOT NULL,
+  `section` varchar(100) NOT NULL,
+  `activity` varchar(200) DEFAULT NULL,
+  `actity_date` datetime NOT NULL,
+  `extra` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB";
 
+$update_history['add_new_log_cms_login_histroy'] = "CREATE TABLE IF NOT EXISTS `log_cms_login_histroy` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `logged_on` datetime NOT NULL,
+  `ip_address` varchar(25) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB";
 
 update_db($update_history);

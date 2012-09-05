@@ -19,7 +19,7 @@
           <div class="widthper fr">
             <div class="add-clip">
               <label>Seo Title <span class="star">*</span></label>
-              <p><input name="seo_title" maxlength="256" type="text" class="input-short" id="seo_title" value="<?php echo $records['venuetype'];?>" /></p>
+              <p><input name="seo_title" readonly="" maxlength="256" type="text" class="input-short" id="seo_title" value="<?php echo $records['venuetype'];?>" /></p>
               <div class="cl"></div>
             </div>
           </div>

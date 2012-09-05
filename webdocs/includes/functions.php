@@ -32,17 +32,6 @@
     return $return[$key];
   }
 
-	function sec2hms ($sec, $padHours = true) {
-		$hms = "";
-		$hours = intval(intval($sec) / 3600);
-		$hms .= ($padHours) ? str_pad($hours, 2, "0", STR_PAD_LEFT). ':' : $hours. ':';
-		$minutes = intval(($sec / 60) % 60);
-		$hms .= str_pad($minutes, 2, "0", STR_PAD_LEFT). ':';
-		$seconds = intval($sec % 60);
-		$hms .= str_pad($seconds, 2, "0", STR_PAD_LEFT);
-		return $hms;
-	}
-
 	function serchInArray($array,$searchData){
 		foreach($array as $key=>$element){
 			$searchKey = (stripos($element,$searchData)>-1 ? $key : -1);
@@ -65,16 +54,6 @@
 		$str = (empty($str) ? "' '":$str);
 		return $str;
 	}
-
-	function filterInArray($ar,$mvalue){
-            $arr = chkMultiArray($ar);
-		if(sizeof($arr)>0){
-			$fiter_array = array_filter($arr , function ($element) use ($mvalue){
-				 return (strtolower($element) != strtolower($mvalue));
-			   });
-			  return  $fiter_array;
-		  }
-	  }
 
 	  function chkMultiArray($ar){
 		  $arr = array();
@@ -259,7 +238,6 @@ function calculate_time($time) {
 
 function convert_datetime($str)
 {
-
 	list($date, $time) = explode(' ', $str);
 	list($year, $month, $day) = explode('-', $date);
 	list($hour, $minute, $second) = explode(':', $time);
@@ -287,38 +265,6 @@ function let_to_num($v){ //This function transforms the php.ini notation for num
     }
     return $ret;
  }
-
- /*
---- if duration is <1 min, it should say [0:SS]
---- if duration is >= 1 min and < 10 min, it should say: [M:SS]
---- if duration is >= 10 min and < 60 min, it should say: [MM:SS]
---- if duration is >= 60 min and < 600 min, it should say: [H:MM:SS]
---- if duration is >=600 min, it should say: [HH:MM:SS]
-*/
-function fixHMSTime($hms){
-	$arr_hms = explode(':',$hms);
-	if($arr_hms[0]>9)
-		return $ret_hms = $hms;
-	elseif($arr_hms[0]>0)
-	{
-		if(!(array_key_exists(2,$arr_hms)))
-		$arr_hms[2]='';
-		return $ret_hms = (int)$arr_hms[0].":$arr_hms[1]:$arr_hms[2]";
-	}
-	elseif($arr_hms[1]>9)
-		return $ret_hms  = $arr_hms[1].":$arr_hms[2]";
-	elseif($arr_hms[1]>0)
-		return $ret_hms = (int)$arr_hms[1].":$arr_hms[2]";
-	else
-	{
-		if(isset($arr_hms[2]))
-		return $ret_hms  = "0:$arr_hms[2]";
-		else
-		return $ret_hms  = "0:";
-
-	}
-
-}
 
 function clean_special_character($text, $strtolower=1){
 	$text = trim($text);
@@ -472,46 +418,18 @@ function resizeThumbnailImage($thumb_image_name, $image, $width, $height, $start
 
 function getArtworkURL($type,$image,$size='small'){
 if($type==NULL || $image==NULL) return;
-    switch($type){
-        case 'news':
-    if($size=='original'){
-      $file = facile::$web_newsimage_path.$image;
-      $file =(@file_exists($file))? facile::$web_newsimage_url.$image:NULL;
-    }else{
-      $imgSizeAry = facile::$newsImgSizes[$size];
-      $file = facile::$web_newsimage_path."crop_".$imgSizeAry['w']."x".$imgSizeAry['h']."_".$image;
-      $file =(@file_exists($file))? facile::$web_newsimage_url."crop_".$imgSizeAry['w']."x".$imgSizeAry['h']."_".$image:NULL;
-    }
-    break;
-  case 'news_poster':
-    $file = facile::$web_newsimage_path.$image;
-    $file =(@file_exists($file))? facile::$web_newsimage_url.$image:NULL;
-    break;
-  case 'news_featured_poster':
-    $file = facile::$web_newsimage_path.$image;
-    $file =(@file_exists($file))? facile::$web_newsimage_url.$image:NULL;
-    break;
-  case 'blogs':
-    /*$file = facile::$web_blogsimage_path."crop_260x150_".$image;
-    $file =(@file_exists($file))? facile::$web_blogsimage_url."crop_260x150_".$image:NULL;*/
-    if($size=='original'){
-      $file = facile::$web_blogsimage_path.$image;
-      $file =(@file_exists($file))? facile::$web_blogsimage_url.$image:NULL;
-    }else{
-      $imgSizeAry = facile::$blogsImgSizes[$size];
-      $file = facile::$web_blogsimage_path."crop_".$imgSizeAry['w']."x".$imgSizeAry['h']."_".$image;
-      $file =(@file_exists($file))? facile::$web_blogsimage_url."crop_".$imgSizeAry['w']."x".$imgSizeAry['h']."_".$image:NULL;
-    }
-    break;
-  case 'auser': // admin user
-    if(facile::$auserPicSizes[$size]){
-      $imgSizeAry = facile::$auserPicSizes[$size];
-    }
-    $file = facile::$web_auserimage_path.'crop_'.$imgSizeAry['w'].'x'.$imgSizeAry['h'].'_'.$image;
-    $file =(@file_exists($file))? facile::$web_auserimage_url.'crop_'.$imgSizeAry['w'].'x'.$imgSizeAry['h'].'_'.$image:NULL;
-    break;
-  default:
-    break;
+  switch($type){
+    case 'venue'://thumb
+      $file = facile::$web_venueimage_path.$image;
+      $file =(@file_exists($file))? facile::$web_venueimage_url.$image:NULL;
+      break;
+    case 'venueGallery':
+      $file = facile::$web_venueimage_path.$image;
+      $file =(@file_exists($file))? facile::$web_venueimage_url.$image:NULL;
+      break;
+    default:
+      $file = NULL;
+      break;
     }
     return $file;
 }
@@ -660,4 +578,65 @@ function copyImageFromUrl($url, $sourceImageName, $destImagePath, $destImageName
   @fwrite($fp, $content);
   @fclose($fp);
 }
+
+function findfile($location='',$fileregex='') {
+    if (!$location or !is_dir($location) or !$fileregex) {
+       return false;
+    }
+
+    $matchedfiles = array();
+
+    $all = opendir($location);
+    while ($file = readdir($all)) {
+       if (is_dir($location.'/'.$file) and $file <> ".." and $file <> ".") {
+          $subdir_matches = findfile($location.'/'.$file,$fileregex);
+          $matchedfiles = array_merge($matchedfiles,$subdir_matches);
+          unset($file);
+       }
+       elseif (!is_dir($location.'/'.$file)) {
+          if (preg_match($fileregex,$file)) {
+             array_push($matchedfiles,$location.'/'.$file);
+          }
+       }
+    }
+    closedir($all);
+    unset($all);
+    return $matchedfiles;
+ }
+
+  /**
+	 * log the cms activity
+	 * Enter description here ...
+   * activity : Insert | Update | Delete
+   * $extra: sql query in the form json_encode
+	*/
+	function cms_activity_log($activity=NULL, $extra=NULL){
+    $user_id = !empty($_SESSION['admin_user_id']) ? $_SESSION['admin_user_id'] : 0;
+    if($user_id<1){
+      return;
+    }
+    if(preg_match('/log_cms_activity/', $extra) || preg_match('/log_cms_login_histroy/', $extra)){
+      return;
+    }
+    $modules = !empty($_SESSION['requestedPage']) ? trim($_SESSION['requestedPage']) : '';
+    $page_url = $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+    $view_date = date('Y-m-d H:i:s');
+    $ip = getIP();
+    //logging to the log_cms_activity for every processing..
+    $sql = "INSERT INTO log_cms_activity(user_id, page_url, section, activity, activity_date, extra) VALUES (?, ?, ?, ?, ?, ?)";
+    $data = array($user_id, $page_url, $modules, $activity, $view_date, $ip);
+    fDB::query($sql, $data);
+  }
+
+//Function to get IP address of user
+function getIP(){
+	if(isset($_SERVER["HTTP_TRUE_CLIENT_IP"]))
+		$IP = $_SERVER["HTTP_TRUE_CLIENT_IP"];
+	elseif(isset($_SERVER["HTTP_NS_REMOTE_ADDR"]))
+		$IP = $_SERVER["HTTP_NS_REMOTE_ADDR"];
+	else
+		$IP = $_SERVER["REMOTE_ADDR"];
+	return($IP);
+}
+
 ?>

@@ -15,7 +15,7 @@
          <fieldset>
           <input class="submit-green" type="button" value="Login" id="signIn">
           <input class="submit-gray" type="reset" value="Reset">
-          <a href="javascript:void(0)" onclick="forgetPassword()">Forgot password?</a>
+          <!--<a href="javascript:void(0)" onclick="forgetPassword()">Forgot password?</a>-->
          </fieldset>
       </form>
 

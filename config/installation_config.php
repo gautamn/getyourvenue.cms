@@ -22,12 +22,12 @@ $DSN[0]['r']['db'] = 'db418924494';
 /* Web URL params */
 $web_url = 'http://localhost/gyvcmsdemo/webdocs/';
 $web_static_url = 'http://localhost/gyvcmsdemo/webdocs/';
-
+$web_url_ui = 'http://localhost/gyvcmsdemo/webdocs/';
 
 /**
 * filesystem path for templates and frames
 */
 $path = dirname(__file__) . '/../';
 
-//ini_set('display_errors','On');
-//error_reporting(E_ALL);
+ini_set('display_errors','On');
+error_reporting(E_ALL);

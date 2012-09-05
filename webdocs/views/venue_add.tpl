@@ -67,17 +67,17 @@
             </div>
 
             <div class="add-clip">
-              <label>Meta Title <span class="star">*</span></label>
+              <label>Meta Title </label>
               <p><textarea class="meta-desshort" id="meta_title" rows="4" name="meta_title"></textarea></p>
               <div class="cl"></div>
             </div>
             <div class="add-clip">
-              <label>Meta Description <span class="star">*</span></label>
+              <label>Meta Description </label>
               <p><textarea class="meta-desshort" id="meta_description" rows="4" name="meta_description"></textarea></p>
               <div class="cl"></div>
             </div>
             <div class="add-clip">
-              <label>Meta Keywords <span class="star">*</span></label>
+              <label>Meta Keywords </label>
               <p><textarea class="meta-desshort" id="meta_keyword" rows="4" name="meta_keyword"></textarea></p>
               <div class="cl"></div>
             </div>
@@ -119,7 +119,7 @@
               <div class="cl"></div>
             </div>
             <div class="add-clip">
-              <label>Google Map Code <span class="star">*</span></label>
+              <label>Google Map Code <img src="<?php echo facile::$theme_url.'images/notification-information.gif'?>" title="google map URL" /> <span class="star">*</span></label>
               <p><textarea class="meta-desshort" id="iframe_code" rows="6" name="iframe_code"></textarea></p>
               <div class="cl"></div>
             </div>

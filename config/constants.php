@@ -28,6 +28,7 @@ define("JS_MIDROLES", "midroles");
 define("JSDATEPICKER_JQ_UI_CORE", "datepicker/jquery.ui.core");
 define("JSDATEPICKER_JQ_UI_WIDGET", "datepicker/jquery.ui.widget");
 define("JSDATEPICKER_JQ_UI_DATEPICKER", "datepicker/jquery.ui.datepicker");
+define("JSDATEPICKER_JQ_UI_DATERANGEPICKER", "datepicker/jquery.daterangepicker");
 
 //JS files
 define("JSLIB_JQUERYMIN", "lib/jquery-1.3.2.min");

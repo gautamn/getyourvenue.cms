@@ -9,15 +9,17 @@ include_once facile::$path_classes . "/leads/leads.php";
 class leadsBlock{
   function process(){
     is_loggedin();
-    
+
     if (isset($_REQUEST['view']))
       $view = $_REQUEST['view'];
 
-    $vars = $_REQUEST['vars'][0];
+    $vars = isset($_REQUEST['vars'][0]) ? $_REQUEST['vars'][0] : array('');
     $vars['currPage'] = isset($vars['currPage']) ? $vars['currPage'] : 1;
 
-    $action = isset($vars['action']) ? $vars['action'] : $_REQUEST['action'];
-    $sh_keyword = isset($vars['sh_keyword']) ? trim($vars['sh_keyword']) : trim($_REQUEST['sh_keyword']);
+    $action = isset($vars['action']) ? $vars['action'] : '';
+    $sh_keyword = isset($vars['sh_keyword']) ? trim($vars['sh_keyword']) : '';
+    $seacrhDateFrom = isset($vars['seacrhDateFrom']) ? trim($vars['seacrhDateFrom']) : '';
+    $seacrhDateTo   = isset($vars['seacrhDateTo']) ? trim($vars['seacrhDateTo']) : '';
 
     //searching logic
     $arrKeyword = array();
@@ -30,7 +32,12 @@ class leadsBlock{
       if(count($arrKeyword)>0)
         $qarr[] = " (".implode(" OR ",$arrKeyword ).") ";
     }
+    if(!empty($seacrhDateFrom) && !empty($seacrhDateTo)){
+      $qarr[] = " (date_format(insertdate,'%Y-%m-%d') BETWEEN '".$seacrhDateFrom."' AND  '".$seacrhDateTo."') ";
+    }
     $tplData['sh_keyword']  = $sh_keyword;
+    $tplData['seacrhDateFrom']  = $seacrhDateFrom;
+    $tplData['seacrhDateTo']  = $seacrhDateTo;
 
     //counting total records
     $tplData['totalRocords'] = Leads::getLeadsListing($qarr, 1, '', '');

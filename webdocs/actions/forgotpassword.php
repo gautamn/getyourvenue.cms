@@ -2,15 +2,15 @@
 include_once facile::$path_utilities . "mail/mail.php";
 include_once facile::$path_classes . "users/users.php";
 
-$vars= $_REQUEST['vars'][0];
+$vars = isset($_REQUEST['vars'][0])  ? $_REQUEST['vars'][0] : array('');
 $jsString = "";
 if(!empty($vars['useremail'])){
-  $params =array();
+  $params = array();
   $params['useremail'] = $vars['useremail'];
   $params['token']= users::getToken();
   $userRow = users::forgotPassword($params);
-  if((int)$userRow['status'] == 0 && !empty($userRow['id'])){ 
-    $jsString = "ShowMessage(50,'error','','Y')";
+  if((int)$userRow['status'] == 0 && !empty($userRow['id'])){
+    $jsString = " ShowMessage(50,'error','','Y');";
   } elseif($userRow['id']>0) {
     $url = facile::$web_url.'resetpassword?token='.$token;
     $mail = new sendmail();

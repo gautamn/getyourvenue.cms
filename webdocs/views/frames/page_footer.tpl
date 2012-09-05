@@ -5,7 +5,7 @@
         	<div class="container_12">
             	<div class="grid_12">
                 	<!-- You can change the copyright line for your own -->
-                	<p>&copy; 2012 <a href="<?php echo $web_url; ?>" title="GYV@2012">GYV.com</a></p>
+                  <p>&copy; 2012 <a href="<?php echo facile::$web_url;?>" title="GYV@2012">GetYourVenue.com</a></p>
         		</div>
             </div>
             <div style="clear:both;"></div>
